@@ -34,6 +34,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setWatchJavaScriptDependencies(true);
   eleventyConfig.setBrowserSyncConfig({
     snippet: true,
+    https: true
   });
 
   eleventyConfig.addGlobalData("eleventyComputed.permalink", function() {
@@ -72,8 +73,8 @@ module.exports = function (eleventyConfig) {
 
     // Use a local key/certificate to opt-in to local HTTP/2 with https
     https: {
-      // key: "./localhost.key",
-      // cert: "./localhost.cert",
+      key: "../../localhost.key",
+      cert: "../../localhost.cert",
     },
 
     // Change the default file encoding for reading/serving files
@@ -181,7 +182,6 @@ module.exports = function (eleventyConfig) {
     <meta name="googlebot" content="noindex">
     <meta name="googlebot-news" content="noindex">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 `});
 
  eleventyConfig.addShortcode('interlude', (title, subtitle, transition) => {

@@ -41,11 +41,13 @@ exports.render = function (data) {
 
   const POIs = pathData.map((poi) => {
     const {data} = poi;
-    
     if(data.status === 'hidden') return '';
+
     return `
       <section>
         ${data.title}
+        ${poi.content}
+        
       </section>
     `;
   });
@@ -55,43 +57,36 @@ exports.render = function (data) {
     <head>
       <title>ARlebnispfade Oberberg // ${data.title}</title>
       ${this.meta()}
-      <link rel="stylesheet" href="${this.url('/reveal/dist/reset.css')}">
-      <link rel="stylesheet" href="${this.url('/reveal/dist/reveal.css')}">
+      <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+      <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+      <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+
       <link rel="stylesheet" href="${this.url('/assets/main.css')}">
-     
       <link rel="icon" type="image/svg" href="${this.url('/assets/images/preview_black_24dp.svg')}">
-  
-      <!-- Theme used for syntax highlighted code -->
-      <link rel="stylesheet" href="${this.url('/reveal/plugin/highlight/monokai.css')}">
+
+      <style>
+  .arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arjs-loader div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+  }
+</style>
     </head>
     <body>
-      <div class="reveal">
-        <div class="slides">
           ${POIs.join('\n')}  
-        </div>
-      </div>
-      
-      <script src="${this.url('/reveal/dist/reveal.js')}"></script>
-      <script src="${this.url('/assets/scripts/libs/fittext.js')}"></script>
-      <script src="${this.url('/assets/scripts/main.js')}"></script>
-      <script src="${this.url('/reveal/plugin/notes/notes.js')}"></script>
-      <script src="${this.url('/reveal/plugin/markdown/markdown.js')}"></script>
-      <script src="${this.url('/reveal/plugin/highlight/highlight.js')}"></script>
-      <script src="${this.url('/reveal/plugin/zoom/zoom.js')}"></script>
-      <script>
-        // More info about initialization & config:
-        // - https://revealjs.com/initialization/
-        // - https://revealjs.com/config/
-        Reveal.initialize({
-          hash: true, 
-          center: false,
-          disableLayout: true,
-          progress: true,
-          backgroundTransition: 'zoom',
-          // Learn about plugins: https://revealjs.com/plugins/
-          plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom]
-        });
-      </script>
     </body>
   </html>`;
 };
