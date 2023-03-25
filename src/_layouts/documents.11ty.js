@@ -14,6 +14,6 @@ exports.render = function (data) {
       ${data.content}
       </main>
     </body>
-    <script src="${this.url('/assets/scripts/gdw.js')}"></script>
+
   </html>`;
 };
