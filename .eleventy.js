@@ -84,39 +84,42 @@ module.exports = function (eleventyConfig) {
  /* Compilation
    ########################################################################## */
 
- // Watch our compiled assets for changes
- // eleventyConfig.addWatchTarget('./src/compiled-assets/main.css');
- eleventyConfig.addWatchTarget('./src/assets/scripts/main.js');
+  // Watch our js for changes
+  eleventyConfig.addWatchTarget('./src/assets/scripts/main.js');
+  // eleventyConfig.addWatchTarget('./src/_layouts/components/');
 
- // Copy _data
- eleventyConfig.addPassthroughCopy({'src/_data': 'assets/data'});
+  // Copy _data
+  eleventyConfig.addPassthroughCopy({ 'src/_data': 'assets/data' });
+  eleventyConfig.addWatchTarget("./src/_data");
 
- // Copy src/compiled-assets to /assets
- eleventyConfig.addPassthroughCopy({'src/compiled-assets': 'assets'});
+  // Watch our compiled assets for changes
+  eleventyConfig.addPassthroughCopy('src/compiled-assets');
+  eleventyConfig.addPassthroughCopy('./compiled-content');
 
- // Copy all fonts
- eleventyConfig.addPassthroughCopy({'src/assets/fonts': 'assets/fonts'});
+  // Copy all fonts
+  eleventyConfig.addPassthroughCopy({ 'src/assets/fonts': 'assets/fonts' });
 
- // Copy asset images
- eleventyConfig.addPassthroughCopy({'src/assets/images': 'assets/images'});
-  
- // Copy images
- eleventyConfig.addPassthroughCopy('src/content/**/images/*.{jpg,png,svg,jpeg, gif}');
- eleventyConfig.addPassthroughCopy('src/content/**/images/**/*.{jpg,png,svg,jpeg,gif}');
+  // Copy asset images
+  eleventyConfig.addPassthroughCopy({ 'src/assets/images': 'assets/images' });
 
- // Copy Reveal Stuff
- eleventyConfig.addPassthroughCopy({'reveal/dist': 'reveal/dist'});
- eleventyConfig.addPassthroughCopy({'reveal/plugin': 'reveal/plugin'});
+  // Copy images
+  eleventyConfig.addPassthroughCopy("**/*.jpg");
+  eleventyConfig.addPassthroughCopy("**/*.jpeg");
+  eleventyConfig.addPassthroughCopy("**/*.webp");
 
- // Copy Scripts
- eleventyConfig.addPassthroughCopy({'src/assets/scripts': 'assets/scripts'});
- eleventyConfig.addWatchTarget("./src/assets/scripts");
+  // Copy Scripts
+  eleventyConfig.addPassthroughCopy({ 'src/assets/scripts': 'assets/scripts' });
+  eleventyConfig.addWatchTarget("./src/assets/scripts");
 
  /* Functions
  ########################################################################## */
 
  eleventyConfig.addJavaScriptFunction("urlPrefix", function() {
   return pathPrefix;
+ });
+
+ eleventyConfig.addJavaScriptFunction("getContentUrl", function(url) {
+  return url;
  });
 
  /* Filter
@@ -156,46 +159,6 @@ module.exports = function (eleventyConfig) {
  /* Shortcodes
  ########################################################################## */
 
- eleventyConfig.addShortcode('screenshot', (imgSrc, props) => {
-  const propData = (props) ? JSON.parse(props) : {};
-  const dataTransition = propData && propData.transition ? `data-transition="${propData.transition}"` : '';
-  const dataBackgroundTransition = propData && propData.backgroundTransition ? `data-background-transition="${propData.backgroundTransition}"` : '';
-  const classes = propData && propData.classes ? propData.classes : '';
-  const width = propData && propData.width ? `width="${propData.width}" ` : '';
-  const buCreditHtml = propData && propData.credit ? `<p class="credit">${propData.credit}</p>` : '';
-  const buHtml = propData && propData.bu ? `<figcaption class="bu"><p>${insertMarkup(propData.bu)}</p></figcaption>` : '';
-  return `<section data-slide-shortcode-class="screenshot" class="image screenshot ${classes}" ${dataTransition} ${dataBackgroundTransition}><figure><img src="${imgSrc}" alt="${imgSrc}" ${width}>${buHtml}</figure></section>`;
- });
-
- eleventyConfig.addShortcode('screenshotFs', (imgSrc, props) => {
-  const propData = (props) ? JSON.parse(props) : {};
-  const dataTransition = propData && propData.transition ? `data-transition="${propData.transition}"` : '';
-  const dataBackgroundTransition = propData && propData.backgroundTransition ? `data-background-transition="${propData.backgroundTransition}"` : '';
-  const classes = propData && propData.classes ? propData.classes : '';
-  const buCreditHtml = propData && propData.credit ? `<p class="credit">${propData.credit}</p>` : '';
-  const buHtml = propData && propData.bu ? `<div class="bu"><p>${insertMarkup(propData.bu)}</p></div>` : '';
-  return `<section data-slide-shortcode-class="screenshot" class="image is-fullscreen ${classes}" data-background="${imgSrc}" ${dataTransition} ${dataBackgroundTransition}>${buHtml}</section>`;
- });
-
- eleventyConfig.addShortcode('meta',()=>{
-  return `<meta name="robots" content="noindex">
-    <meta name="googlebot" content="noindex">
-    <meta name="googlebot-news" content="noindex">
-    <meta charset="utf-8">
-`});
-
- eleventyConfig.addShortcode('interlude', (title, subtitle, transition) => {
-  const getRandomBackgroundColor = ()=>{
-    const colors = ['#4952e1', '#d16', '#00ad2f', '#9313ce', '#aaa'];
-    return colors[colors.length * Math.random() | 0];
-  }
-  const htmlSubtitle = subtitle ? `<h2 class="subtitle js-delay">${insertMarkup(subtitle)}</h2>` : '';
-  const dataTransition = transition ? `data-transition="${transition}"` : '';
-
-  return `<section data-slide-shortcode-class="interlude" data-background-color="${getRandomBackgroundColor()}" class="image screenshot interlude" ${dataTransition}><div><h1 class="title">${insertMarkup(title)}</h1>${htmlSubtitle}</div></section>`;
- });
-
-
 
  /* Environment
  ########################################################################## */
@@ -229,7 +192,8 @@ module.exports = function (eleventyConfig) {
   templateFormats: [
    'md',
    'html',
-   'njk'
+   'njk',
+   '11ty.js'
   ],
  };
 };
