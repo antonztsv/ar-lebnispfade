@@ -302,9 +302,28 @@ main {
   padding: 0;
 }
 .overview li {
+  position: relative;
   display: block;
   background-size: cover;
-  padding: var(--l);
+  background-position: center center;
+  z-index: 0;
+}
+.overview li > a {
+  position: relative;
+  display: block;
+  padding: calc(var(--l) * 4) var(--s) var(--s) var(--s);
+  z-index: 2;
+}
+.overview li::before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.9) 100%);
+  z-index: 1;
 }
 
 /*# sourceMappingURL=main.css.map */

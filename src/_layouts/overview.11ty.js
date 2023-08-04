@@ -8,18 +8,12 @@ exports.render = function (data) {
 
   return `<!doctype html>
   <html lang="de">
-    
     ${documentHead}
-
     <body class="overview">
-
       ${pageHead}
-
       <main>
         ${data.content}
       </main>
-
     </body>
-
   </html>`;
 };

@@ -17,7 +17,7 @@ class Overview {
       });
 
       return `
-        <ul class="overview">
+        <ul class="item-list">
           ${overviewItems.join("\n")}
         </ul>`;
     }
