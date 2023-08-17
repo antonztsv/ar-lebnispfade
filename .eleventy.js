@@ -110,6 +110,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/assets/scripts': 'assets/scripts' });
   eleventyConfig.addWatchTarget("./src/assets/scripts");
 
+  // Copy CNAME
+  eleventyConfig.addPassthroughCopy({ 'src/CNAME': '' });
+
  /* Functions
  ########################################################################## */
 
