@@ -1,3 +1,9 @@
+body{
+  display: flex;
+  flex-direction: column;
+}
+
 main{
   margin: var(--s);
+  flex-grow: 2;
 }

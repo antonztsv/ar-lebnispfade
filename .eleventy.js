@@ -119,7 +119,7 @@ module.exports = function (eleventyConfig) {
  });
 
  eleventyConfig.addJavaScriptFunction("getContentUrl", function(url) {
-  return url;
+  return `.${url}`;
  });
 
  /* Filter

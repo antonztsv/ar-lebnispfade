@@ -285,14 +285,27 @@ small {
   font-size: 80%;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 main {
   margin: var(--s);
+  flex-grow: 2;
 }
 
 /* Main Header
 ###########################################################################  */
 .main-header > * {
   margin: var(--s);
+}
+
+/* Main Footer
+###########################################################################  */
+.main-footer {
+  padding: var(--m) var(--s);
+  font-size: var(--s);
 }
 
 /* Overview
@@ -337,6 +350,9 @@ main {
 }
 .poi .core-info figcaption {
   font-weight: var(--fw-normal);
+}
+.poi .core-info figcaption p + p {
+  margin-top: var(--xs);
 }
 
 /*# sourceMappingURL=main.css.map */

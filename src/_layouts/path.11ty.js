@@ -1,5 +1,6 @@
 const documentHeader = require('./components/head.11ty');
 const pageHeader = require('./components/page-header.11ty');
+const pageFooter = require('./components/page-footer.11ty');
 
 const getData = (collections, pattern) => collections.filter((item) => {
   const {url} = item;
@@ -20,10 +21,8 @@ const createPathItems = (pathData) => {
     if(data.status === 'hidden') return '';
     if(data.status === 'hidden') return '';
 
-    console.log(data.type, poi.url);
-
-    const contentUrl = this.getContentUrl(poi.url);
-    const imageUrl =  poi.data.image;
+    const contentUrl = `..${poi.url}`;
+    const imageUrl =  `./images/${poi.data.image}`;
 
     return `<li style="background-image: url(${imageUrl})"><a href="${contentUrl}">${poi.data.title}</a></li>`;
   });
@@ -38,6 +37,7 @@ exports.render = function (data) {
   const pathData = getData(data.collections.sorted, data.page.fileSlug);
   const documentHead = documentHeader.getHeader(this, data);
   const pageHead = pageHeader.getPageHeader(this, data);
+  const pageFoot = pageFooter.getPageFooter(this, data);
   const pathItems = createPathItems(pathData);
 
   return `<!doctype html>
@@ -48,6 +48,7 @@ exports.render = function (data) {
       <main>
         ${pathItems}
       </main>
+      ${pageFoot}
     </body>
   </html>`;
 };
