@@ -1,0 +1,23 @@
+/* POI
+############################################################################ */
+
+.poi{
+
+  .core-info{
+    img{
+      display: block;
+      margin-left: calc(var(--s) * -1);
+      width: calc(100% + (var(--s) * 2));
+      max-width: calc(100% + (var(--s) * 2));
+      margin-bottom: var(--s);
+    }
+
+    figcaption{
+      font-weight: var(--fw-normal);
+
+      p + p {
+        margin-top: var(--xs);
+      }
+    }
+  }
+}

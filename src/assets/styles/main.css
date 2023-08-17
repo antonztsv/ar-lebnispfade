@@ -80,31 +80,31 @@ select {
 
 @font-face {
   font-display: swap;
-  font-family: SourceSans;
+  font-family: Roboto;
   font-style: normal;
   font-weight: 200;
-  src: url("../assets/fonts/Source_Sans_3/static/SourceSans3-Light.ttf");
+  src: url("../assets/fonts/Roboto/Roboto-Light.ttf");
 }
 @font-face {
   font-display: swap;
-  font-family: SourceSans;
+  font-family: Roboto;
   font-style: normal;
   font-weight: 300;
-  src: url("../assets/fonts/Source_Sans_3/static/SourceSans3-Regular.ttf");
+  src: url("../assets/fonts/Roboto/Roboto-Regular.ttf");
 }
 @font-face {
   font-display: swap;
-  font-family: SourceSans;
+  font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  src: url("../assets/fonts/Source_Sans_3/static/SourceSans3-SemiBold.ttf");
+  src: url("../assets/fonts/Roboto/Roboto-Medium.ttf");
 }
 @font-face {
   font-display: swap;
-  font-family: SourceSans;
+  font-family: Roboto;
   font-style: normal;
   font-weight: 700;
-  src: url("../assets/fonts/Source_Sans_3/static/SourceSans3-Bold.ttf");
+  src: url("../assets/fonts/Roboto/Roboto-Bold.ttf");
 }
 @font-face {
   font-family: "MaterialIcons";
@@ -190,12 +190,12 @@ select {
   --color-accent: var(--mi-pink);
   --color-decoration: var(--mi-gruen);
   --color-background: var(--darkest);
-  --ff-normal: "SourceSans", sans-serif;
-  --ff-serif: "PTserif", serif;
+  --ff-normal: "Roboto", sans-serif;
+  --ff-serif: "Roboto", serif;
   --ff-code: "RobotoCode", monospace;
   --ff-headline: "Roboto", monospace;
   --ff-icons: "MaterialIcons", serif;
-  --fw-normal: 400;
+  --fw-normal: 200;
   --fw-medium: 500;
   --fw-bold: 700;
   --lh-normal: 140%;
@@ -297,24 +297,24 @@ main {
 
 /* Overview
 ############################################################################ */
-.overview {
+.overview, .path {
   margin: 0;
   padding: 0;
 }
-.overview li {
+.overview li, .path li {
   position: relative;
   display: block;
   background-size: cover;
   background-position: center center;
   z-index: 0;
 }
-.overview li > a {
+.overview li > a, .path li > a {
   position: relative;
   display: block;
   padding: calc(var(--l) * 4) var(--s) var(--s) var(--s);
   z-index: 2;
 }
-.overview li::before {
+.overview li::before, .path li::before {
   position: absolute;
   display: block;
   content: "";
@@ -324,6 +324,19 @@ main {
   right: 0;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.9) 100%);
   z-index: 1;
+}
+
+/* POI
+############################################################################ */
+.poi .core-info img {
+  display: block;
+  margin-left: calc(var(--s) * -1);
+  width: calc(100% + (var(--s) * 2));
+  max-width: calc(100% + (var(--s) * 2));
+  margin-bottom: var(--s);
+}
+.poi .core-info figcaption {
+  font-weight: var(--fw-normal);
 }
 
 /*# sourceMappingURL=main.css.map */

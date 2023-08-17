@@ -1,4 +1,3 @@
-const fs = require('fs');
 const documentHeader = require('./components/head.11ty');
 const pageHeader = require('./components/page-header.11ty');
 
@@ -24,7 +23,7 @@ const createPathItems = (pathData) => {
     console.log(data.type, poi.url);
 
     const contentUrl = this.getContentUrl(poi.url);
-    const imageUrl =  poi.url.replace(/\/$/, '.jpg'); //`${contentUrl.replace(/(.*)\//, RegExp.$1)}.jpg`;
+    const imageUrl =  poi.data.image;
 
     return `<li style="background-image: url(${imageUrl})"><a href="${contentUrl}">${poi.data.title}</a></li>`;
   });
@@ -44,7 +43,7 @@ exports.render = function (data) {
   return `<!doctype html>
   <html lang="de">
     ${documentHead}
-    <body>
+    <body class="path">
       ${pageHead}
       <main>
         ${pathItems}

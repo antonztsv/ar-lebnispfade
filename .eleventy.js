@@ -133,11 +133,15 @@ module.exports = function (eleventyConfig) {
   return topic;
  });
 
+ eleventyConfig.addFilter("markdown", (content) => {
+  return md.render(content);
+});
+
  /* Collections
  ########################################################################## */
 
  eleventyConfig.addCollection("pathes", (collection) => {
-  return POIs = getPOIData(collection, "./src/content/**/index.md");
+  return POIs = getPOIData(collection, "./src/**/index.md");
  });
 
  eleventyConfig.addCollection("all", function (collection) {
@@ -145,7 +149,7 @@ module.exports = function (eleventyConfig) {
  });
 
  eleventyConfig.addCollection("sorted", function (collection) {
-  return POIs = collection.getFilteredByGlob("./src/content/**/*.md").sort((a, b) => {
+  return POIs = collection.getFilteredByGlob("./src/**/*.md").sort((a, b) => {
    const filenameFromA = a.filePathStem.split(/\//).pop();
 
    if (filenameFromA === 'index') return 1;
