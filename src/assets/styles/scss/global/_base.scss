@@ -25,7 +25,7 @@ h5,
 h6 {
   color: var(--color-headline);
   font-family: var(--ff-headline);
-  font-weight: bold;
+  font-weight: var(--fw-normal);
   line-height: var(--lh-tight);
   hyphens: none;
 }

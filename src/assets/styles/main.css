@@ -164,7 +164,7 @@ select {
 }
 
 :root {
-  --bfs: 1rem;
+  --bfs: 1.2rem;
   --half: calc(var(--bfs) / 2);
   --quat: calc(var(--bfs) / 4);
   --xxs: calc(var(--bfs) * 0.4);
@@ -243,7 +243,7 @@ h5,
 h6 {
   color: var(--color-headline);
   font-family: var(--ff-headline);
-  font-weight: bold;
+  font-weight: var(--fw-normal);
   line-height: var(--lh-tight);
   hyphens: none;
 }
@@ -291,14 +291,27 @@ body {
 }
 
 main {
-  margin: var(--s);
   flex-grow: 2;
 }
 
 /* Main Header
 ###########################################################################  */
+.main-header {
+  display: flex;
+}
+.main-header .back-button {
+  display: inline-block;
+  width: var(--m);
+  font-size: var(--xl);
+}
+.main-header .back-button.is-hidden {
+  display: none;
+}
 .main-header > * {
   margin: var(--s);
+}
+.main-header h1 {
+  flex-grow: 2;
 }
 
 /* Main Footer
@@ -349,6 +362,7 @@ main {
   margin-bottom: var(--s);
 }
 .poi .core-info figcaption {
+  padding: var(--m) var(--s);
   font-weight: var(--fw-normal);
 }
 .poi .core-info figcaption p + p {

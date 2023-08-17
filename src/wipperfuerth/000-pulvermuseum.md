@@ -2,7 +2,7 @@
 title: Pulvermuseum
 image: pulvermuseum.webp
 type: ar-data
-layout: arlebnis
+layout: poi
 gmaps: https://www.google.com/maps/place/Villa+Ohl/@51.1113933,7.4862051,17z/data=!3m1!4b1!4m6!3m5!1s0x47b934b438695541:0x23677c406164f6e9!8m2!3d51.11139!4d7.48878!16s%2Fg%2F120p462z?entry=ttu
 coords: [51.111524684583856, 7.488779997927827]
 info: |

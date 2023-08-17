@@ -23,6 +23,7 @@ exports.getHeader = (eleventy, data) => {
       <meta name="theme-color" content="#ffffff">
 
       <link href="${eleventy.url('/compiled-assets/main.css')}" rel="stylesheet">
+      <script src="${eleventy.url('/assets/scripts/main.js')}" defer></script>
     </head>
   `;
 };

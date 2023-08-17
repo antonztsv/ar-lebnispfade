@@ -8,14 +8,13 @@ const md = new markdownIt({
   html: true,
 });
 
-const insertMarkup = (string)=>{
- string = string.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>", string);
- return string.replace(/\*(.*?)\*/g, "<mark>$1</mark>", string);
-}
-
-const insertColor = (string, colorClass)=>{
- const color = (colorClass) ? colorClass : "is-purple";
- return string.replace(/\/\//g, "<span class="+color+">//</span>", string);
+const clearRequireCache = () => {
+  
+  Object.keys(require.cache).forEach(function (key) {
+    if (require.cache[key].filename.match(/11ty\.js/)) {
+      delete require.cache[key];
+    }
+  });  
 }
 
 const getPOIData = (collection, pattern)=>{
@@ -128,7 +127,8 @@ module.exports = function (eleventyConfig) {
 
  eleventyConfig.addFilter("contentByTopic", function (topic) {
   eleventyConfig.addCollection(topic, (collection) => {
-   return collection.getFilteredByGlob(`./src/content/${topic}/*.md`);
+    clearRequireCache();
+    return collection.getFilteredByGlob(`./src/content/${topic}/*.md`);
   });
   return topic;
  });
@@ -141,14 +141,17 @@ module.exports = function (eleventyConfig) {
  ########################################################################## */
 
  eleventyConfig.addCollection("pathes", (collection) => {
+  clearRequireCache();
   return POIs = getPOIData(collection, "./src/**/index.md");
  });
 
  eleventyConfig.addCollection("all", function (collection) {
+  clearRequireCache();
   return collection.getAll();
  });
 
  eleventyConfig.addCollection("sorted", function (collection) {
+  clearRequireCache();
   return POIs = collection.getFilteredByGlob("./src/**/*.md").sort((a, b) => {
    const filenameFromA = a.filePathStem.split(/\//).pop();
 

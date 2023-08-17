@@ -13,6 +13,7 @@
     }
 
     figcaption{
+      padding: var(--m) var(--s);
       font-weight: var(--fw-normal);
 
       p + p {
