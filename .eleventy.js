@@ -106,6 +106,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("**/*.jpeg");
   eleventyConfig.addPassthroughCopy("**/*.webp");
 
+  // Copy Media
+  eleventyConfig.addPassthroughCopy("**/*.mp4");
+  eleventyConfig.addPassthroughCopy("**/*.glb");
+
   // Copy Scripts
   eleventyConfig.addPassthroughCopy({ 'src/assets/scripts': 'assets/scripts' });
   eleventyConfig.addWatchTarget("./src/assets/scripts");

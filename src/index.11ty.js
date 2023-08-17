@@ -1,5 +1,5 @@
 const fontMatterData = {
-    title: "ARlebnispfade",
+    title: "ARlebnispfade Oberberg",
     layout: "overview",
 };
 
