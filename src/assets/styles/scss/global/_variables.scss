@@ -23,11 +23,14 @@
   --darker: #111;
   --darkest: #000;
   --darken: rgba(0, 0, 0, 0.1);
+
+  --obk-gelb: #F2CB05;
+  --obk-grau: #666666;
   
   --color-text: var(--lighter);
   --color-headline: var(--light);
-  --color-accent: var(--mi-pink);
-  --color-decoration: var(--mi-gruen);
+  --color-accent: var(--obk-gelb);
+  --color-decoration: var(--obk-grau);
   --color-background: var(--darkest);
   
   --ff-normal: 'Roboto', sans-serif;

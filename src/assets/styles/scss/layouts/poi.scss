@@ -6,9 +6,6 @@
   .core-info{
     img{
       display: block;
-      margin-left: calc(var(--s) * -1);
-      width: calc(100% + (var(--s) * 2));
-      max-width: calc(100% + (var(--s) * 2));
       margin-bottom: var(--s);
     }
 
@@ -20,5 +17,23 @@
         margin-top: var(--xs);
       }
     }
+  }
+
+  .maps-link{
+    padding: var(--m) var(--s);
+
+    display: flex;
+    gap: var(--quat);
+    align-items: baseline;
+
+    & > *{
+      display: block;
+    }
+  }
+
+  .ar-desc{
+    padding: var(--m) var(--s);
+    display: flex;
+    gap: var(--quat);
   }
 }

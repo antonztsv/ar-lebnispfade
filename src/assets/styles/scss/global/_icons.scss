@@ -1,6 +1,6 @@
 // Icons
 .icon {
-  display: inline-block;
+  display: inline-flex;
   width: auto;
   height: auto;
   direction: ltr;
@@ -14,9 +14,10 @@
   line-height: inherit;
   text-rendering: optimizeLegibility;
   text-transform: none;
-  vertical-align: middle;
+  vertical-align: bottom;
   white-space: nowrap;
   word-wrap: normal;
+  font-size: var(--xxxl);
 
   &--s {
     font-size: var(--s);
