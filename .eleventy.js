@@ -1,7 +1,7 @@
 const htmlmin = require('html-minifier');
 const markdownIt = require("markdown-it");
 
-const pathPrefix = (process.env.ELEVENTY_ENV === 'production') ? "ar-lebnispfade" : "";
+const pathPrefix = (process.env.ELEVENTY_ENV === 'production') ? "" : "";
 const ghPagesFolder = "docs";
 
 const md = new markdownIt({

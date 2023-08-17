@@ -115,7 +115,7 @@ select {
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.woff2") format("woff2"), url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.woff") format("woff"), url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.ttf") format("truetype");
 }
 .icon {
-  display: inline-block;
+  display: inline-flex;
   width: auto;
   height: auto;
   direction: ltr;
@@ -129,9 +129,10 @@ select {
   line-height: inherit;
   text-rendering: optimizeLegibility;
   text-transform: none;
-  vertical-align: middle;
+  vertical-align: bottom;
   white-space: nowrap;
   word-wrap: normal;
+  font-size: var(--xxxl);
 }
 .icon--s {
   font-size: var(--s);
@@ -185,10 +186,12 @@ select {
   --darker: #111;
   --darkest: #000;
   --darken: rgba(0, 0, 0, 0.1);
+  --obk-gelb: #F2CB05;
+  --obk-grau: #666666;
   --color-text: var(--lighter);
   --color-headline: var(--light);
-  --color-accent: var(--mi-pink);
-  --color-decoration: var(--mi-gruen);
+  --color-accent: var(--obk-gelb);
+  --color-decoration: var(--obk-grau);
   --color-background: var(--darkest);
   --ff-normal: "Roboto", sans-serif;
   --ff-serif: "Roboto", serif;
@@ -298,6 +301,7 @@ main {
 ###########################################################################  */
 .main-header {
   display: flex;
+  align-items: baseline;
 }
 .main-header .back-button {
   display: inline-block;
@@ -356,9 +360,6 @@ main {
 ############################################################################ */
 .poi .core-info img {
   display: block;
-  margin-left: calc(var(--s) * -1);
-  width: calc(100% + (var(--s) * 2));
-  max-width: calc(100% + (var(--s) * 2));
   margin-bottom: var(--s);
 }
 .poi .core-info figcaption {
@@ -367,6 +368,20 @@ main {
 }
 .poi .core-info figcaption p + p {
   margin-top: var(--xs);
+}
+.poi .maps-link {
+  padding: var(--m) var(--s);
+  display: flex;
+  gap: var(--quat);
+  align-items: baseline;
+}
+.poi .maps-link > * {
+  display: block;
+}
+.poi .ar-desc {
+  padding: var(--m) var(--s);
+  display: flex;
+  gap: var(--quat);
 }
 
 /*# sourceMappingURL=main.css.map */
