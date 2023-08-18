@@ -102,13 +102,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/assets/images': 'assets/images' });
 
   // Copy images
-  eleventyConfig.addPassthroughCopy("**/*.jpg");
-  eleventyConfig.addPassthroughCopy("**/*.jpeg");
-  eleventyConfig.addPassthroughCopy("**/*.webp");
+  eleventyConfig.addPassthroughCopy("src/**/*.jpg");
+  eleventyConfig.addPassthroughCopy("src/**/*.jpeg");
+  eleventyConfig.addPassthroughCopy("src/**/*.webp");
 
   // Copy Media
-  eleventyConfig.addPassthroughCopy("**/*.mp4");
-  eleventyConfig.addPassthroughCopy("**/*.glb");
+  eleventyConfig.addPassthroughCopy("src/**/*.mp4");
+  eleventyConfig.addPassthroughCopy("src/**/*.glb");
+  eleventyConfig.addPassthroughCopy("src/**/*.obj");
+  eleventyConfig.addPassthroughCopy("src/**/*.mtl");
 
   // Copy Scripts
   eleventyConfig.addPassthroughCopy({ 'src/assets/scripts': 'assets/scripts' });

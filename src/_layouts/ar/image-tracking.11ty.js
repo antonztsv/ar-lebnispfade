@@ -81,7 +81,7 @@ exports.getImageTrackingCode = (eleventy, arData) => {
           id="optimerBoldFont"
           src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"
         ></a-asset-item>
-        <video id="video" controls src="./media/videos/${arData.video.filename}" autoplay loop></video>
+        <video id="video" controls src="./ar-media/videos/${arData.video.filename}" autoplay loop></video>
       </a-assets>
       <!-- a-nft is the anchor that defines an Image Tracking entity -->
       <!-- on 'url' use the path to the Image Descriptors created before. -->
@@ -91,7 +91,7 @@ exports.getImageTrackingCode = (eleventy, arData) => {
       <a-nft
         class="${arData.nft.id}-nft"
         type="nft"
-        url="./media/images/${arData.nft.id}"
+        url="./ar-media/images/${arData.nft.id}"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
@@ -104,9 +104,9 @@ exports.getImageTrackingCode = (eleventy, arData) => {
         "./models/sunflower/sunflower.gltf" 
     
         scale attribute does not function-->
-          <!-- gltf-model="./media/models/${arData.nft.model}.glb" -->
+          <!-- gltf-model="./ar-media/models/${arData.nft.model}.glb" -->
           <a-entity
-            gltf-model="./media/models/${arData.nft.model}.glb"
+            gltf-model="./ar-media/models/${arData.nft.model}.glb"
             scale="50 50 50"
             position="-1 -1 -5"
             rotation="0 0 0"

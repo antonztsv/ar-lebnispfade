@@ -166,21 +166,15 @@
         "./models/sunflower/sunflower.gltf" 
     
         scale attribute does not function-->
-        <!-- gltf-model="./media/models/Muenzschlaeger_T.glb" -->
-        <a-entity
-          gltf-model="./media/models/Muenzschlaeger_T.glb"
-          scale="50 50 50"
-          position="-1 -1 -5"
-          rotation="0 0 0"
-          class="clickable"
-          gesture-handler="minScale: 0.25; maxScale: 10"
-        >
-          <!--           <a-text
-            text="value: Muenzschlaeger"
-            color="white"
-            rotation="-90 0 0"
-            position="0 0 -1"
-          ></a-text> -->
+          <!-- gltf-model="./media/models/Muenzschlaeger_T.glb" -->
+          <a-entity
+            gltf-model="./media/models/Muenzschlaeger_T.glb"
+            scale="50 50 50"
+            position="-1 -1 -5"
+            rotation="0 0 0"
+            class="clickable"
+            gesture-handler="minScale: 0.25; maxScale: 10"
+          >
           <a-entity
             text-geometry="value: Muenzschlaeger"
             material="color: white"
@@ -204,16 +198,7 @@
         cursor="fuse: false; rayOrigin: mouse"
         vidhandler
       >
-      <a-video
-      src="#video"
-      width="160"
-      height="90"
-      position="0 0 -20"
-      rotation="90 0 180"
-      gesture-handler="minScale: 0.25; maxScale: 10"
-      vidhandler
-    ></a-video>
-<!--       <a-entity
+        <a-video
           src="#video"
           width="160"
           height="90"
@@ -221,9 +206,7 @@
           rotation="90 0 180"
           gesture-handler="minScale: 0.25; maxScale: 10"
           vidhandler
-          video-controls="src:#video"
-      ></a-entity> -->
-
+        ></a-video>
       </a-nft>
 
       <a-nft
@@ -237,12 +220,7 @@
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse"
       >
-<!--         <a-entity
-          obj-model="obj: url(models/3d-Hologramm.obj); 
-            mtl: url(models/3d-Hologramm.mtl)"
-        >
-        </a-entity> -->
-        <a-entity 
+      <a-entity 
         gltf-model=”url(assets/models/Parrot.glb)”
         animation-mixer
         gesture-handler="minScale: 0.25; maxScale: 10"
@@ -259,7 +237,7 @@
       </main>
       
     <footer class="main-footer">
-    18.08.2023 // 7:31:27
+    18.08.2023 // 7:54:24
     </footer>
   
     </body>
