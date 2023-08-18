@@ -1,7 +1,7 @@
 {
-  "name": "fd-2021-cnoss",
-  "version": "4.0.0",
-  "description": "Mitlaufendes Projekt für das Modul Frontend Development",
+  "name": "arlebnispfade-obk",
+  "version": "0.0.1",
+  "description": "Static Page Generation für die arlebnispfade-obk.de",
   "main": "index.js",
   "scripts": {
     "lint:css": "stylelint src/assets/styles/**/*.scss",
