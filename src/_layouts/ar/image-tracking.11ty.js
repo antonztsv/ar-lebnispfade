@@ -104,21 +104,15 @@ exports.getImageTrackingCode = (eleventy, arData) => {
         "./models/sunflower/sunflower.gltf" 
     
         scale attribute does not function-->
-        <!-- gltf-model="./media/models/${arData.nft.model}.glb" -->
-        <a-entity
-          gltf-model="./media/models/${arData.nft.model}.glb"
-          scale="50 50 50"
-          position="-1 -1 -5"
-          rotation="0 0 0"
-          class="clickable"
-          gesture-handler="minScale: 0.25; maxScale: 10"
-        >
-          <!--           <a-text
-            text="value: ${arData.nft.name}"
-            color="white"
-            rotation="-90 0 0"
-            position="0 0 -1"
-          ></a-text> -->
+          <!-- gltf-model="./media/models/${arData.nft.model}.glb" -->
+          <a-entity
+            gltf-model="./media/models/${arData.nft.model}.glb"
+            scale="50 50 50"
+            position="-1 -1 -5"
+            rotation="0 0 0"
+            class="clickable"
+            gesture-handler="minScale: 0.25; maxScale: 10"
+          >
           <a-entity
             text-geometry="value: ${arData.nft.name}"
             material="color: white"
@@ -142,16 +136,7 @@ exports.getImageTrackingCode = (eleventy, arData) => {
         cursor="fuse: false; rayOrigin: mouse"
         vidhandler
       >
-      <a-video
-      src="#video"
-      width="160"
-      height="90"
-      position="0 0 -20"
-      rotation="90 0 180"
-      gesture-handler="minScale: 0.25; maxScale: 10"
-      vidhandler
-    ></a-video>
-<!--       <a-entity
+        <a-video
           src="#video"
           width="160"
           height="90"
@@ -159,9 +144,7 @@ exports.getImageTrackingCode = (eleventy, arData) => {
           rotation="90 0 180"
           gesture-handler="minScale: 0.25; maxScale: 10"
           vidhandler
-          video-controls="src:#video"
-      ></a-entity> -->
-
+        ></a-video>
       </a-nft>
 
       <a-nft
@@ -175,12 +158,7 @@ exports.getImageTrackingCode = (eleventy, arData) => {
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse"
       >
-<!--         <a-entity
-          obj-model="obj: url(models/3d-Hologramm.obj); 
-            mtl: url(models/3d-Hologramm.mtl)"
-        >
-        </a-entity> -->
-        <a-entity 
+      <a-entity 
         gltf-model=”url(assets/models/Parrot.glb)”
         animation-mixer
         gesture-handler="minScale: 0.25; maxScale: 10"
@@ -191,7 +169,6 @@ exports.getImageTrackingCode = (eleventy, arData) => {
       <a-entity camera></a-entity>
     </a-scene>
   `;
-
 
   return `
     <script>${script}</script>
