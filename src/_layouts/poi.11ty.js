@@ -9,7 +9,7 @@ const poiInfo = (data) => `
     <figcaption>${this.markdown(data.info)}</figcaption>
   </figure>`;
 
-
+  
 const poiMaps = (data) => {
   const gmapUrl = data.gmaps;
   if(!gmapUrl) return '';
@@ -59,15 +59,14 @@ exports.render = function (data) {
       </div>
     `;
   };
-
-
+  /* ${poiInfo(data)}*/
   return `<!doctype html>
   <html lang="de">
     ${documentHead}
     <body class="poi">
       ${pageHead}
       <main>
-        ${poiInfo(data)}
+
         ${poiMaps(data)}
         ${poiDesc(data)}
         ${data.content}

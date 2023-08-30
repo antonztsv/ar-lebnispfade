@@ -23,8 +23,8 @@ exports.getHeader = (eleventy, data) => {
       <meta name="theme-color" content="#ffffff">
 
       <link href="${eleventy.url('/compiled-assets/main.css')}" rel="stylesheet">
-
-      <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+      
+      <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@cb0bb8407968be713b79008548b7044908ba5729/dist/aframe-master.min.js"></script>
       <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
       <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
       <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
