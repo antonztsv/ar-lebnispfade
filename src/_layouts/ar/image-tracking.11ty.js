@@ -1,5 +1,5 @@
 exports.getImageTrackingCode = (eleventy, arData) => {
-
+  
   const script = `
     AFRAME.registerComponent('vidhandler',{
       init: function(){
@@ -68,11 +68,12 @@ exports.getImageTrackingCode = (eleventy, arData) => {
 
     <!-- a-frame scene -->
     <a-scene
+      embedded
       stats
       vr-mode-ui="enabled: false;"
       renderer="logarithmicDepthBuffer: true;"
-      embedded
-      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: true;"
+      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+      antialias='true'
       gesture-detector
       id="scene"
     >
@@ -81,7 +82,7 @@ exports.getImageTrackingCode = (eleventy, arData) => {
           id="optimerBoldFont"
           src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"
         ></a-asset-item>
-        <video id="video" controls src="./ar-media/videos/${arData.video.filename}" autoplay loop></video>
+        <video id="video" controls src="../ar-media/videos/${arData.video.filename}" autoplay loop></video>
       </a-assets>
       <!-- a-nft is the anchor that defines an Image Tracking entity -->
       <!-- on 'url' use the path to the Image Descriptors created before. -->
@@ -91,7 +92,7 @@ exports.getImageTrackingCode = (eleventy, arData) => {
       <a-nft
         class="${arData.nft.id}-nft"
         type="nft"
-        url="./ar-media/images/${arData.nft.id}"
+        url="${arData.location}/ar-media/images/${arData.nft.id}"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
@@ -106,9 +107,9 @@ exports.getImageTrackingCode = (eleventy, arData) => {
         scale attribute does not function-->
           <!-- gltf-model="./ar-media/models/${arData.nft.model}.glb" -->
           <a-entity
-            gltf-model="./ar-media/models/${arData.nft.model}.glb"
+            gltf-model="../ar-media/models/${arData.nft.model}.glb"
             scale="50 50 50"
-            position="-1 -1 -5"
+            position="-5 -5 -5"
             rotation="0 0 0"
             class="clickable"
             gesture-handler="minScale: 0.25; maxScale: 10"
@@ -126,7 +127,7 @@ exports.getImageTrackingCode = (eleventy, arData) => {
       <!-- Development: url="cranach-ar/AR.js-ARlebnispfadeOBK/arlebnispfad/pages/obk/assets/images/hammerboy" -->
       <a-nft
         type="nft"
-        url="pages/obk/assets/images/hammerboy"
+        url="${arData.location}/ar-media/images/${arData.nft2.id}"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
@@ -149,7 +150,7 @@ exports.getImageTrackingCode = (eleventy, arData) => {
 
       <a-nft
         type="nft"
-        url="pages/obk/assets/images/pulvermuseum"
+        url="${arData.location}/ar-media/images/${arData.nft3.id}"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
@@ -159,7 +160,7 @@ exports.getImageTrackingCode = (eleventy, arData) => {
         cursor="fuse: false; rayOrigin: mouse"
       >
       <a-entity 
-        gltf-model=”url(assets/models/Parrot.glb)”
+        gltf-model=”url(../ar-media/models/${arData.nft3.model}.glb)”
         animation-mixer
         gesture-handler="minScale: 0.25; maxScale: 10"
         >
@@ -175,4 +176,3 @@ exports.getImageTrackingCode = (eleventy, arData) => {
     ${html(arData)}
   `;
 };
-

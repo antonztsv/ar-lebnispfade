@@ -9,12 +9,12 @@ const md = new markdownIt({
 });
 
 const clearRequireCache = () => {
-  
+
   Object.keys(require.cache).forEach(function (key) {
     if (require.cache[key].filename.match(/11ty\.js/)) {
       delete require.cache[key];
     }
-  });  
+  });
 }
 
 const getPOIData = (collection, pattern)=>{
@@ -24,7 +24,7 @@ const getPOIData = (collection, pattern)=>{
     if (a.fileSlug > b.fileSlug) return 1;
     else a.fileSlug < b.fileSlug
     return -1;
-   });
+  });
 }
 
 module.exports = function (eleventyConfig) {
@@ -37,16 +37,16 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addGlobalData("eleventyComputed.permalink", function() {
-		return (data) => {
-			// Always skip during non-watch/serve builds
-			if(data.type === 'arf-data') {
+    return (data) => {
+      // Always skip during non-watch/serve builds
+      if(data.type === 'arf-data') {
         console.log("skipping draft");
-				return false;
-			}
+        return false;
+      }
 
-			return data.permalink;
-		}
-	});
+      return data.permalink;
+    }
+  });
 
   eleventyConfig.setServerOptions({
     // Default values are shown:
@@ -79,8 +79,8 @@ module.exports = function (eleventyConfig) {
     // Change the default file encoding for reading/serving files
     encoding: "utf-8",
   });
-  
- /* Compilation
+
+  /* Compilation
    ########################################################################## */
 
   // Watch our js for changes
@@ -105,6 +105,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/**/*.jpg");
   eleventyConfig.addPassthroughCopy("src/**/*.jpeg");
   eleventyConfig.addPassthroughCopy("src/**/*.webp");
+  eleventyConfig.addPassthroughCopy("src/**/*.fset");
+  eleventyConfig.addPassthroughCopy("src/**/*.fset3");
+  eleventyConfig.addPassthroughCopy("src/**/*.iset");
 
   // Copy Media
   eleventyConfig.addPassthroughCopy("src/**/*.mp4");
@@ -119,97 +122,97 @@ module.exports = function (eleventyConfig) {
   // Copy CNAME
   eleventyConfig.addPassthroughCopy({ 'src/CNAME': '' });
 
- /* Functions
+  /* Functions
  ########################################################################## */
 
- eleventyConfig.addJavaScriptFunction("urlPrefix", function() {
-  return pathPrefix;
- });
-
- eleventyConfig.addJavaScriptFunction("getContentUrl", function(url) {
-  return `.${url}`;
- });
-
- /* Filter
- ########################################################################## */
-
-
- eleventyConfig.addFilter("contentByTopic", function (topic) {
-  eleventyConfig.addCollection(topic, (collection) => {
-    clearRequireCache();
-    return collection.getFilteredByGlob(`./src/content/${topic}/*.md`);
+  eleventyConfig.addJavaScriptFunction("urlPrefix", function() {
+    return pathPrefix;
   });
-  return topic;
- });
 
- eleventyConfig.addFilter("markdown", (content) => {
-  return md.render(content);
-});
-
- /* Collections
- ########################################################################## */
-
- eleventyConfig.addCollection("pathes", (collection) => {
-  clearRequireCache();
-  return POIs = getPOIData(collection, "./src/**/index.md");
- });
-
- eleventyConfig.addCollection("all", function (collection) {
-  clearRequireCache();
-  return collection.getAll();
- });
-
- eleventyConfig.addCollection("sorted", function (collection) {
-  clearRequireCache();
-  return POIs = collection.getFilteredByGlob("./src/**/*.md").sort((a, b) => {
-   const filenameFromA = a.filePathStem.split(/\//).pop();
-
-   if (filenameFromA === 'index') return 1;
-   else if (a.fileSlug > b.fileSlug) return 1;
-   else if (a.fileSlug < b.fileSlug) return -1;
-
-   else return 0;
+  eleventyConfig.addJavaScriptFunction("getContentUrl", function(url) {
+    return `.${url}`;
   });
- });
 
- /* Shortcodes
+  /* Filter
  ########################################################################## */
 
 
- /* Environment
- ########################################################################## */
-
- if (process.env.ELEVENTY_ENV === 'production') {
-  eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
-   if (outputPath.endsWith('.html')) {
-    return minified = htmlmin.minify(content, {
-     collapseInlineTagWhitespace: false,
-     collapseWhitespace: true,
-     removeComments: true,
-     sortClassName: true,
-     useShortDoctype: true,
+  eleventyConfig.addFilter("contentByTopic", function (topic) {
+    eleventyConfig.addCollection(topic, (collection) => {
+      clearRequireCache();
+      return collection.getFilteredByGlob(`./src/content/${topic}/*.md`);
     });
-   }
-
-   return content;
+    return topic;
   });
- }
 
- return {
-  dir: {
-   includes: '_components',
-   input: 'src',
-   layouts: '_layouts',
-   output: 'docs',
-  },
-  pathPrefix: pathPrefix,
-  markdownTemplateEngine: 'njk',
-  htmlTemplateEngine: 'njk',
-  templateFormats: [
-   'md',
-   'html',
-   'njk',
-   '11ty.js'
-  ],
- };
+  eleventyConfig.addFilter("markdown", (content) => {
+    return md.render(content);
+  });
+
+  /* Collections
+ ########################################################################## */
+
+  eleventyConfig.addCollection("pathes", (collection) => {
+    clearRequireCache();
+    return POIs = getPOIData(collection, "./src/**/index.md");
+  });
+
+  eleventyConfig.addCollection("all", function (collection) {
+    clearRequireCache();
+    return collection.getAll();
+  });
+
+  eleventyConfig.addCollection("sorted", function (collection) {
+    clearRequireCache();
+    return POIs = collection.getFilteredByGlob("./src/**/*.md").sort((a, b) => {
+        const filenameFromA = a.filePathStem.split(/\//).pop();
+
+        if (filenameFromA === 'index') return 1;
+        else if (a.fileSlug > b.fileSlug) return 1;
+        else if (a.fileSlug < b.fileSlug) return -1;
+
+        else return 0;
+      });
+  });
+
+  /* Shortcodes
+ ########################################################################## */
+
+
+  /* Environment
+ ########################################################################## */
+
+  if (process.env.ELEVENTY_ENV === 'production') {
+    eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
+      if (outputPath.endsWith('.html')) {
+        return minified = htmlmin.minify(content, {
+          collapseInlineTagWhitespace: false,
+          collapseWhitespace: true,
+          removeComments: true,
+          sortClassName: true,
+          useShortDoctype: true,
+        });
+      }
+
+      return content;
+    });
+  }
+
+  return {
+    dir: {
+      includes: '_components',
+      input: 'src',
+      layouts: '_layouts',
+      output: 'docs',
+    },
+    pathPrefix: pathPrefix,
+    markdownTemplateEngine: 'njk',
+    htmlTemplateEngine: 'njk',
+    templateFormats: [
+      'md', 
+      'html', 
+      'njk', 
+      '11ty.js'
+    ],
+  };
 };
