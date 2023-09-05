@@ -54,9 +54,7 @@ exports.render = function (data) {
   const arCode = (ar) => {
     const code = getArCode(ar);
     return `
-      <div class="ar-container">
         ${code}
-      </div>
     `;
   };
   /* ${poiInfo(data)}*/
