@@ -28,6 +28,7 @@ h6 {
   font-weight: var(--fw-normal);
   line-height: var(--lh-tight);
   hyphens: none;
+  margin-bottom: var(--s);
 }
 
 
@@ -70,4 +71,16 @@ small{
   font-size: 80%;
 }
 
+p + p {
+  margin-top: var(--s);
+}
 
+
+p + h2{
+  margin-top: var(--xxl);
+}
+
+p + h3,
+p + h4{
+  margin-top: var(--xl);
+}

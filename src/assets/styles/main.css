@@ -249,6 +249,7 @@ h6 {
   font-weight: var(--fw-normal);
   line-height: var(--lh-tight);
   hyphens: none;
+  margin-bottom: var(--s);
 }
 
 h1 {
@@ -286,6 +287,19 @@ a {
 small {
   opacity: var(--op-medium);
   font-size: 80%;
+}
+
+p + p {
+  margin-top: var(--s);
+}
+
+p + h2 {
+  margin-top: var(--xxl);
+}
+
+p + h3,
+p + h4 {
+  margin-top: var(--xl);
 }
 
 body {
@@ -420,6 +434,12 @@ main {
   padding: var(--m) var(--s);
   display: flex;
   gap: var(--quat);
+}
+
+/* Page
+############################################################################ */
+.page main {
+  padding: var(--m);
 }
 
 /*# sourceMappingURL=main.css.map */

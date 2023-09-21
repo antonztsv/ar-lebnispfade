@@ -1,44 +1,33 @@
 ---
 title: Impressum
-layout: impressum.11ty.js
+layout: page.11ty.js
+bodyClass: impressum
+backArrow: true
 ---
 
-VHS Oberberg
+VHS Oberberg  
+Oberbergischer Kreis  
+Der Landrat  
+Moltkestraße 42  
+51643 Gummersbach  
 
-Oberbergischer Kreis
-
-Der Landrat
-
-Moltkestraße 42
-
-51643 Gummersbach
-
-
-Telefon-Zentrale: 02261 88-0
-
-E-Mail: mail@obk.dewww.obk.de
+Telefon-Zentrale: 02261 88-0  
+E-Mail: mail@obk.dewww.obk.de  
 
 ### Verantwortlich für den Inhalt:
-Oberbergischer Kreis
-
-Der Landrat
-
-Volkshochschule Oberberg
+Oberbergischer Kreis  
+Der Landrat  
+Volkshochschule Oberberg  
 
 ### Vertreten durch:
-Michael Beiderwellen (Leiter der Volkshochschule Oberberg)
+Michael Beiderwellen (Leiter der Volkshochschule Oberberg)  
+im Amt für Schule und Bildung  
+Mühlenbergweg 3  
+51645 Gummersbach  
 
-im Amt für Schule und Bildung
-
-Mühlenbergweg 3
-
-51645 Gummersbach
-
-Telefon: 02261 8190-0
-
-Fax: 02261 8190-27
-
-E-Mail: infovhs@obk.dewww.vhs-oberberg.de
+Telefon: 02261 8190-0  
+Fax: 02261 8190-27  
+E-Mail: infovhs@obk.dewww.vhs-oberberg.de  
 
 ### Hinweise und Links
 Als Inhaltsanbieter ist der Oberbergische Kreis nach § 7 Abs. 1 und 2 des Telemediengesetzes – TMG – vom 26.02.2007 (BGBl. I, Seite 179) für die „eigenen Inhalte“, die er zur Nutzung bereit hält, nach den allgemeinen Gesetzen verantwortlich. Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
@@ -75,38 +64,29 @@ Die Seite verwendet keine Cookies. Es werden auch keine anderen Techniken einges
 ### Noch weitere Fragen?
 Sollten Sie noch weitere Informationen benötigen oder noch Fragen haben, dann wenden Sie sich bitte vertrauensvoll per E-Mail an den Mitarbeiter des Oberbergischen Kreises für Angelegenheiten des Datenschutzes:
 
-**Uwe Kaldeich**
+#### Uwe Kaldeich
 
-Angelegenheiten des Datenschutzes
+Angelegenheiten des Datenschutzes  
+Oberbergischer Kreis  
+Der Landrat  
+Moltkestraße 42  
+51643 Gummersbach  
 
-Oberbergischer Kreis
+Telefon: 02261 / 88-1287  
+Telefax: 02261 / 88-972 1288  
+E-mail: datenschutz@obk.de  
+Kommentare und Fragen zu diesen Richtlinien sind uns jederzeit willkommen.  
+Stand: 24.05.2018  
 
-Der Landrat
+#### Verantwortlich für den Inhalt nach § 55 Abs. 2 RstV: Renée Scheer, zu erreichen, wie oben angegeben.
 
-Moltkestraße 42
-
-51643 Gummersbach
-
-Telefon: 02261 / 88-1287
-
-Telefax: 02261 / 88-972 1288
-
-E-mail: datenschutz@obk.de
-
-Kommentare und Fragen zu diesen Richtlinien sind uns jederzeit willkommen.
-
-Stand: 24.05.2018
-
-**Verantwortlich für den Inhalt nach § 55 Abs. 2 RstV:** Renée Scheer, zu erreichen, wie oben angegeben.
-
-**Streitbeilegung für Verbraucher:** 
+#### Streitbeilegung für Verbraucher:
 
 Die Plattform der EU-Kommission zur Online-Streitbeilegung ist unter folgendem Link erreichbar:
-
 http://ec.europa.eu/consumers/odr/
 
 Die Volkshochschule des Oberbergischen Kreises ist eine gemeinnützige, nicht rechtsfähige öffentliche Einrichtung in der Unterhaltungsträgerschaft des Oberbergischen Kreises und beteiligt sich grundsätzlich nicht an Streitbeilegungsverfahren. Hier kommt das Verfahren des Oberbergischen Kreises zur Anwendung.
 
-**Urheberrechtshinweis:** 
+#### Urheberrechtshinweis:
 
 Die VHS Oberberg behält sich alle Rechte an dieser Webseite und ihren Inhalten vor. Sie ist entweder Urheber oder hat sich die entsprechenden Nutzungsrechte einräumen lassen.
