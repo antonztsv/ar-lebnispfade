@@ -12,6 +12,12 @@ exports.getPageFooter = (eleventy, data) => {
   return `
     <footer class="main-footer">
     ${date}.${month}.${year} // ${hours}:${minutes}:${seconds}
+    <a href="https://localhost:8080/impressum/index.html">
+    Impressum
+    </a>
+    <a href="https://localhost:8080/datenschutz/index.html">
+      Datenschutz
+      </a>
     </footer>
   `;
 };
