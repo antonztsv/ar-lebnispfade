@@ -1,39 +1,40 @@
-const documentHeader = require('./components/head.11ty');
-const pageHeader = require('./components/page-header.11ty');
-const pageFooter = require('./components/page-footer.11ty');
+exports.render = function (data) {
 
-const getData = (collections, pattern) => collections.filter((item) => {
-  const {url} = item;
-  const extendedPattern = `${pattern}/.*[a-zA-Z0-9]/`;
-  return url.match(extendedPattern);
-});
+  const documentHeader = require('./components/head.11ty');
+  const pageHeader = require('./components/page-header.11ty');
+  const pageFooter = require('./components/page-footer.11ty');
 
-const createPathItems = (pathData) => {
-
-  /*const overviewItems = collection.map((item) => {
-    const contentUrl = this.getContentUrl(item.url);
-    const imageUrl = `${contentUrl}images/${item.data.image}`;
-    return `<li style="background-image: url(${imageUrl})"><a href="${contentUrl}">${item.data.title}</a></li>`;
-  });*/
-
-  const POIs = pathData.map((poi) => {
-    const {data} = poi;
-    if(data.status === 'hidden') return '';
-    if(data.status === 'hidden') return '';
-
-    const contentUrl = `..${poi.url}`;
-    const imageUrl =  `./images/${poi.data.image}`;
-
-    return `<li style="background-image: url(${imageUrl})"><a href="${contentUrl}">${poi.data.title}</a></li>`;
+  const getData = (collections, pattern) => collections.filter((item) => {
+    const { url } = item;
+    const extendedPattern = `${pattern}/.*[a-zA-Z0-9]/`;
+    return url.match(extendedPattern);
   });
 
-  return `
+  const createPathItems = (pathData) => {
+
+    /*const overviewItems = collection.map((item) => {
+      const contentUrl = this.getContentUrl(item.url);
+      const imageUrl = `${contentUrl}images/${item.data.image}`;
+      return `<li style="background-image: url(${imageUrl})"><a href="${contentUrl}">${item.data.title}</a></li>`;
+    });*/
+
+    const POIs = pathData.map((poi) => {
+      const { data } = poi;
+      if (data.status === 'hidden') return '';
+      if (data.status === 'hidden') return '';
+
+      const contentUrl = `..${poi.url}`;
+      const imageUrl = `./images/${poi.data.image}`;
+
+      return `<li style="background-image: url(${imageUrl})"><a href="${contentUrl}">${poi.data.title}</a></li>`;
+    });
+
+    return `
     <ul class="item-list">
       ${POIs.join("\n")}
     </ul>`;
-}
+  }
 
-exports.render = function (data) {
   const pathData = getData(data.collections.sorted, data.page.fileSlug);
   const documentHead = documentHeader.getHeader(this, data);
   const pageHead = pageHeader.getPageHeader(this, data);

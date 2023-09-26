@@ -8,10 +8,9 @@ exports.getPageFooter = (eleventy, data) => {
   const minutes = date_ob.getMinutes();
   const seconds = date_ob.getSeconds();
   
-
   return `
     <footer class="main-footer">
-    ${date}.${month}.${year} // ${hours}:${minutes}:${seconds} // <a href="/impressum/index.html">Impressum</a>
+      ${date}.${month}.${year} // ${hours}:${minutes}:${seconds} // <a href="/impressum/index.html">Impressum</a>
     </footer>
   `;
 };
