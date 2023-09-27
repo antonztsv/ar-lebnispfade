@@ -27,10 +27,10 @@ exports.getHeader = (eleventy, data) => {
       <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@cb0bb8407968be713b79008548b7044908ba5729/dist/aframe-master.min.js"></script>
       <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
       <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
-      <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
 
       <script src="${eleventy.url('/assets/scripts/main.js')}" defer></script>
+      <script src="${eleventy.url('/assets/scripts/gestures.js')}" defer></script>
     </head>
   `;
 };
