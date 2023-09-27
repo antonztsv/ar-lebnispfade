@@ -9,7 +9,6 @@ const md = new markdownIt({
 });
 
 const clearRequireCache = () => {
-
   Object.keys(require.cache).forEach(function (key) {
     if (require.cache[key].filename.match(/11ty\.js/)) {
       delete require.cache[key];
@@ -28,7 +27,7 @@ const getPOIData = (collection, pattern)=>{
 }
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.setWatchThrottleWaitTime(500);
+  eleventyConfig.setWatchThrottleWaitTime(100);
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.setWatchJavaScriptDependencies(true);
   eleventyConfig.setBrowserSyncConfig({
@@ -55,7 +54,7 @@ module.exports = function (eleventyConfig) {
     liveReload: true,
 
     // Whether DOM diffing updates are applied where possible instead of page reloads
-    domDiff: true,
+    domDiff: false,
 
     // The starting port number
     // Will increment up to (configurable) 10 times if a port is already in use.
@@ -85,7 +84,7 @@ module.exports = function (eleventyConfig) {
 
   // Watch our js for changes
   eleventyConfig.addWatchTarget('./src/assets/scripts/main.js');
-  // eleventyConfig.addWatchTarget('./src/_layouts/components/');
+  eleventyConfig.addWatchTarget('./src/_layouts/components');
 
   // Copy _data
   eleventyConfig.addPassthroughCopy({ 'src/_data': 'assets/data' });
