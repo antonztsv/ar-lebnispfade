@@ -59,7 +59,9 @@ exports.render = function (data) {
         ${code}
     `;
   };
-  /* ${poiInfo(data)}*/
+  /* ${poiInfo(data)}
+     ${poiMaps(data)}
+     ${poiDesc(data)}*/
   return `<!doctype html>
   <html lang="de">
     ${documentHead}
@@ -67,8 +69,7 @@ exports.render = function (data) {
       ${pageHead}
       <main>
 
-        ${poiMaps(data)}
-        ${poiDesc(data)}
+
         ${data.content}
         ${arCode(ar)}
         </main>

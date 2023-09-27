@@ -10,8 +10,6 @@ exports.getImageTrackingCode = (eleventy, arData) => {
 
       tick: function(t, dt) {
 
-        console.log(document.querySelector("#hammerboy").object3D.visible)
-
         if(document.querySelector("#hammerboy").object3D.visible == true){
 
           video = document.querySelector('#video');
@@ -41,10 +39,7 @@ exports.getImageTrackingCode = (eleventy, arData) => {
         video.toggle = false;
         video.pause();
         
-        //console.log(video.controls)
         el.addEventListener('click',function(){
-          console.log("VIDEO CLICKED!")
-          console.log(el)
           if(video.toggle == false){
             video.toggle = true
             video.play()
@@ -70,7 +65,6 @@ exports.getImageTrackingCode = (eleventy, arData) => {
         })
         text.setAttribute('align', 'center')
         compoundEntity.appendChild(text)
-        //console.log("Marker: " + marker)
         let check;
   
         marker.addEventListener('markerFound', () => {
@@ -84,7 +78,6 @@ exports.getImageTrackingCode = (eleventy, arData) => {
               distance = cameraPosition.distanceTo(markerPosition)
   
               // do what you want with the distance:
-              console.log(distance);
               text.setAttribute('value', toString(distance.toFixed(2)) + '?')
             }, 100);
         });
@@ -138,12 +131,12 @@ exports.getImageTrackingCode = (eleventy, arData) => {
         <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity
         "./models/sunflower/sunflower.gltf" 
     
-        scale attribute does not function-->
+        scale/rotation/position attribute need high values (pixels?)-->
           <!-- gltf-model="./ar-media/models/${arData.nft.model}.glb" -->
           <a-entity
             gltf-model="../ar-media/models/${arData.nft.model}.glb"
             scale="50 50 50"
-            position="0 -0 -5"
+            position="0 -200 -200"
             rotation="0 0 0"
             class="clickable"
             gesture-handler="minScale: 0.25; maxScale: 10"
