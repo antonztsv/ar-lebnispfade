@@ -26,7 +26,7 @@ exports.render = function (data) {
       const contentUrl = `..${poi.url}`;
       const imageUrl = `./images/${poi.data.image}`;
 
-      return `<li style="background-image: url(${imageUrl})"><a href="${contentUrl}"><p class="title">${poi.data.title}</p></a></li>`;
+      return `<li style="background-image: url(${imageUrl})"><a data-js-action-on-touch="move-left" href="${contentUrl}"><p class="title">${poi.data.title}</p></a></li>`;
     });
 
     return `
@@ -46,7 +46,7 @@ exports.render = function (data) {
     ${documentHead}
     <body class="path">
       ${pageHead}
-      <main>
+      <main data-js-on-load-action="move-left">
         ${pathItems}
       </main>
       ${pageFoot}

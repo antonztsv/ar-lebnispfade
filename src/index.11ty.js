@@ -13,7 +13,7 @@ class Overview {
       const overviewItems = collection.map((item) => {
         const contentUrl = this.getContentUrl(item.url);
         const imageUrl = `${contentUrl}images/${item.data.image}`;
-        return `<li style="background-image: url(${imageUrl})"><a href="${contentUrl}"><p class="title">${item.data.title}</p></a></li>`;
+        return `<li style="background-image: url(${imageUrl})"><a data-js-action-on-touch="fade" href="${contentUrl}"><p class="title">${item.data.title}</p></a></li>`;
       });
 
       return `

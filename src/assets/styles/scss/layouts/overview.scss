@@ -1,0 +1,13 @@
+/* Overview
+############################################################################ */
+
+.overview{
+  main{
+    opacity: var(--op-low);
+    transition: all var(--tr-slow) var(--tr-fast);
+
+    &.fade-in{
+      opacity: 1;
+    }
+  }
+}
