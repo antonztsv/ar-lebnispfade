@@ -26,7 +26,7 @@ exports.render = function (data) {
       const contentUrl = `..${poi.url}`;
       const imageUrl = `./images/${poi.data.image}`;
 
-      return `<li style="background-image: url(${imageUrl})"><a href="${contentUrl}">${poi.data.title}</a></li>`;
+      return `<li style="background-image: url(${imageUrl})"><a href="${contentUrl}"><p class="title">${poi.data.title}</p></a></li>`;
     });
 
     return `
