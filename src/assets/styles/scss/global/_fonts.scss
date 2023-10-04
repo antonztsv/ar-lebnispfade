@@ -31,6 +31,22 @@
 }
 
 @font-face {
+  font-display: swap;
+  font-family: Atkinson;
+  font-style: normal;
+  font-weight: 200;
+  src: url("../assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Atkinson;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.ttf");
+}
+
+@font-face {
   font-family: 'MaterialIcons';
   font-style: normal;
   font-weight: 400;

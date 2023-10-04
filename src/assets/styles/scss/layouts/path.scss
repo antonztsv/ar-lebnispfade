@@ -1,0 +1,15 @@
+/* Path
+############################################################################ */
+
+.path{
+  main{
+    transform: translateX(calc(var(--xxl) * 4));
+    opacity: var(--op-low);
+    transition: all var(--tr-slow);
+
+    &.move-left{
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}

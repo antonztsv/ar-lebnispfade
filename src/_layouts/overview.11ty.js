@@ -12,7 +12,7 @@ exports.render = function (data) {
     ${documentHead}
     <body class="overview">
       ${pageHead}
-      <main>
+      <main data-js-on-load-action="fade-in">
         ${data.content}
       </main>
       ${pageFoot}

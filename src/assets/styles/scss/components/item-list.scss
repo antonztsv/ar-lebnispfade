@@ -11,12 +11,29 @@
     background-size: cover;
     background-position: center center;
     z-index: 0;
+    margin-bottom: var(--border-width-m);
     
     & > a{
       position: relative;
       display: block;
-      padding: calc(var(--l) * 4) var(--s) var(--s) var(--s);
+      min-height: calc(var(--m) * 8);
       z-index: 2;
+
+      p{
+        position: absolute;
+        bottom: var(--xs);
+        left: var(--xs);
+        display: inline-block;
+        font-size: var(--l);
+        background-color: var(--darkest);
+        transition: all var(--tr-fast);
+        padding: var(--quat) var(--s);
+  
+        &:hover{
+          transform: scale(1.2);
+          transform-origin: bottom left;
+        }
+      }
     }
 
     &::before{
@@ -27,7 +44,7 @@
       left: 0;
       bottom: 0;
       right: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.9) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);
       z-index: 1;
     }
   }
