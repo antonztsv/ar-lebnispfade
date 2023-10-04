@@ -1,0 +1,35 @@
+<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{
+            background-color: black;
+        }
+    .container {
+    background-color: black;
+    color: #F2CB05;
+    margin: auto;
+    width: 75%;
+    border: 3px solid #F2CB05;
+    padding: 10px;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    white-space: pre-line;
+    }</style><title>Position</title></head><body onload="getPositionalData()"><div class="container"><div id="message"></div></div><script>function getPositionalData(){
+            var text = "";
+            var message = document.getElementById("message")
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+        function onSuccess(position) {
+            const {
+            latitude,
+            longitude
+            } = position.coords;
+
+        message.textContent = `Standort: 
+
+        Lat: ${latitude},
+        Long: ${longitude}`;
+    }
+
+    function onError() {
+        message.textContent = `Failed to get your location!`;
+    }
+        }</script></body></html>
