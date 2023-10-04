@@ -107,6 +107,20 @@ select {
   src: url("../assets/fonts/Roboto/Roboto-Bold.ttf");
 }
 @font-face {
+  font-display: swap;
+  font-family: Atkinson;
+  font-style: normal;
+  font-weight: 200;
+  src: url("../assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf");
+}
+@font-face {
+  font-display: swap;
+  font-family: Atkinson;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.ttf");
+}
+@font-face {
   font-family: "MaterialIcons";
   font-style: normal;
   font-weight: 400;
@@ -193,10 +207,10 @@ select {
   --color-accent: var(--obk-gelb);
   --color-decoration: var(--obk-grau);
   --color-background: var(--darkest);
-  --ff-normal: "Roboto", sans-serif;
-  --ff-serif: "Roboto", serif;
+  --ff-normal: "Atkinson", sans-serif;
+  --ff-serif: "Atkinson", serif;
   --ff-code: "RobotoCode", monospace;
-  --ff-headline: "Roboto", monospace;
+  --ff-headline: "Atkinson", monospace;
   --ff-icons: "MaterialIcons", serif;
   --fw-normal: 200;
   --fw-medium: 500;
@@ -207,7 +221,7 @@ select {
   --tr-fast: 0.2s;
   --tr-slow: 0.6s;
   --tr-delay: 1.2s;
-  --op-low: 0.4;
+  --op-low: 0.2;
   --op-medium: 0.6;
   --shadow-l: 0 0 var(--xs) rgba(0, 0, 0, 0.5);
   --shadow-xl: var(--half) var(--half) var(--m) rgba(0, 0, 0, 0.3);
@@ -310,6 +324,9 @@ body {
 main {
   flex-grow: 2;
 }
+main.fade {
+  opacity: var(--op-medium);
+}
 
 /* Main Header
 ###########################################################################  */
@@ -351,12 +368,27 @@ main {
   background-size: cover;
   background-position: center center;
   z-index: 0;
+  margin-bottom: var(--border-width-m);
 }
 .overview li > a, .path li > a {
   position: relative;
   display: block;
-  padding: calc(var(--l) * 4) var(--s) var(--s) var(--s);
+  min-height: calc(var(--m) * 8);
   z-index: 2;
+}
+.overview li > a p, .path li > a p {
+  position: absolute;
+  bottom: var(--xs);
+  left: var(--xs);
+  display: inline-block;
+  font-size: var(--l);
+  background-color: var(--darkest);
+  transition: all var(--tr-fast);
+  padding: var(--quat) var(--s);
+}
+.overview li > a p:hover, .path li > a p:hover {
+  transform: scale(1.2);
+  transform-origin: bottom left;
 }
 .overview li::before, .path li::before {
   position: absolute;
@@ -366,7 +398,7 @@ main {
   left: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.9) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
   z-index: 1;
 }
 
@@ -408,6 +440,16 @@ main {
   flex-direction: column;
 }
 
+/* Overview
+############################################################################ */
+.overview main {
+  opacity: var(--op-low);
+  transition: all var(--tr-slow) var(--tr-fast);
+}
+.overview main.fade-in {
+  opacity: 1;
+}
+
 /* POI
 ############################################################################ */
 .poi .core-info img {
@@ -434,6 +476,18 @@ main {
   padding: var(--m) var(--s);
   display: flex;
   gap: var(--quat);
+}
+
+/* Path
+############################################################################ */
+.path main {
+  transform: translateX(calc(var(--xxl) * 4));
+  opacity: var(--op-low);
+  transition: all var(--tr-slow);
+}
+.path main.move-left {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 /* Page
