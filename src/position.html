@@ -19,12 +19,18 @@
     font-weight: bold;
     white-space: pre-line;
     }
+    button{
+        background-color: #F2CB05;
+        font-weight: bold;
+        font-size: large;
+    }
     </style>
     <title>Position</title>
 </head>
 <body onload="getPositionalData()">
     <div class="container">
         <div id="message"></div>
+        <button onclick="copyText()">Copy Text</button>
     </div>
     <script>
         function getPositionalData(){
@@ -48,6 +54,31 @@
         message.textContent = `Failed to get your location!`;
     }
         }
+
+        function copyText(){
+            var range, selection, worked;
+            var element = document.getElementById("message")
+
+            if (document.body.createTextRange) {
+                range = document.body.createTextRange();
+                range.moveToElementText(element);
+                range.select();
+            } else if (window.getSelection) {
+                selection = window.getSelection();        
+                range = document.createRange();
+                range.selectNodeContents(element);
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }
+
+            try {
+                document.execCommand('copy');
+                alert('text copied');
+                }
+            catch (err) {
+                alert('unable to copy text');
+                }
+                }
     </script>
 </body>
 </html>
