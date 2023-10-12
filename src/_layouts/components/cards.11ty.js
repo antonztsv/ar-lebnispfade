@@ -17,6 +17,8 @@ exports.getCards = (eleventy, data) => {
 
         <p class="description"></p>
 
+        <iframe id="iframeVideo" src="https://www.youtube.com/embed/uDjJPtmBcmY?si=japZwtlh16alDnu_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
         <p class="duration"></p>
             </div>
         </div>

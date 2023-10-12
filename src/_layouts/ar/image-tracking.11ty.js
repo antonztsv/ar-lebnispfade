@@ -109,13 +109,16 @@ exports.getImageTrackingCode = (eleventy, arData) => {
           id="optimerBoldFont"
           src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"
         ></a-asset-item>
-        <video id="video" controls src="../ar-media/videos/${arData.video.filename}" loop></video>
+        <!-- <video id="video" controls src="../ar-media/videos/${arData.video.filename}" loop></video> -->
+        <video id="video" preload="auto" src="https://youtu.be/uDjJPtmBcmY?si=FpyMBX274-DAx30c" width="160" height="90" autoplay loop="true" crossOrigin="anonymous" muted>></video>
+        <video crossOrigin="anonymous" id="video1" controls src="https://www.youtube.com/embed/uDjJPtmBcmY?si=japZwtlh16alDnu_" loop></video>
+        <video crossOrigin="anonymous" id="video2" controls src="https://www.youtube.com/watch?v=uDjJPtmBcmY" loop></video>
+        <video id="videoCORS" preload="auto" src="https://youtu.be/uDjJPtmBcmY?si=FpyMBX274-DAx30c&origin=https://www.arlebnisobk.de/" width="160" height="90" autoplay loop="true" crossOrigin="anonymous" muted>></video>
+        <video crossOrigin="anonymous" id="video1CORS" controls src="https://www.youtube.com/embed/uDjJPtmBcmY?si=japZwtlh16alDnu_&origin=https://www.arlebnisobk.de/" loop></video>
+        <video crossOrigin="anonymous" id="video2CORS" controls src="https://www.youtube.com/watch?v=uDjJPtmBcmY&origin=https://www.arlebnisobk.de/" loop></video>
       </a-assets>
       <!-- a-nft is the anchor that defines an Image Tracking entity -->
       <!-- on 'url' use the path to the Image Descriptors created before. -->
-      <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
-      <!-- Deployment: url="pages/obk/assets/images/muenzschlaeger" -->
-      <!-- Development: url="cranach-ar/AR.js-ARlebnispfadeOBK/arlebnispfad/pages/obk/assets/images/muenzschlaeger" -->
       <a-nft
         class="${arData.nft.id}-nft"
         type="nft"
@@ -128,11 +131,8 @@ exports.getImageTrackingCode = (eleventy, arData) => {
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse"
       >
-        <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity
-        "./models/sunflower/sunflower.gltf" 
     
-        scale/rotation/position attribute need high values (pixels?)-->
-          <!-- gltf-model="./ar-media/models/${arData.nft.model}.glb" -->
+        <!-- scale/rotation/position attribute need high values (pixels?) -->
           <a-entity
             gltf-model="../ar-media/models/${arData.nft.model}.glb"
             scale="50 50 50"
@@ -150,8 +150,6 @@ exports.getImageTrackingCode = (eleventy, arData) => {
         </a-entity>
       </a-nft>
 
-      <!-- Deployment: url="pages/obk/assets/images/hammerboy" -->
-      <!-- Development: url="cranach-ar/AR.js-ARlebnispfadeOBK/arlebnispfad/pages/obk/assets/images/hammerboy" -->
       <a-nft
         id="hammerboy"
         class="hammerboy-nft"
