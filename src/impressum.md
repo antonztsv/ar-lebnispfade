@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Impressum
 layout: page.11ty.js
 bodyClass: impressum
@@ -89,4 +89,4 @@ Die Volkshochschule des Oberbergischen Kreises ist eine gemeinnützige, nicht re
 
 #### Urheberrechtshinweis:
 
-Die VHS Oberberg behält sich alle Rechte an dieser Webseite und ihren Inhalten vor. Sie ist entweder Urheber oder hat sich die entsprechenden Nutzungsrechte einräumen lassen.
+Die VHS Oberberg behält sich alle Rechte an dieser Webseite und ihren Inhalten vor. Sie ist entweder Urheber oder hat sich die entsprechenden Nutzungsrechte einräumen lassen. -->
