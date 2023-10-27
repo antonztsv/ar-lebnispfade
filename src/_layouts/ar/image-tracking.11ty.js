@@ -67,8 +67,9 @@ exports.getImageTrackingCode = (eleventy, arData) => {
         compoundEntity.appendChild(text)
         let check;
   
-        marker.addEventListener('markerFound', () => {
-            let cameraPosition = camera.object3D.position;
+        marker.addEventListener('markerFound', (e) => {
+          //fillCard(e);
+   /*          let cameraPosition = camera.object3D.position;
             let markerPosition = marker.object3D.position;
             let distance = cameraPosition.distanceTo(markerPosition)
   
@@ -79,7 +80,7 @@ exports.getImageTrackingCode = (eleventy, arData) => {
   
               // do what you want with the distance:
               text.setAttribute('value', toString(distance.toFixed(2)) + '?')
-            }, 100);
+            }, 100); */
         });
       
         marker.addEventListener('markerLost', () => {
@@ -130,6 +131,7 @@ exports.getImageTrackingCode = (eleventy, arData) => {
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse"
+        card
       >
     
         <!-- scale/rotation/position attribute need high values (pixels?) -->
@@ -187,7 +189,7 @@ exports.getImageTrackingCode = (eleventy, arData) => {
         cursor="fuse: false; rayOrigin: mouse"
       >
       <a-entity 
-        gltf-model=”url(../ar-media/models/${arData.nft3.model}.glb)”
+        gltf-model="url(../ar-media/models/${arData.nft3.model}.glb)"
         animation-mixer
         gesture-handler="minScale: 0.25; maxScale: 10"
         >

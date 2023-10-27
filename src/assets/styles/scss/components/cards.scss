@@ -19,3 +19,11 @@
     align-items: flex-start;
     flex-direction: column;
   }
+.card h4 {
+  color: black;
+}
+.card-body {
+    overflow-y: auto;
+    max-height: calc(25vh - 40px); /* Adjusted to account for header and padding */
+    padding: 10px;
+  }
