@@ -16,17 +16,25 @@ ar:
     location: wipperfuerth
     video: 
         url: "https://www.youtube.com/embed/uDjJPtmBcmY?si=japZwtlh16alDnu_"
-    nft:
+    nft: 
+        type: model,
         id: "muenzschlaeger"
         name: "Muenzschlaeger"
         model: "Muenzschlaeger_T"
-    nft2:
-        id: "hammerboy"
-        name: "Hammerboy"
-    nft3:
-        id: "pulvermuseum"
-        name: "Pulvermuseum"
-        model: "Parrot"
-
+    
+    nftTest: [
+        {
+            type: model,
+            id: "muenzschlaeger",
+            name: "Muenzschlaeger",
+            model: "Muenzschlaeger_T"
+        },
+        {
+            type: model,
+            id: "pulvermuseum",
+            name: "Pulvermuseum",
+            model: "Parrot"
+        }
+    ]
 ---
 

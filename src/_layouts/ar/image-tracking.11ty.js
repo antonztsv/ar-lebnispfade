@@ -88,38 +88,65 @@ window.addEventListener('load', () => {
   })
 });
 `;
-  switch (arData.content) {
+var htmlWithARData = ``;
+
+for (const data of arData.nftTest) {
+  switch (data.type) {
     case 'model':
-      return getModelCode(arData);
+      htmlWithARData = htmlWithARData.concat(getModelCode(arData, data));
     case 'video':
-      return getVideoCode(arData);
+      htmlWithARData = htmlWithARData.concat(getVideoCode(arData, data));
     case 'audio':
-      return getAudioCode(arData);
-    case 'mixed':
-      return getMixedCode(arData);
+      htmlWithARData = htmlWithARData.concat(getAudioCode(arData, data));
     default:
+      break;
   }
+}
 
-function getModelCode(arData) {
+function getModelCode(arData, data) {
 
-
-
-  const html = (arData) => `
-  <div class="arjs-loader">
-  <div>Loading, please wait...</div>
-</div>
-
-<!-- a-frame scene -->
-<a-scene
-  embedded
-  stats
-  vr-mode-ui="enabled: false;"
-  renderer="logarithmicDepthBuffer: true;"
-  arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-  antialias='true'
-  gesture-detector
-  id="scene"
+return `
+<a-assets>
+        <a-asset-item
+          id="optimerBoldFont"
+          src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"
+        ></a-asset-item>
+        <!-- <video id="video" controls src="../ar-media/videos/${arData.video.filename}" loop></video> -->
+</a-assets>
+<a-nft
+class="${data.id}-nft"
+type="nft"
+url="${arData.location}/ar-media/images/${data.id}"
+smooth="true"
+smoothCount="10"
+smoothTolerance=".01"
+smoothThreshold="5"
+raycaster="objects: .clickable"
+emitevents="true"
+cursor="fuse: false; rayOrigin: mouse"
+card
 >
+
+<!-- scale/rotation/position attribute need high values (pixels?) -->
+  <a-entity
+    gltf-model="../ar-media/models/${data.model}.glb"
+    scale="250 250 250"
+    position="250 400 -500"
+    rotation="0 0 0"
+    class="clickable"
+    gesture-handler="minScale: 0.5; maxScale: 10"
+  >
+  <a-entity
+    text-geometry="value: ${data.name}"
+    material="color: white"
+    rotation="-90 0 0"
+    position="0 0 -1"
+  ></a-entity>
+</a-entity>
+</a-nft>
+`
+
+/*  const html = (arData) => `
 <a-assets>
         <a-asset-item
           id="optimerBoldFont"
@@ -144,11 +171,11 @@ card
 <!-- scale/rotation/position attribute need high values (pixels?) -->
   <a-entity
     gltf-model="../ar-media/models/${arData.nft.model}.glb"
-    scale="50 50 50"
-    position="0 -200 -200"
+    scale="250 250 250"
+    position="250 400 -500"
     rotation="0 0 0"
     class="clickable"
-    gesture-handler="minScale: 0.25; maxScale: 10"
+    gesture-handler="minScale: 0.5; maxScale: 10"
   >
   <a-entity
     text-geometry="value: ${arData.nft.name}"
@@ -158,23 +185,13 @@ card
   ></a-entity>
 </a-entity>
 </a-nft>
-<a-entity camera></a-entity>
-</a-scene>
   `
 
   return `
   <script>${script}</script>
-  ${html(arData)}
-`;
-}
-
-function getVideoCode(arData) {
-  const html = (arData) => `
   <div class="arjs-loader">
   <div>Loading, please wait...</div>
 </div>
-
-<!-- a-frame scene -->
 <a-scene
   embedded
   stats
@@ -185,27 +202,34 @@ function getVideoCode(arData) {
   gesture-detector
   id="scene"
 >
+${html(arData)}
+<a-entity camera></a-entity>
+</a-scene>
+`; */
+}
+
+function getVideoCode(arData, data) {
+  const html = (arData) => `
 <a-assets>
         <a-asset-item
           id="optimerBoldFont"
           src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"
         ></a-asset-item>
-        <!-- <video id="video" controls src="../ar-media/videos/${arData.video.filename}" loop></video> -->
+        <video id="video" controls src="../ar-media/videos/${arData.video.filename}" loop></video>
 </a-assets>
-  <a-nft
-        id="hammerboy"
-        class="hammerboy-nft"
-        nfthandler
-        type="nft"
-        url="${arData.location}/ar-media/images/${arData.nft.id}"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance=".01"
-        smoothThreshold="5"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse"
-      >
+<a-nft
+class="${arData.nft.id}-nft"
+type="nft"
+url="${arData.location}/ar-media/images/${arData.nft.id}"
+smooth="true"
+smoothCount="10"
+smoothTolerance=".01"
+smoothThreshold="5"
+raycaster="objects: .clickable"
+emitevents="true"
+cursor="fuse: false; rayOrigin: mouse"
+card
+>
         <a-video
           id="video"
           src="#video"
@@ -216,14 +240,50 @@ function getVideoCode(arData) {
           gesture-handler="minScale: 0.25; maxScale: 10"
         ></a-video>
       </a-nft>
-      <a-entity camera></a-entity>
-      </a.scene>
   `
   return `
   <script>${script}</script>
-  ${html(arData)}
+  <div class="arjs-loader">
+  <div>Loading, please wait...</div>
+</div>
+<a-scene
+  embedded
+  stats
+  vr-mode-ui="enabled: false;"
+  renderer="logarithmicDepthBuffer: true;"
+  arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+  antialias='true'
+  gesture-detector
+  id="scene"
+>
+${html(arData)}
+<a-entity camera></a-entity>
+</a-scene>
 `;
 }
+
+function getAudioCode(arData, data){
+}
+
+return `
+<script>${script}</script>
+<div class="arjs-loader">
+<div>Loading, please wait...</div>
+</div>
+<a-scene
+embedded
+stats
+vr-mode-ui="enabled: false;"
+renderer="logarithmicDepthBuffer: true;"
+arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+antialias='true'
+gesture-detector
+id="scene"
+>
+${htmlWithARData}
+<a-entity camera></a-entity>
+</a-scene>
+`
 
 /*const html = (arData) => `
      
