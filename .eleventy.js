@@ -110,6 +110,7 @@ module.exports = function (eleventyConfig) {
 
   // Copy Media
   eleventyConfig.addPassthroughCopy("src/**/*.mp4");
+  eleventyConfig.addPassthroughCopy("src/**/*.mp3");
   eleventyConfig.addPassthroughCopy("src/**/*.glb");
   eleventyConfig.addPassthroughCopy("src/**/*.obj");
   eleventyConfig.addPassthroughCopy("src/**/*.mtl");

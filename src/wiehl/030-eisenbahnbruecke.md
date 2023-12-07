@@ -12,21 +12,24 @@ ar:
     type: image-tracking
     content: model
     location: whiel
-    video:
-        filename: "mov_bbb.mp4"
-    nft:
-        type: model,
-        id: "muehlrad"
-        name: "Muehlrad"
-        model: "Muenzschlaeger_T"
-    nftTest: [
-        {type: model,
-        id: "muehlrad",
-        name: "Muehlrad",
-        model: "Muenzschlaeger_T"},
-        {type: model,
-        id: "bergischerLoewe",
-        name: "BergischerLoewe",
-        model: "BergischerLoewe"}
+    video: [
+        {
+            type: "filename",
+            filename: "wahllokal.mp4"
+        }
+    ] 
+    nft: [
+        {
+            type: model,
+            id: "muehlrad",
+            name: "Muehlrad",
+            model: "Muenzschlaeger_T"
+        },
+        {
+            type: model,
+            id: "bergischerLoewe",
+            name: "BergischerLoewe",
+            model: "BergischerLoewe"
+        }
     ]
 ---

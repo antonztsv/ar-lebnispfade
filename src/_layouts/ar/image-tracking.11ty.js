@@ -30,6 +30,27 @@ exports.getImageTrackingCode = (eleventy, arData) => {
   video.pause();
 }
 
+AFRAME.registerComponent('soundhandler', {
+  init: function () {
+      this.soundEl = document.querySelector('[sound]');
+      this.marker = document.querySelector('#audio-nft');
+      this.visible = false;
+      console.log(this.soundEl)
+  },
+  tick: function () {
+
+      if (this.marker.object3D.visible && !this.visible) {
+          console.log("ding")
+          console.log(this.soundEl.components.sound)
+          this.soundEl.components.sound.stopSound(); // stop if playing
+          this.soundEl.components.sound.playSound(); // play
+          this.visible = true; // make sure it plays only once per visible
+      } else if (!this.marker.object3D.visible) {
+          this.visible = false;
+      }
+  }
+});
+
 
 AFRAME.registerComponent('vidhandler',{
   init: function(){
@@ -90,14 +111,17 @@ window.addEventListener('load', () => {
 `;
 var htmlWithARData = ``;
 
-for (const data of arData.nftTest) {
+for (const data of arData.nft) {
   switch (data.type) {
     case 'model':
       htmlWithARData = htmlWithARData.concat(getModelCode(arData, data));
+      break
     case 'video':
       htmlWithARData = htmlWithARData.concat(getVideoCode(arData, data));
+      break
     case 'audio':
       htmlWithARData = htmlWithARData.concat(getAudioCode(arData, data));
+      break
     default:
       break;
   }
@@ -106,13 +130,6 @@ for (const data of arData.nftTest) {
 function getModelCode(arData, data) {
 
 return `
-<a-assets>
-        <a-asset-item
-          id="optimerBoldFont"
-          src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"
-        ></a-asset-item>
-        <!-- <video id="video" controls src="../ar-media/videos/${arData.video.filename}" loop></video> -->
-</a-assets>
 <a-nft
 class="${data.id}-nft"
 type="nft"
@@ -136,12 +153,6 @@ card
     class="clickable"
     gesture-handler="minScale: 0.5; maxScale: 10"
   >
-  <a-entity
-    text-geometry="value: ${data.name}"
-    material="color: white"
-    rotation="-90 0 0"
-    position="0 0 -1"
-  ></a-entity>
 </a-entity>
 </a-nft>
 `
@@ -209,7 +220,43 @@ ${html(arData)}
 }
 
 function getVideoCode(arData, data) {
-  const html = (arData) => `
+
+  var localFilename = ''
+
+  for (const data of arData.video){
+    if (data.type === 'filename') localFilename = data.filename
+  }
+
+  return `
+  <a-assets>
+        <video id="video" controls src="../ar-media/videos/${localFilename}" loop></video>
+</a-assets>
+<a-nft
+class="${data.id}-nft"
+type="nft"
+url="${arData.location}/ar-media/images/${data.id}"
+smooth="true"
+smoothCount="10"
+smoothTolerance=".01"
+smoothThreshold="5"
+raycaster="objects: .clickable"
+emitevents="true"
+cursor="fuse: false; rayOrigin: mouse"
+card
+vidhandler
+>
+        <a-video
+          id="video"
+          src="#video"
+          width="160"
+          height="90"
+          position="0 0 -20"
+          rotation="90 0 180"
+          gesture-handler="minScale: 0.25; maxScale: 10"
+          ></a-video>
+      </a-nft>
+  `
+  /* const html = (arData) => `
 <a-assets>
         <a-asset-item
           id="optimerBoldFont"
@@ -259,10 +306,34 @@ card
 ${html(arData)}
 <a-entity camera></a-entity>
 </a-scene>
-`;
+`; */
 }
 
 function getAudioCode(arData, data){
+  return `
+  <a-assets>
+            <audio id="sound" src="../ar-media/audios/${arData.audio.filename}" preload="auto"></audio>
+        </a-assets>
+  <a-nft
+  id="${data.type}-nft"
+class="${data.id}-nft"
+type="nft"
+url="${arData.location}/ar-media/images/${data.id}"
+smooth="true"
+smoothCount="10"
+smoothTolerance=".01"
+smoothThreshold="5"
+raycaster="objects: .clickable"
+emitevents="true"
+cursor="fuse: false; rayOrigin: mouse"
+card
+soundhandler
+>
+
+<!-- scale/rotation/position attribute need high values (pixels?) -->
+<a-entity sound="src: #sound" autoplay="false"></a-entity>
+</a-nft>
+  `
 }
 
 return `

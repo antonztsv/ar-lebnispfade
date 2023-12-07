@@ -14,15 +14,19 @@ ar:
     type: image-tracking
     content: model
     location: wipperfuerth
-    video: 
-        url: "https://www.youtube.com/embed/uDjJPtmBcmY?si=japZwtlh16alDnu_"
-    nft: 
-        type: model,
-        id: "muenzschlaeger"
-        name: "Muenzschlaeger"
-        model: "Muenzschlaeger_T"
-    
-    nftTest: [
+    video: [
+        {
+            type: 'url',
+            url: 'https://www.youtube.com/embed/uDjJPtmBcmY?si=japZwtlh16alDnu_'
+        },
+        {
+            type: 'filename',
+            filename: 'wahllokal.mp4'
+        }
+    ]
+    audio:
+        filename: "wiehl_bielstein_motocross.mp3"
+    nft: [
         {
             type: model,
             id: "muenzschlaeger",
@@ -30,7 +34,12 @@ ar:
             model: "Muenzschlaeger_T"
         },
         {
-            type: model,
+            type: audio,
+            id: "hammerboy",
+            name: "Hammerboy"
+        },
+        {
+            type: video,
             id: "pulvermuseum",
             name: "Pulvermuseum",
             model: "Parrot"
