@@ -1,9 +1,28 @@
 exports.getCards = (eleventy, data) => {
 
-  var iframeData = "";
-  if(data.ar.video.url){
-    iframeData = '<iframe id="iframeVideo" src="https://www.youtube.com/embed/uDjJPtmBcmY?si=japZwtlh16alDnu_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
-  } 
+
+  var videoData = ``;
+
+  for(const videoElement of data.ar.video){
+    switch(videoElement.type){
+      case 'url':
+        videoData = videoData.concat(`<iframe id="iframeVideo" src="${videoElement.url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`);
+        break;
+      case 'filename':
+        videoData = videoData.concat(`<video controls="controls" src="../ar-media/videos/${videoElement.filename}"></video>`)
+        break;
+      default:
+        break;
+    }
+  }
+
+/*   if(data.ar.video.url){
+    videoData = '<iframe id="iframeVideo" src="' + data.ar.video.url + 'title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+  } else if(data.ar.video.filename){
+    videoData = ' <video controls="controls" src="../ar-media/videos/' + data.ar.video.filename + '"></video>'
+  } else{
+
+  } */
 
     return `
         <div id="card" class="card">
@@ -13,7 +32,7 @@ exports.getCards = (eleventy, data) => {
                 <p class="info">${data.info}</p>
                 <h4>Beschreibung</h4>
                 <p class="description">${data.arDesc}</p>
-                ${iframeData}
+                ${videoData}
                 <p class="duration"></p>
           </div>
         </div>

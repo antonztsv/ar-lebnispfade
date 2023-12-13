@@ -12,20 +12,38 @@ arDesc: |
     In diesem ARlebnis können Sie dies und das erleben. Ziehen Sie dafür Ihr Smartphone Halvah shortbread jelly-o tootsie roll tiramisu gummi bears. Sesame snaps lollipop gummi bears marzipan marshmallow tiramisu pie danish icing. Gummi bears caramels cheesecake lemon drops jujubes oat cake liquorice. Sweet roll dragée apple pie pastry chocolate fruitcake. Caramels sesame snaps dragée soufflé caramels sweet roll donut croissant jujubes.
 ar:
     type: image-tracking
+    content: model
     location: wipperfuerth
-    video: 
-        filename: "mov_bbb.mp4"
-    nft:
-        id: "muenzschlaeger"
-        name: "Muenzschlaeger"
-        model: "Muenzschlaeger_T"
-    nft2:
-        id: "hammerboy"
-        name: "Hammerboy"
-    nft3:
-        id: "pulvermuseum"
-        name: "Pulvermuseum"
-        model: "Parrot"
-
+    video: [
+        {
+            type: 'url',
+            url: 'https://www.youtube.com/embed/uDjJPtmBcmY?si=japZwtlh16alDnu_'
+        },
+        {
+            type: 'filename',
+            filename: 'wahllokal.mp4'
+        }
+    ]
+    audio:
+        filename: "wiehl_bielstein_motocross.mp3"
+    nft: [
+        {
+            type: model,
+            id: "muenzschlaeger",
+            name: "Muenzschlaeger",
+            model: "Muenzschlaeger_T"
+        },
+        {
+            type: audio,
+            id: "hammerboy",
+            name: "Hammerboy"
+        },
+        {
+            type: video,
+            id: "pulvermuseum",
+            name: "Pulvermuseum",
+            model: "Parrot"
+        }
+    ]
 ---
 
