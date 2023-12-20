@@ -32,6 +32,7 @@ exports.getHeader = (eleventy, data) => {
       <script src="${eleventy.url('/assets/scripts/main.js')}" defer></script>
       <script src="${eleventy.url('/assets/scripts/gestures.js')}" defer></script>
       <script src="${eleventy.url('/assets/scripts/card.js')}" defer></script>
+      <script src="${eleventy.url('/assets/scripts/mediaControls.js')}" defer></script>
     </head>
   `;
 };

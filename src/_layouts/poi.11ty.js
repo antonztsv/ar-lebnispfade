@@ -68,11 +68,14 @@ exports.render = function (data) {
     <body class="poi">
       ${pageHead}
       <main>
-
-
         ${data.content}
         ${arCode(ar)}
         </main>
+        <div id="media-controls">
+        <button id="playButton" hidden="hidden"></button>
+        <button id="pauseButton" hidden="hidden"></button>
+        <button id="stopButton" hidden="hidden"></button>
+        </div>
         ${card}
       ${pageFoot}
     </body>

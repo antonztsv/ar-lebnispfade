@@ -421,6 +421,46 @@ main.fade {
   color: white;
 }
 
+#media-controls {
+  display: block;
+  margin-bottom: 20px;
+  z-index: 2;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+button {
+  font-size: 20px;
+  margin: 0 10px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#playButton::before {
+  content: "▶";
+  /* Unicode symbol for Play */
+}
+
+#pauseButton::before {
+  content: "II";
+  /* Unicode symbol for Pause */
+}
+
+#stopButton::before {
+  content: "■";
+  /* Unicode symbol for Stop */
+}
+
 .card {
   background-color: var(--light);
   z-index: 1;
