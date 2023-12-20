@@ -1,113 +1,7 @@
 exports.getImageTrackingCode = (eleventy, arData) => {
 
   const script = `
-  var video
-  
-  AFRAME.registerComponent('nfthandler', {
-    init: function(){
-      this.tick = AFRAME.utils.throttle(this.tick, 500, this);
-    },
-    
-    tick: function(t, dt) {
-      
-      if(document.querySelector("#hammerboy").object3D.visible == true){
-        
-        video = document.querySelector('#video');
 
-        video.addEventListener('click', function () { playPauseVideo(); console.log("Video Toggle") })
-        
-      } else{
-        
-      }
-    }
-  })
-  
-  function playPauseVideo(){
-    
-    if (video.paused)
-    video.play();
-  else
-  video.pause();
-}
-
-AFRAME.registerComponent('soundhandler', {
-  init: function () {
-      this.soundEl = document.querySelector('[sound]');
-      this.marker = document.querySelector('#audio-nft');
-      this.visible = false;
-      console.log(this.soundEl)
-  },
-  tick: function () {
-
-      if (this.marker.object3D.visible && !this.visible) {
-          console.log("ding")
-          console.log(this.soundEl.components.sound)
-          this.soundEl.components.sound.stopSound(); // stop if playing
-          this.soundEl.components.sound.playSound(); // play
-          this.visible = true; // make sure it plays only once per visible
-      } else if (!this.marker.object3D.visible) {
-          this.visible = false;
-      }
-  }
-});
-
-
-AFRAME.registerComponent('vidhandler',{
-  init: function(){
-    let el = this.el;
-    let video = document.querySelector("#video");
-    video.controls = true
-    video.toggle = false;
-    video.pause();
-    
-    el.addEventListener('click',function(){
-      if(video.toggle == false){
-        video.toggle = true
-        video.play()
-      }else{
-        video.toggle = false;
-        video.pause()
-      }
-    })
-    el.addEventListener('dblclick',function(){video.stop()})
-  }
-});
-window.addEventListener('load', () => {
-  const camera = document.querySelector('[camera]');
-  const marker = document.querySelector('a-nft');
-  const compoundEntity = document.createElement('a-entity');
-  const text = document.createElement('a-text');
-  const textScale = 100
-  text.setAttribute('look-at', '[camera]')
-  text.setAttribute('scale', {
-    x: textScale,
-    y: textScale,
-    z: textScale
-  })
-  text.setAttribute('align', 'center')
-  compoundEntity.appendChild(text)
-  let check;
-  
-  marker.addEventListener('markerFound', (e) => {
-    //fillCard(e);
-    /*          let cameraPosition = camera.object3D.position;
-    let markerPosition = marker.object3D.position;
-    let distance = cameraPosition.distanceTo(markerPosition)
-    
-    check = setInterval(() => {
-      cameraPosition = camera.object3D.position;
-      markerPosition = marker.object3D.position;
-      distance = cameraPosition.distanceTo(markerPosition)
-      
-      // do what you want with the distance:
-      text.setAttribute('value', toString(distance.toFixed(2)) + '?')
-    }, 100); */
-  });
-  
-  marker.addEventListener('markerLost', () => {
-    clearInterval(check);
-  })
-});
 `;
 var htmlWithARData = ``;
 
@@ -142,6 +36,8 @@ raycaster="objects: .clickable"
 emitevents="true"
 cursor="fuse: false; rayOrigin: mouse"
 card
+nfthandler
+registerevents
 >
 
 <!-- scale/rotation/position attribute need high values (pixels?) -->
@@ -242,15 +138,17 @@ smoothThreshold="5"
 raycaster="objects: .clickable"
 emitevents="true"
 cursor="fuse: false; rayOrigin: mouse"
+content="video"
 card
-vidhandler
+nfthandler
+registerevents
 >
         <a-video
           id="video"
           src="#video"
-          width="160"
-          height="90"
-          position="0 0 -20"
+          width="40"
+          height="22"
+          position="20 0 -35"
           rotation="90 0 180"
           gesture-handler="minScale: 0.25; maxScale: 10"
           ></a-video>
@@ -312,7 +210,7 @@ ${html(arData)}
 function getAudioCode(arData, data){
   return `
   <a-assets>
-            <audio id="sound" src="../ar-media/audios/${arData.audio.filename}" preload="auto"></audio>
+            <audio id="audio" src="../ar-media/audios/${arData.audio.filename}" preload="auto"></audio>
         </a-assets>
   <a-nft
   id="${data.type}-nft"
@@ -326,8 +224,10 @@ smoothThreshold="5"
 raycaster="objects: .clickable"
 emitevents="true"
 cursor="fuse: false; rayOrigin: mouse"
+content="audio"
 card
-soundhandler
+nfthandler
+registerevents
 >
 
 <!-- scale/rotation/position attribute need high values (pixels?) -->
@@ -337,7 +237,6 @@ soundhandler
 }
 
 return `
-<script>${script}</script>
 <div class="arjs-loader">
 <div>Loading, please wait...</div>
 </div>
