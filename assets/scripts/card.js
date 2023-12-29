@@ -1,22 +1,25 @@
-/* AFRAME.registerComponent("card", {
-    init: function () {
-        const cardEl = document.querySelector(".card");
-        cardEl.classList.add("hidden");
-        cardEl.style.display = "none";
-
-    }
-}) */
+/* Functions & Classes
+############################################################################ */
 
 function fillCard(e){
     const data = document.querySelector(".info-head");
     console.log(data.textContent)
 }
 
-function toggleCardBody() {
-    var cardBody = document.getElementById("cardBody");
-    if (cardBody.style.display === "none") {
-      cardBody.style.display = "block";
-    } else {
-      cardBody.style.display = "none";
-    }
-  }
+const addCardNavigation = () => {
+  const cardContent = document.querySelector("[data-js-card-content]");
+  const cardNavigation = document.querySelector("[data-js-card-navigation]");
+
+  if(!cardContent || !cardNavigation) return;
+
+  cardNavigation.addEventListener("click", (e) => {
+    cardContent.classList.toggle("is-active");
+  });
+}
+
+/* Main
+############################################################################ */
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  addCardNavigation();
+});

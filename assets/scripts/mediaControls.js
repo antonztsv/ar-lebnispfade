@@ -42,6 +42,7 @@ window.onload = function() {
     pauseBtn = document.getElementById("pauseButton");
     stopBtn = document.getElementById("stopButton");
 
+    if(!playBtn || !pauseBtn || !stopBtn) return;
     //console.log(playableContent)
 
     playBtn.onclick = function (){
