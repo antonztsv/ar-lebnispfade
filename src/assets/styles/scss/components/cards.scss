@@ -1,29 +1,58 @@
-.card {
-    background-color: var(--light);
-    z-index: 1;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 1;
+/* Info Card
+############################################################################ */
+
+.info-card {
+    &-wrap{
+      background-color: var(--lightest);
+      z-index: 1;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: var(--op-full);
+
+      border-top-left-radius: var(--border-radius-l);
+      border-top-right-radius: var(--border-radius-l);
+      box-shadow: var(--shadow-card);
+    }
+
+    &-body{
+
+      max-height: 0;
+      transition: max-height var(--tr-slow), padding var(--tr-slow);
+      overflow: hidden;
+      padding: var(--l) var(--l) 0 var(--l);
+      max-width: var(--max-width-content);
   
-    padding: 1rem;
-    margin: 0.5rem auto;
-    width: calc(100vw - 1rem);
-    max-width: 1200px;
-  
-    border-radius: 10px;
-  
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: column;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+
+      &.is-active{
+        max-height: 1200px;
+        padding-bottom: var(--xl);
+      }
+    }
+
+    &-item{
+      margin-bottom: var(--s);
+    }
   }
-.card h4 {
-  color: black;
+
+/* Info Card Navigation
+############################################################################ */
+
+.info-card{
+  &-navigation{
+    text-align: center;
+    button{
+      padding: 0;
+      display: inline-block;
+      height: var(--xs);
+      border-radius: 2ch;
+      width: 4ch;
+      background-color: var(--darken-strong);
+    }
+  }
 }
-.card-body {
-    overflow-y: auto;
-    max-height: calc(25vh - 40px); /* Adjusted to account for header and padding */
-    padding: 10px;
-  }

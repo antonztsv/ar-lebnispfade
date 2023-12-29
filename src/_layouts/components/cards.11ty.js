@@ -17,10 +17,15 @@ exports.getCards = (eleventy, data) => {
   } */
 
     return `
-        <div id="card" class="info-card">
-        ${info}
-        ${desc}
-        ${videoData}
+        <div id="card" class="info-card-wrap" >
+          <div class="info-card-navigation">
+            <button data-js-card-navigation></button>
+          </div>
+          <div class="info-card-body" data-js-card-content>
+          ${info}
+          ${desc}
+          ${videoData}
+          </div>
         </div>
     `;
 }

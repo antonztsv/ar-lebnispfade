@@ -40,6 +40,9 @@ exports.render = function (data) {
   };
 
   const getArCode = (arData) => {
+
+    if(!arData) return '';
+
     switch (arData.type) {
       case 'image-tracking':
         return imageTracking.getImageTrackingCode(this, arData);
@@ -66,15 +69,16 @@ exports.render = function (data) {
   <html lang="de">
     ${documentHead}
     <body class="poi">
+      ${arCode(ar)}
       ${pageHead}
       <main>
         ${data.content}
-        ${arCode(ar)}
+
         </main>
         <div id="media-controls">
-        <button id="playButton" hidden="hidden"></button>
-        <button id="pauseButton" hidden="hidden"></button>
-        <button id="stopButton" hidden="hidden"></button>
+          <button id="playButton" hidden="hidden"></button>
+          <button id="pauseButton" hidden="hidden"></button>
+          <button id="stopButton" hidden="hidden"></button>
         </div>
         ${card}
       ${pageFoot}

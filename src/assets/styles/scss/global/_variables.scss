@@ -23,6 +23,7 @@
   --darker: #111;
   --darkest: #000;
   --darken: rgba(0, 0, 0, 0.1);
+  --darken-strong: rgba(0, 0, 0, 0.3);
 
   --obk-gelb: #F2CB05;
   --obk-grau: #666666;
@@ -33,24 +34,32 @@
 
   
   --color-text: var(--darker);
-  --color-headline: var(--obk-blau);
+  --color-headline: var(--darkest);
   --color-accent: var(--obk-blau);
   --color-decoration: var(--obk-akzent-1);
   --color-background: var(--lightest);
   
-  --ff-normal: Verdana, 'Atkinson', sans-serif;
-  --ff-serif: Verdana, 'Atkinson', serif;
-  --ff-code: 'RobotoCode', monospace;
-  --ff-headline: Verdana, 'Atkinson', monospace;
+  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ff-normal: var(--system-ui), sans-serif;
+  --ff-serif: var(--system-ui), serif;
+  --ff-code: var(--system-ui), monospace;
+  --ff-headline: var(--system-ui), monospace;
   --ff-icons: 'MaterialIcons', serif;
 
   --fw-normal: 200;
   --fw-medium: 500;
   --fw-bold: 700;
 
+  --level-bg: 0;
+  --level-content: 10;
+  --level-main-nav: 100;
+
+
   --lh-normal: 140%;
   --lh-tight: 110%;
   --lh-loose: 150%;
+
+  --max-width-content: 120ch;
 
   --tr-fast: 0.2s;
   --tr-slow: 0.6s;
@@ -61,12 +70,16 @@
 
   --shadow-l: 0 0 var(--xs) rgba(0, 0, 0, 0.5);
   --shadow-xl: var(--half) var(--half) var(--m) rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 0 var(--l) rgba(0, 0, 0, 0.1);
 
   --border-width-s: 1px;
   --border-width-m: 3px;
   --border-width-l: 6px;
 
   --border-radius-s: 3px;
+  --border-radius-m: 6px;
+  --border-radius-l: 12px;
+
 }
 
 /* Viewportgrößen für Media Queries

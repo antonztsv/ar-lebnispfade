@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+.arjs-video{
+  z-index: var(--level-content);
+}
+
 .arjs-loader div {
   text-align: center;
   font-size: 1.25em;
