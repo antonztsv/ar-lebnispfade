@@ -1,6 +1,6 @@
 :root {
 
-  --bfs: 1.2rem;
+  --bfs: 1rem;
   --half: calc(var(--bfs) / 2); // halbes geviert
   --quat: calc(var(--bfs) / 4); // viertel geviert
   --xxs: calc(var(--bfs) * 0.4);
@@ -26,17 +26,22 @@
 
   --obk-gelb: #F2CB05;
   --obk-grau: #666666;
+  --obk-blau: #0090d4;
+  --obk-rot: #c50e1f;
+  --obk-akzent-1: #cbe2ec;
+  --obk-akzent-2: #f1f2f5;
+
   
-  --color-text: var(--lighter);
-  --color-headline: var(--light);
-  --color-accent: var(--obk-gelb);
-  --color-decoration: var(--obk-grau);
-  --color-background: var(--darkest);
+  --color-text: var(--darker);
+  --color-headline: var(--obk-blau);
+  --color-accent: var(--obk-blau);
+  --color-decoration: var(--obk-akzent-1);
+  --color-background: var(--lightest);
   
-  --ff-normal: 'Atkinson', sans-serif;
-  --ff-serif: 'Atkinson', serif;
+  --ff-normal: Verdana, 'Atkinson', sans-serif;
+  --ff-serif: Verdana, 'Atkinson', serif;
   --ff-code: 'RobotoCode', monospace;
-  --ff-headline: 'Atkinson', monospace;
+  --ff-headline: Verdana, 'Atkinson', monospace;
   --ff-icons: 'MaterialIcons', serif;
 
   --fw-normal: 200;

@@ -21,13 +21,14 @@
 
       p{
         position: absolute;
-        bottom: var(--xs);
+        bottom: var(--s);
         left: var(--xs);
         display: inline-block;
         font-size: var(--l);
-        background-color: var(--darkest);
+        background-color: var(--obk-blau);
         transition: all var(--tr-fast);
         padding: var(--quat) var(--s);
+        color: var(--lightest);
   
         &:hover{
           transform: scale(1.2);
