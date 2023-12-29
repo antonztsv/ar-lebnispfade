@@ -1,20 +1,12 @@
 exports.getCards = (eleventy, data) => {
 
+  const video = require('./video.11ty');
+  const videoData = video.getVideo(eleventy, data);
 
-  var videoData = ``;
+  const info = data.info ? `<p class="info-card-text info-card-item">${data.info}</p>` : '';
+  const desc = data.arDesc ? `        <h4>Was kann ich hier machen?</h4><p class="info-card-text info-card-item">${data.arDesc}</p>` : '';
 
-  for(const videoElement of data.ar.video){
-    switch(videoElement.type){
-      case 'url':
-        videoData = videoData.concat(`<iframe id="iframeVideo" src="${videoElement.url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`);
-        break;
-      case 'filename':
-        videoData = videoData.concat(`<video controls="controls" src="../ar-media/videos/${videoElement.filename}"></video>`)
-        break;
-      default:
-        break;
-    }
-  }
+  
 
 /*   if(data.ar.video.url){
     videoData = '<iframe id="iframeVideo" src="' + data.ar.video.url + 'title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
@@ -25,16 +17,10 @@ exports.getCards = (eleventy, data) => {
   } */
 
     return `
-        <div id="card" class="card">
-          <div class="info-head" onclick="toggleCardBody()">${data.title}</div>
-              <div class="card-body" id="cardBody" style="display: none">
-                <h4>Infos</h4>
-                <p class="info">${data.info}</p>
-                <h4>Beschreibung</h4>
-                <p class="description">${data.arDesc}</p>
-                ${videoData}
-                <p class="duration"></p>
-          </div>
+        <div id="card" class="info-card">
+        ${info}
+        ${desc}
+        ${videoData}
         </div>
     `;
 }
