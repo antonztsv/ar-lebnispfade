@@ -27,6 +27,7 @@ compiled-assets     Kompilierte Dateien, z.B. CSS
 
 ## Funktionen
 
-`npm install`
-`npm run build` 
-`npm run dev` 
+- `npm install`
+- `npm run build` 
+- `npm run dev` 
+- `npm run quiet` Leise Version des Dev Servers … ist nicht so gesprächig 🤫
