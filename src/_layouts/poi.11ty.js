@@ -73,14 +73,14 @@ exports.render = function (data) {
       ${pageHead}
       <main>
         ${data.content}
-
-        </main>
         <div id="media-controls">
           <button id="playButton" hidden="hidden"></button>
           <button id="pauseButton" hidden="hidden"></button>
           <button id="stopButton" hidden="hidden"></button>
         </div>
         ${card}
+      </main>
+
       ${pageFoot}
     </body>
   </html>`;

@@ -179,7 +179,7 @@ select {
 }
 
 :root {
-  --bfs: 1.2rem;
+  --bfs: 1rem;
   --half: calc(var(--bfs) / 2);
   --quat: calc(var(--bfs) / 4);
   --xxs: calc(var(--bfs) * 0.4);
@@ -200,24 +200,34 @@ select {
   --darker: #111;
   --darkest: #000;
   --darken: rgba(0, 0, 0, 0.1);
+  --darken-strong: rgba(0, 0, 0, 0.3);
   --obk-gelb: #F2CB05;
   --obk-grau: #666666;
-  --color-text: var(--lighter);
-  --color-headline: var(--light);
-  --color-accent: var(--obk-gelb);
-  --color-decoration: var(--obk-grau);
-  --color-background: var(--darkest);
-  --ff-normal: "Atkinson", sans-serif;
-  --ff-serif: "Atkinson", serif;
-  --ff-code: "RobotoCode", monospace;
-  --ff-headline: "Atkinson", monospace;
+  --obk-blau: #0090d4;
+  --obk-rot: #c50e1f;
+  --obk-akzent-1: #cbe2ec;
+  --obk-akzent-2: #f1f2f5;
+  --color-text: var(--darker);
+  --color-headline: var(--darkest);
+  --color-accent: var(--obk-blau);
+  --color-decoration: var(--obk-akzent-1);
+  --color-background: var(--lightest);
+  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ff-normal: var(--system-ui), sans-serif;
+  --ff-serif: var(--system-ui), serif;
+  --ff-code: var(--system-ui), monospace;
+  --ff-headline: var(--system-ui), monospace;
   --ff-icons: "MaterialIcons", serif;
   --fw-normal: 200;
   --fw-medium: 500;
   --fw-bold: 700;
+  --level-bg: 0;
+  --level-content: 10;
+  --level-main-nav: 100;
   --lh-normal: 140%;
   --lh-tight: 110%;
   --lh-loose: 150%;
+  --max-width-content: 120ch;
   --tr-fast: 0.2s;
   --tr-slow: 0.6s;
   --tr-delay: 1.2s;
@@ -225,10 +235,13 @@ select {
   --op-medium: 0.6;
   --shadow-l: 0 0 var(--xs) rgba(0, 0, 0, 0.5);
   --shadow-xl: var(--half) var(--half) var(--m) rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 0 var(--l) rgba(0, 0, 0, 0.1);
   --border-width-s: 1px;
   --border-width-m: 3px;
   --border-width-l: 6px;
   --border-radius-s: 3px;
+  --border-radius-m: 6px;
+  --border-radius-l: 12px;
 }
 
 /* Viewportgrößen für Media Queries
@@ -260,7 +273,7 @@ h5,
 h6 {
   color: var(--color-headline);
   font-family: var(--ff-headline);
-  font-weight: var(--fw-normal);
+  font-weight: var(--fw-bold);
   line-height: var(--lh-tight);
   hyphens: none;
   margin-bottom: var(--s);
@@ -331,7 +344,13 @@ main.fade {
 /* Main Header
 ###########################################################################  */
 .main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
+  z-index: var(--level-main-nav);
+  background-color: var(--color-background);
   align-items: baseline;
 }
 .main-header .back-button {
@@ -378,13 +397,14 @@ main.fade {
 }
 .overview li > a p, .path li > a p {
   position: absolute;
-  bottom: var(--xs);
+  bottom: var(--s);
   left: var(--xs);
   display: inline-block;
   font-size: var(--l);
-  background-color: var(--darkest);
+  background-color: var(--obk-blau);
   transition: all var(--tr-fast);
-  padding: var(--quat) var(--s);
+  padding: var(--quat) var(--xs);
+  color: var(--lightest);
 }
 .overview li > a p:hover, .path li > a p:hover {
   transform: scale(1.2);
@@ -413,6 +433,10 @@ main.fade {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.arjs-video {
+  z-index: var(--level-content);
 }
 
 .arjs-loader div {
@@ -461,34 +485,70 @@ button:hover {
   /* Unicode symbol for Stop */
 }
 
-.card {
-  background-color: var(--light);
+/* Info Card
+############################################################################ */
+.info-card-wrap {
+  background-color: var(--lightest);
   z-index: 1;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 1;
-  padding: 1rem;
-  margin: 0.5rem auto;
-  width: calc(100vw - 1rem);
-  max-width: 1200px;
-  border-radius: 10px;
+  opacity: var(--op-full);
+  border-top-left-radius: var(--border-radius-l);
+  border-top-right-radius: var(--border-radius-l);
+  box-shadow: var(--shadow-card);
+}
+.info-card-body {
+  max-height: 0;
+  transition: max-height var(--tr-slow), padding var(--tr-slow);
+  overflow: hidden;
+  padding: var(--l) var(--l) 0 var(--l);
+  max-width: var(--max-width-content);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
 }
-
-.card h4 {
-  color: black;
+.info-card-body.is-active {
+  max-height: 1200px;
+  padding-bottom: var(--xl);
+}
+.info-card-item {
+  margin-bottom: var(--s);
 }
 
-.card-body {
-  overflow-y: auto;
-  max-height: calc(25vh - 40px);
-  /* Adjusted to account for header and padding */
-  padding: 10px;
+/* Info Card Navigation
+############################################################################ */
+.info-card-navigation {
+  text-align: center;
+}
+.info-card-navigation button {
+  padding: 0;
+  display: inline-block;
+  height: var(--xs);
+  border-radius: 2ch;
+  width: 4ch;
+  background-color: var(--darken-strong);
+}
+
+/* Video
+###########################################################################  */
+.video {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+.video iframe, .video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Overview
@@ -503,6 +563,9 @@ button:hover {
 
 /* POI
 ############################################################################ */
+.poi {
+  background-color: var(--light);
+}
 .poi .core-info img {
   display: block;
   margin-bottom: var(--s);

@@ -17,7 +17,7 @@ exports.getCards = (eleventy, data) => {
   } */
 
     return `
-        <div id="card" class="info-card-wrap" >
+        <div id="card" class="info-card-wrap" data-js-card-wrap>
           <div class="info-card-navigation">
             <button data-js-card-navigation></button>
           </div>

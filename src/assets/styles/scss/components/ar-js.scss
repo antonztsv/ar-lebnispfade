@@ -11,8 +11,10 @@
   align-items: center;
 }
 
-.arjs-video{
+#arjs-video{
   z-index: var(--level-content);
+  width: 100vw !important;
+  overflow: hidden;
 }
 
 .arjs-loader div {

@@ -14,20 +14,21 @@
       border-top-left-radius: var(--border-radius-l);
       border-top-right-radius: var(--border-radius-l);
       box-shadow: var(--shadow-card);
+
+      width: 100vw;
+
+      &.is-active{
+        position: relative;
+      }
     }
 
     &-body{
 
       max-height: 0;
-      transition: max-height var(--tr-slow), padding var(--tr-slow);
+      transition: max-height var(--tr-slow), padding var(--tr-fast);
       overflow: hidden;
       padding: var(--l) var(--l) 0 var(--l);
       max-width: var(--max-width-content);
-  
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-direction: column;
 
       &.is-active{
         max-height: 1200px;
