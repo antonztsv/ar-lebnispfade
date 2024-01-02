@@ -2,7 +2,7 @@
 title: Bergischer Löwe an der Mühle
 image: bergischerloewe.webp
 type: ar-data
-layout: overview
+layout: poi
 gmaps:
 coords: [50.962642, 7.5066416]
 info: |

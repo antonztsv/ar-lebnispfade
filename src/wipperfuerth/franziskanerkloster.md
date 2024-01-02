@@ -4,7 +4,7 @@ image: franziskanerkloster.webp
 type: ar-data
 layout: poi
 gmaps: 
-coords: []
+coords: [51.1205898,7.4014834]
 info: |
     Thema 1848 Franziskaner Gymnasium/ erste Wahl 
 
@@ -12,3 +12,4 @@ info: |
 
 arDesc: |
 ---
+

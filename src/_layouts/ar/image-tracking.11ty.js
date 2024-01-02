@@ -237,23 +237,23 @@ registerevents
 }
 
 return `
-<div class="arjs-loader">
-<div>Loading, please wait...</div>
-</div>
-<a-scene
-embedded
-stats
-vr-mode-ui="enabled: false;"
-renderer="logarithmicDepthBuffer: true;"
-arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-antialias='true'
-gesture-detector
-id="scene"
->
-${htmlWithARData}
-<a-entity camera></a-entity>
-</a-scene>
-`
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
+  <a-scene
+    embedded
+
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+    antialias='true'
+    gesture-detector
+    id="scene"
+  >
+    ${htmlWithARData}
+    <a-entity camera></a-entity>
+  </a-scene>
+`;
 
 /*const html = (arData) => `
      

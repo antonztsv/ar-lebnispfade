@@ -69,9 +69,10 @@ exports.render = function (data) {
   <html lang="de">
     ${documentHead}
     <body class="poi">
-      ${arCode(ar)}
+
       ${pageHead}
       <main>
+        ${arCode(ar)}
         ${data.content}
         <div id="media-controls">
           <button id="playButton" hidden="hidden"></button>
