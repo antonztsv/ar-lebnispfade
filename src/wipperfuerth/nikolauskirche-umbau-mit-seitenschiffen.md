@@ -3,7 +3,7 @@ title: Nikolauskirche Umbau mit Seitenschiffen
 image: nikolauskirche.webp
 layout: poi
 gmaps: 
-coords: []
+coords: [51.1177699,7.3949151]
 info: |
     Die Nikolauskirche in Wipperfürth ist eine historische Kirche, die ihre Wurzeln bis ins 12. Jahrhundert zurückverfolgen lässt. Das beeindruckende gotische Gebäude steht im Herzen der Stadt und zeugt von der reichen Geschichte dieser Region. Die Kirche wurde im Laufe der Jahrhunderte mehrmals renoviert und erweitert, wobei ihre architektonische Pracht erhalten blieb. Besucher können die beeindruckende Bauweise bewundern, die kunstvollen Glasmalereien erkunden und die spirituelle Atmosphäre dieses religiösen Wahrzeichens erleben.
 

@@ -2,7 +2,7 @@
 title: Burghaus
 image: burghaus.webp
 type: ar-data
-layout: overview
+layout: poi
 gmaps: 
 coords: [50.961562, 7.4977105]
 info: |

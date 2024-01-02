@@ -1,4 +1,4 @@
-const fontMatterData = {
+const frontMatterData = {
     title: "ARlebnispfade Oberberg",
     layout: "overview",
 };
@@ -6,7 +6,7 @@ const fontMatterData = {
 class Overview {
 
     data() {
-      return fontMatterData;
+      return frontMatterData;
     }
 
     createOverview(collection) {

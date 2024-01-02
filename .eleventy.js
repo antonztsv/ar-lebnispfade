@@ -135,12 +135,10 @@ module.exports = function (eleventyConfig) {
 
   /* Filter
  ########################################################################## */
-
-
   eleventyConfig.addFilter("contentByTopic", function (topic) {
     eleventyConfig.addCollection(topic, (collection) => {
       clearRequireCache();
-      return collection.getFilteredByGlob(`./src/content/${topic}/*.md`);
+      return collection.getFilteredByGlob(`./src/${topic}/*.md`);
     });
     return topic;
   });
@@ -155,6 +153,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("pathes", (collection) => {
     clearRequireCache();
     return POIs = getPOIData(collection, "./src/**/index.md");
+  });
+
+  eleventyConfig.addCollection("pois", (collection) => {
+    clearRequireCache();
+    const POIs = collection.getFilteredByGlob(`./src/**/*.md`).filter((item) => {
+      return item.data.layout === 'poi';
+    });
+    return POIs;
   });
 
   eleventyConfig.addCollection("all", function (collection) {
