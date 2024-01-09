@@ -1,7 +1,5 @@
-/* reason: map.js is used by script.js via $.getScript() */
-/* eslint-disable no-unused-vars */
-/* reason: mapbox is loaded via html script tag */
-/* eslint-disable no-undef */
+let map;
+let poisGeoJSON;
 
 const colors = {
   'accent-color': '#0090d4',
@@ -30,7 +28,7 @@ function addClusterLayer() {
   map.addLayer({
     id: 'clusters',
     type: 'circle',
-    source: 'paintings',
+    source: 'pois',
     filter: ['has', 'point_count'],
     paint: {
       'circle-stroke-width': 1,
@@ -61,7 +59,7 @@ function addUnclusteredLayer() {
   map.addLayer({
     id: 'unclustered-point',
     type: 'circle',
-    source: 'paintings',
+    source: 'pois',
     filter: ['!', ['has', 'point_count']],
     paint: {
       'circle-color': '#849cff',
@@ -77,7 +75,7 @@ function addClusterCount() {
   map.addLayer({
     id: 'cluster-count',
     type: 'symbol',
-    source: 'paintings',
+    source: 'pois',
     layout: {
       'text-field': '{point_count_abbreviated}',
       'text-size': [
@@ -130,29 +128,32 @@ function setMapBounds(filteredGeoJSON) {
 function addMapData(filteredGeoJSON = null) {
 
   map.on('load', () => {
-    map.addSource('paintings', {
+    map.addSource('pois', {
       type: 'geojson',
-      data: filteredGeoJSON || paintingsGeoJSON,
+      data: filteredGeoJSON || poisGeoJSON,
       cluster: true,
-      clusterRadius: 2,
-      clusterMaxZoom: 6
+      clusterRadius: 50,
+      clusterMaxZoom: 10
     });
 
     if (filteredGeoJSON) {
       setMapBounds(filteredGeoJSON);
     }
     addClusterLayer();
-    addUnclusteredLayer();
     addClusterCount();
+    addClusterListener();
+
+    addUnclusteredLayer();
   });
 }
 
 async function loadData() {
-  paintingsGeoJSON = await $.get('ar-poi-data.geojson');
+  poisGeoJSON = await $.get('ar-poi-data.geojson');
 
   // Filter the objects with no (correct) coordinates
   // paintingsGeoJSON.features = paintingsGeoJSON.features.filter((e) => e.geometry.coordinates[0] !== 200);
   addMapData();
+  
 }
 
 function addClusterPopups(e, features, clusterId, clusterSource) {
@@ -160,6 +161,7 @@ function addClusterPopups(e, features, clusterId, clusterSource) {
   const coordinates = e.features[0].geometry.coordinates.slice();
 
   clusterSource.getClusterChildren(clusterId, (err, aFeatures) => {
+    console.log(aFeatures)
     if (aFeatures.length === 1) {
       clusterSource.getClusterLeaves(clusterId, pointCount, 0, (error, leavesFeatures) => {
         let popupText = `<h5 Class="popupCity">${leavesFeatures[0].properties.location}</h5>`;
@@ -179,13 +181,15 @@ function addClusterPopups(e, features, clusterId, clusterSource) {
 }
 
 function clusterClickListener() {
+  console.log()
   map.on('click', 'clusters', (e) => {
+    console.log(e);
     const features = map.queryRenderedFeatures(e.point, {
       layers: ['clusters'],
     });
     const clusterId = features[0].properties.cluster_id;
-    const clusterSource = map.getSource('paintings');
-    map.getSource('paintings').getClusterExpansionZoom(
+    const clusterSource = map.getSource('pois');
+    map.getSource('pois').getClusterExpansionZoom(
       clusterId,
       (err, zoom) => {
         map.flyTo({
@@ -200,6 +204,8 @@ function clusterClickListener() {
 }
 
 function unclusteredPointClickListener() {
+
+  console.log(map)
   map.on('click', 'unclustered-point', (e) => {
     const coordinates = e.features[0].geometry.coordinates.slice();
 
@@ -226,6 +232,7 @@ function addClusterListener() {
 
   map.on('mouseenter', 'clusters', () => {
     map.getCanvas().style.cursor = 'pointer';
+    console.log("asas")
   });
 
   map.on('mouseenter', 'unclustered-point', () => {
@@ -241,12 +248,93 @@ function addClusterListener() {
   });
 }
 
+/* reason: filter.js is used by script.js via $.getScript() */
+/* eslint-disable no-unused-vars */
+/* reason: jQuery is loaded via html script tag */
+/* eslint-disable no-undef */
+function renderCard(searchResult, isFilter) {
+  const paintingURL = searchResult.properties.image !== '' ? searchResult.properties.image : 'No-image-available.png';
+  const paintingTitle = searchResult.properties.titles;
+  const paintingTitleShort = paintingTitle.length > 41 ? `${paintingTitle.substring(0, 40)}...` : paintingTitle;
+  const paintingCoordinates = JSON.stringify(searchResult.geometry.coordinates);
+  if (isFilter) {
+    return `
+        <div class="card mb-3 search-result-card">
+            <div class="row g-0 m-0" id="rowSearchResult">
+                <div class="col-md-5 p-0" id="imageColumnSearchResult">
+                    <img class="img-center-block" src="${paintingURL}" alt="kein Bild verfügbar">
+                </div>
+                <div class="col-md-7 p-0 content-column-search-result">
+                    <div class="card-body body-search-result p-2">
+                        <h5 class="card-title search-result-title" data-toggle="tooltip" data-placement="top"
+                        title="${paintingTitle}">${paintingTitleShort}</h5>
+                        <p class="card-text search-result-text">
+                        ${searchResult.properties.dated}<br>
+                        ${searchResult.properties.repository}<br>
+                        ${searchResult.properties.location}, ${searchResult.properties.country}</p>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <button class="btn p-0" type="button">
+                                    <a target="_blank" href="http://www.lucascranach.org/${searchResult.properties.inventoryNumber}">  
+                                    <i class="bi bi-info-circle-fill"></i></a>
+                                </button>
+                            </div>
+                            <div class="col-md-2 btn-geo-icon-column">
+                                <button class="btn p-0 btn-geo-icon" type="button" data-location="${paintingCoordinates}">
+                                    <i class="bi bi-geo-alt-fill"></i></a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+  } return `
+        <div class="card popup-card">
+            <div class="row g-0 m-0 row-popup-card">
+                <div class="col-md-5 img-column-popup-card p-0">
+                     <img class="img-center-block" src="${paintingURL}" alt="kein Bild verfügbar">
+                </div>
+                <div class="col-md-7 p-0 content-column-popup-card">
+                    <div class="card-body p-0 body-popup-card">
+                        <h5 class="card-title title-popup-card" data-toggle="tooltip" data-placement="top"
+                            title="${paintingTitle}">${paintingTitleShort}</h5>
+                            <p class="card-text text-popup-card">${searchResult.properties.dated}<br>
+                            ${searchResult.properties.repository}<br>
+                            ${searchResult.properties.location}, ${searchResult.properties.country}</p>
+                            <div class="col-md-2 p-0">
+                                <button class="btn p-0" type="button">
+                                    <a target="_blank" href="http://www.lucascranach.org/${searchResult.properties.inventoryNumber}">  
+                                    <i class="bi bi-info-circle-fill bi-info-circle-fill"></i></a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+}
 
-let map;
-let paintingsGeoJSON;
+function renderError(message) {
+  $('.search-result').html(`<div class="container mp-0 error-message"><p>${message}</p></div>`);
+  $('#resultCount').html(0);
+  $('.result-container').attr('style', 'display: block !important');
+}
+
+
+
+function resetFilter() {
+  $('.search-result').html('');
+  $('.result-container').attr('style', 'display: none !important');
+  $('#resultCount').html('');
+  $('#toggle-result-visibility').hide();
+  initMap();
+  addClusterListener();
+  addMapData();
+}
 
 
 document.addEventListener("DOMContentLoaded", async (event) => {
   initMap();
   await loadData();
+
 });
