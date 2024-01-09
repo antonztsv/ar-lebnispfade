@@ -36,7 +36,7 @@ jobs:
           MAPBOX_TOKEN: ${{ vars.MAPBOX_TOKEN }}
 
       - name: Run npm build
-        run: npm run build
+        run: npm run build ${{ vars.MAPBOX_TOKEN }}
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
