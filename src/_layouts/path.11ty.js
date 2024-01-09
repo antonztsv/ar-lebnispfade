@@ -12,12 +12,6 @@ exports.render = function (data) {
 
   const createPathItems = (pathData) => {
 
-    /*const overviewItems = collection.map((item) => {
-      const contentUrl = this.getContentUrl(item.url);
-      const imageUrl = `${contentUrl}images/${item.data.image}`;
-      return `<li style="background-image: url(${imageUrl})"><a href="${contentUrl}">${item.data.title}</a></li>`;
-    });*/
-
     const POIs = pathData.map((poi) => {
       const { data } = poi;
       if (data.status === 'hidden') return '';

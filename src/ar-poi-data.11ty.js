@@ -1,5 +1,5 @@
 const frontMatterData = {
-    permalink: '/ar-poi-data.geojson'
+    permalink: '/map/ar-poi-data.geojson'
 };
 
 class Overview {
@@ -16,7 +16,6 @@ class Overview {
         const { data } = item;
         if(! data.coords ) return;
         const location = data.ar && data.ar.location ? data.ar.location : "";
-
         const coords = data.coords;
         
         const feature = {
@@ -32,7 +31,8 @@ class Overview {
             "title": data.title,
             "location": location,
             "image": data.image,
-            "url": data.page.url
+            "url": data.page.url,
+            "arDescription": data.arDesc ? data.arDesc : "",
           }
         };
 

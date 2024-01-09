@@ -38,13 +38,13 @@ button {
   padding: 10px;
   cursor: pointer;
   border: none;
-  background-color: #3498db;
-  color: #fff;
+  background-color: var(--color-accent);
+  color: var(--lighest);
   border-radius: 5px;
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: var(--color-accent);
 }
 
 #playButton::before {

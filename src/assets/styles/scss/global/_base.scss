@@ -29,6 +29,7 @@ h6 {
   line-height: var(--lh-tight);
   hyphens: none;
   margin-bottom: var(--s);
+  text-wrap: balance;
 }
 
 
@@ -38,6 +39,7 @@ h1{
 
 h2{
   font-size: var(--xl);
+  font-weight: var(--fw-medium);
 }
 
 h3{
@@ -64,6 +66,13 @@ p, div {
 a {
   color: var(--color-accent);
   text-decoration: none;
+  font-weight: var(--fw-medium);
+  transition: all var(--tr-fast);
+  &:hover{
+    background-color: var(--color-accent);
+    color: var(--lightest);
+    padding: 0 var(--quat);
+  }
 }
 
 small{

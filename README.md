@@ -31,3 +31,22 @@ compiled-assets     Kompilierte Dateien, z.B. CSS
 - `npm run build` 
 - `npm run dev` 
 - `npm run quiet` Leise Version des Dev Servers … ist nicht so gesprächig 🤫
+
+
+## Code Conventions
+
+- bitte Material Icons nutzen
+- in Dateinamen bitte keine CamelCase Notation verwenden
+
+### CSS
+- bitte (möglichst) ausschließlich CSS Variabeln aus der variables.scss nutzen
+- bitte keine Regeln auf Elemente im Global Scope legen. Außer in der base.scss
+
+## ToDos
+
+### Michael
+- Einführungstext Startseite
+- Link zum Projekt Startseite
+- Einführungstext zu den Pfaden
+- Absprungtext Text bei den POIs
+- Duzen oder siezen?

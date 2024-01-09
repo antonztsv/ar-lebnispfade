@@ -23,6 +23,11 @@
     &.is-hidden{
       display: none;
     }
+
+    &:hover{
+      color: var(--color-accent);
+      background-color: transparent;;
+    }
   }
 
   & > *{

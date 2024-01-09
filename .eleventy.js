@@ -119,6 +119,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/assets/scripts': 'assets/scripts' });
   eleventyConfig.addWatchTarget("./src/assets/scripts");
 
+  // Copy Libs
+  eleventyConfig.addPassthroughCopy({ 'src/assets/lib': 'assets/lib' });
+
   // Copy CNAME
   eleventyConfig.addPassthroughCopy({ 'src/CNAME': '' });
 
@@ -152,7 +155,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addCollection("pathes", (collection) => {
     clearRequireCache();
-    return POIs = getPOIData(collection, "./src/**/index.md");
+    const POIs = getPOIData(collection, "./src/**/index.md");
+    return POIs.filter((item) => {
+      return item.data.layout === 'path.11ty.js';
+    });
   });
 
   eleventyConfig.addCollection("pois", (collection) => {
