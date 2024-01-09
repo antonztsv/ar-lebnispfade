@@ -36,6 +36,7 @@ compiled-assets     Kompilierte Dateien, z.B. CSS
 ## Code Conventions
 
 - bitte Material Icons nutzen
+- in Dateinamen bitte keine CamelCase Notation verwenden
 
 ### CSS
 - bitte (möglichst) ausschließlich CSS Variabeln aus der variables.scss nutzen
