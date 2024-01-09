@@ -31,7 +31,7 @@ jobs:
         run: npm ci
 
       - name: Get Token
-        run: echo 'MAPBOX_TOKEN="${{ vars.MAPBOX_TOKEN }}"' >> $GITHUB_ENV    
+        run: echo 'MAPBOX_TOKEN=${{ vars.MAPBOX_TOKEN }}' >> $GITHUB_ENV    
 
       - name: Run npm build
         run: npm run build
