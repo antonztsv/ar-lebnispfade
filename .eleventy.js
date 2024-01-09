@@ -1,3 +1,6 @@
+require('dotenv').config();
+const {MAPBOX_TOKEN} = process.env;
+
 const htmlmin = require('html-minifier');
 const markdownIt = require("markdown-it");
 
@@ -130,6 +133,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addJavaScriptFunction("urlPrefix", function() {
     return pathPrefix;
+  });
+
+  eleventyConfig.addJavaScriptFunction("getMapboxToken", function() {
+    return MAPBOX_TOKEN;
   });
 
   eleventyConfig.addJavaScriptFunction("getContentUrl", function(url) {

@@ -22,10 +22,14 @@ exports.render = function(data) {
     ? `<ul class="links">${links.join("\n")}</ul>`
     : '';
 
+  const mapBoxToken = this.getMapboxToken();
 
   return `<!doctype html>
   <html lang="de">
     ${documentHead}
+    <script>
+      mapboxgl.accessToken = '${mapBoxToken}';
+    </script>
     <body class="overview">
       ${pageHead}
       <main data-js-on-load-action="fade-in">
