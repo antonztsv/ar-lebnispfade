@@ -1,6 +1,6 @@
 # ARlebnispfade OBK
 
-Nutzt [11ty](https://www.11ty.dev) für die strukturierte Ablage von Content.
+Nutzt [11ty](https://www.11ty.dev) für die strukturierte Ablage von Content. Für die Karte wird eine .env Konfiguration mit dem Token genutzt.
 
 ## Ordnerstruktur
 
