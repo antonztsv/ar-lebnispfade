@@ -1,6 +1,8 @@
 require('dotenv').config();
 const {MAPBOX_TOKEN} = process.env;
 
+console.log(process.env);
+
 const htmlmin = require('html-minifier');
 const markdownIt = require("markdown-it");
 

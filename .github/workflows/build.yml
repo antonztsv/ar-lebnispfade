@@ -30,6 +30,9 @@ jobs:
       - name: Install packages
         run: npm ci
 
+      - name: Check Secrets
+        run: env
+
       - name: Run npm build
         run: npm run build
 
