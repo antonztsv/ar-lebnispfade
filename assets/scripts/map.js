@@ -8,14 +8,14 @@ const colors = {
 ############################################################################ */
 
 const initMap = () => {
-  mapboxgl.accessToken = 'pk.eyJ1IjoianVsaWVsbCIsImEiOiJja2d0cmJia2cwbW8wMnRtanE3Z3Z5aGxoIn0.lLrglrscfprCZCJO-ymRpg';
+  //mapboxgl.accessToken = 'pk.eyJ1IjoianVsaWVsbCIsImEiOiJja2d0cmJia2cwbW8wMnRtanE3Z3Z5aGxoIn0.lLrglrscfprCZCJO-ymRpg';
   map = new mapboxgl.Map({
 	  container: 'map', // container ID
     style: 'mapbox://styles/mapbox/light-v9',
     center: [7.45, 50.9847674],
     minZoom: 1.7,
     maxZoom: 20,
-    zoom: 10
+    zoom: 8
   });
 };
 
