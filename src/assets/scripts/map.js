@@ -336,5 +336,4 @@ function resetFilter() {
 document.addEventListener("DOMContentLoaded", async (event) => {
   initMap();
   await loadData();
-
 });

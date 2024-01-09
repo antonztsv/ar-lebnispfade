@@ -22,6 +22,17 @@ exports.getMap = (eleventy, data) => {
           <span class="bi bi-chevron-right"></span>
         </button>
       </div>
+<<<<<<< HEAD
+=======
+      <div class="card result-container">
+        <div class="card-header result-container-header">
+          <label id="resultCount" text="Zahl"></label> Ergebnisse gefunden
+        </div>
+        <div class="card-body result-container-body">
+          <div class="search-result"></div>
+        </div>
+      </div>
+>>>>>>> main
     </div>
   </div>
 </div>
