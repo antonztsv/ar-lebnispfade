@@ -34,7 +34,7 @@ h6 {
 
 
 h1{
-  font-size: var(--xxl);
+  font-size: var(--xl);
 }
 
 h2{
@@ -68,11 +68,12 @@ a {
   text-decoration: none;
   font-weight: var(--fw-medium);
   transition: all var(--tr-fast);
-  &:hover{
-    background-color: var(--color-accent);
-    color: var(--lightest);
-    padding: 0 var(--quat);
-  }
+}
+
+a.text-link:hover{
+  background-color: var(--color-accent);
+  color: var(--lightest);
+  padding: 0 var(--quat);
 }
 
 small{

@@ -375,6 +375,10 @@ main.fade {
 .main-header .back-button.is-hidden {
   display: none;
 }
+.main-header .back-button:hover {
+  color: var(--color-accent);
+  background-color: transparent;
+}
 .main-header > * {
   margin: var(--s);
 }
@@ -664,18 +668,19 @@ button.cta:hover {
 /* Textlink
 ############################################################################ */
 ul.links .text-link a {
-  background-color: var(--color-accent);
+  background-color: var(--lighter);
   display: flex;
   align-items: center;
-  padding: var(--quat);
-  color: var(--lightest);
+  padding: 0 var(--half);
   transition: all var(--tr-fast);
+  border-top: solid var(--border-width-s) var(--color-accent);
 }
 ul.links .text-link a span {
   margin-right: var(--quat);
 }
 ul.links .text-link a:hover {
-  background-color: var(--darkest);
+  background-color: var(--color-accent);
+  color: var(--lightest);
 }
 
 /* POI

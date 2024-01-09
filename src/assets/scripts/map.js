@@ -15,7 +15,7 @@ const initMap = () => {
     center: [7.45, 50.9847674],
     minZoom: 1.7,
     maxZoom: 20,
-    zoom: 10
+    zoom: 8
   });
 };
 
@@ -230,7 +230,7 @@ const unclusteredPointClickListener = () => {
 const renderCard = (data) => {
   const { title, image, url, arDescription } = data.properties;
   const urlFragments = url.split('/');
-  const imgSrc = image ? `${urlFragments[1]}/images/${image}` : 'https://via.placeholder.com/150';
+  const imgSrc = image ? `../${urlFragments[1]}/images/${image}` : 'https://via.placeholder.com/150';
 
   return `
     <div class="card popup-card">
