@@ -30,11 +30,10 @@ jobs:
       - name: Install packages
         run: npm ci
 
-      - name: Check Secrets
-        run: env
-
-      - name: Tell me a secret!
+      - name: Get Token
         run: echo "Var ${{ vars.MAPBOX_TOKEN }}"
+        env:
+          MAPBOX_TOKEN: ${{ vars.MAPBOX_TOKEN }}
 
       - name: Run npm build
         run: npm run build
