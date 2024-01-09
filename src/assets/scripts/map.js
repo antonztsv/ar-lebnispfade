@@ -230,7 +230,7 @@ const unclusteredPointClickListener = () => {
 const renderCard = (data) => {
   const { title, image, url, arDescription } = data.properties;
   const urlFragments = url.split('/');
-  const imgSrc = image ? `${urlFragments[1]}/images/${image}` : 'https://via.placeholder.com/150';
+  const imgSrc = image ? `../${urlFragments[1]}/images/${image}` : 'https://via.placeholder.com/150';
 
   return `
     <div class="card popup-card">
