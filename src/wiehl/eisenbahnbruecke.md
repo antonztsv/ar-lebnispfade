@@ -15,7 +15,7 @@ arDesc: |
 ar:
     type: image-tracking
     content: model
-    location: whiel
+    location: wiehl
     video: [
         {
             type: "filename",

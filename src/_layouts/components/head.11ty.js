@@ -4,6 +4,8 @@ exports.getHeader = (eleventy, data, mapMeta) => {
   const currentYear = new Date().getFullYear();
   const publishDate = `${currentYear}-${currentMonth}-${currentDay}`;
 
+  const mapMetaData = mapMeta ? mapMeta : '';
+
   return `
     <head>
       <title>ARlebnispfade Oberberg // ${data.title}</title>
@@ -18,7 +20,7 @@ exports.getHeader = (eleventy, data, mapMeta) => {
       <link rel="manifest" href="${eleventy.url('/assets/images/favicons/site.webmanifest')}">
       <link rel="mask-icon" href="${eleventy.url('/assets/images/favicons/safari-pinned-tab.svg')}" color="#5bbad5">
       
-      ${mapMeta}
+      ${mapMetaData}
 
       <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
       <meta name="msapplication-TileColor" content="#da532c">

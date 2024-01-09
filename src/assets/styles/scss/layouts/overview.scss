@@ -11,3 +11,38 @@
     }
   }
 }
+
+/* Infotext
+############################################################################ */
+
+.info{
+  padding: var(--m) var(--s) var(--l);
+
+  p{
+    font-weight: var(--fw-normal);
+  }
+}
+
+/* Textlink
+############################################################################ */
+
+ul.links{
+  .text-link a{
+    background-color: var(--lighter);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--half);
+    transition: all var(--tr-fast);
+    border-top: solid var(--border-width-s) var(--color-accent);
+
+    span{
+      margin-right: var(--quat);
+    }
+
+    &:hover{
+      background-color: var(--color-accent);
+      color: var(--lightest);
+    }
+  }
+
+}

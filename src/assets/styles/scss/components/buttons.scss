@@ -1,0 +1,15 @@
+/* CTA
+############################################################################ */
+
+button.cta{
+  border-radius: 0;
+  margin: var(--m) 0;
+  font-size: var(--m);
+  padding: var(--quat) var(--half);
+  transition: all var(--tr-fast);
+
+  &:hover{
+    transform: scale(1.2);
+    transform-origin: bottom left;
+  }
+}

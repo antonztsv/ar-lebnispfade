@@ -155,7 +155,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addCollection("pathes", (collection) => {
     clearRequireCache();
-    return POIs = getPOIData(collection, "./src/**/index.md");
+    const POIs = getPOIData(collection, "./src/**/index.md");
+    return POIs.filter((item) => {
+      return item.data.layout === 'path.11ty.js';
+    });
   });
 
   eleventyConfig.addCollection("pois", (collection) => {
