@@ -31,12 +31,10 @@ jobs:
         run: npm ci
 
       - name: Get Token
-        run: echo "Var ${{ vars.MAPBOX_TOKEN }}"
-        env:
-          MAPBOX_TOKEN: ${{ vars.MAPBOX_TOKEN }}
+        run: echo 'MAPBOX_TOKEN="${{ vars.MAPBOX_TOKEN }}"' >> $GITHUB_ENV    
 
       - name: Run npm build
-        run: npm run build ${{ vars.MAPBOX_TOKEN }}
+        run: npm run build
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
