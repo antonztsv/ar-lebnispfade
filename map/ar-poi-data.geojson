@@ -1,0 +1,13 @@
+
+        {
+          "type": "FeatureCollection",
+          "features": [
+            {"type":"Feature","geometry":{"type":"Point","coordinates":[7.5066416,50.962642]},"properties":{"title":"Bergischer Löwe an der Mühle","location":"","image":"bergischerloewe.webp","url":"/wiehl/bergischerloewe/","arDescription":"Halte nun die Kamera auf die Brücke. Dort siehst du die alte Dampflock \"Bergischer Löwe\" vorbeifahren, die die Region Oberberg mit erschlossen hat.\n"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[7.4977105,50.961562]},"properties":{"title":"Burghaus","location":"","image":"burghaus.webp","url":"/wiehl/burghaus/","arDescription":""}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[7.50665783,50.9624464]},"properties":{"title":"Eisenbahnbrücke an der Mühle","location":"wiehl","image":"eisenbahnbrueckemuehle.webp","url":"/wiehl/eisenbahnbruecke/","arDescription":"Halte die Kamera auf das Gebäude der Mühle. Es erscheint das fehlende Mühlrad der Mühle - und zeigt dir, wie es früher einmal ausgesehen haben könnte.\n"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[7.4014834,51.1205898]},"properties":{"title":"Franziskaner Kloster","location":"","image":"franziskanerkloster.webp","url":"/wipperfuerth/franziskanerkloster/","arDescription":""}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[7.3949151,51.1177699]},"properties":{"title":"Nikolauskirche Umbau mit Seitenschiffen","location":"wipperfuerth","image":"nikolauskirche.webp","url":"/wipperfuerth/nikolauskirche-umbau-mit-seitenschiffen/","arDescription":"In diesem ARlebnis können Sie dies und das erleben. Ziehen Sie dafür Ihr Smartphone Halvah shortbread jelly-o tootsie roll tiramisu gummi bears. Sesame snaps lollipop gummi bears marzipan marshmallow tiramisu pie danish icing. Gummi bears caramels cheesecake lemon drops jujubes oat cake liquorice. Sweet roll dragée apple pie pastry chocolate fruitcake. Caramels sesame snaps dragée soufflé caramels sweet roll donut croissant jujubes.\n"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[7.488779997927827,51.111524684583856]},"properties":{"title":"Pulvermuseum","location":"wipperfuerth","image":"pulvermuseum.webp","url":"/wipperfuerth/pulvermuseum/","arDescription":"In diesem ARlebnis können Sie dies und das erleben. Ziehen Sie dafür Ihr Smartphone Halvah shortbread jelly-o tootsie roll tiramisu gummi bears. Sesame snaps lollipop gummi bears marzipan marshmallow tiramisu pie danish icing. Gummi bears caramels cheesecake lemon drops jujubes oat cake liquorice. Sweet roll dragée apple pie pastry chocolate fruitcake. Caramels sesame snaps dragée soufflé caramels sweet roll donut croissant jujubes.\n"}}
+          ]
+        }
+      
