@@ -392,6 +392,8 @@ main.fade {
 .main-footer {
   padding: var(--m) var(--s);
   font-size: var(--s);
+  background-color: var(--darkest);
+  color: var(--lighten);
 }
 
 /* Overview

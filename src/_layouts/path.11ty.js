@@ -42,6 +42,15 @@ exports.render = function (data) {
       ${pageHead}
       <main data-js-on-load-action="move-left">
         ${pathItems}
+
+        <div class="info">
+          <p>
+          Hier findest Du unsere ARlebnisse für den ARlebnispfad <em>${data.title}</em>. Für die meisten ARlebnisse brauchst Du ein Smartphone, eine Internetverbindung und musst an der entsprechenden Stelle sein. Viel Spaß 🙌🏽
+          </p>
+          <p>
+          Hier findest Du weitere <a href="https://www.vhs-nrw.de/innovationsfonds2023/">Informationen zum Projekt</a>.
+          </p>
+        </div>
       </main>
       ${pageFoot}
     </body>
