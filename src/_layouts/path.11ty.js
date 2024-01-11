@@ -3,6 +3,7 @@ exports.render = function (data) {
   const documentHeader = require('./components/head.11ty');
   const pageHeader = require('./components/page-header.11ty');
   const pageFooter = require('./components/page-footer.11ty');
+  const pageAside = require('./components/aside.11ty');
 
   const getData = (collections, pattern) => collections.filter((item) => {
     const { url } = item;
@@ -34,25 +35,31 @@ exports.render = function (data) {
   const pageHead = pageHeader.getPageHeader(this, data);
   const pageFoot = pageFooter.getPageFooter(this, data);
   const pathItems = createPathItems(pathData);
+  const aside = pageAside.getAside(this, data);
 
   return `<!doctype html>
   <html lang="de">
     ${documentHead}
     <body class="path">
-      ${pageHead}
-      <main data-js-on-load-action="move-left">
-        ${pathItems}
+      <div class="device-wrapper">
+        ${pageHead}
+        <main data-js-on-load-action="move-left">
+          ${pathItems}
 
-        <div class="info">
-          <p>
-          Hier findest Du unsere ARlebnisse für den ARlebnispfad <em>${data.title}</em>. Für die meisten ARlebnisse brauchst Du ein Smartphone, eine Internetverbindung und musst an der entsprechenden Stelle sein. Viel Spaß 🙌🏽
-          </p>
-          <p>
-          Hier findest Du weitere <a href="https://www.vhs-nrw.de/innovationsfonds2023/">Informationen zum Projekt</a>.
-          </p>
-        </div>
-      </main>
-      ${pageFoot}
+          <div class="info">
+            <p>
+            Hier findest Sie unsere ARlebnisse für den ARlebnispfad <em>${data.title}</em>. Für die meisten ARlebnisse brauchen Sie ein Smartphone, eine Internetverbindung und musst an der entsprechenden Stelle sein. Viel Spaß 🙌🏽
+            </p>
+            <p>
+            Weitere <a href="https://www.vhs-nrw.de/innovationsfonds2023/">Informationen zum Projekt</a> gibt es hier.
+            </p>
+          </div>
+        </main>
+        ${pageFoot}
+      </div>
+
+      ${aside}
+      
     </body>
   </html>`;
 };

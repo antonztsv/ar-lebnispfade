@@ -6,9 +6,11 @@ exports.getHeader = (eleventy, data, mapMeta) => {
 
   const mapMetaData = mapMeta ? mapMeta : '';
 
+  const title = data.title === 'ARlebnispfade Oberberg' ? data.title : `ARlebnispfade Oberberg // ${data.title}`;
+
   return `
     <head>
-      <title>ARlebnispfade Oberberg // ${data.title}</title>
+      <title>${title}</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <meta property="og:title" content="${data.title}">
       <meta property="article:published_time" content="${publishDate}">

@@ -5,6 +5,7 @@ exports.render = function (data) {
   const pageFooter = require('./components/page-footer.11ty');
   const imageTracking = require('./ar/image-tracking.11ty');
   const cards = require('./components/cards.11ty');
+  const pageAside = require('./components/aside.11ty');
 
   const poiInfo = (data) => `
   <figure class="core-info">
@@ -54,6 +55,8 @@ exports.render = function (data) {
   const documentHead = documentHeader.getHeader(this, data);
   const pageHead = pageHeader.getPageHeader(this, data);
   const pageFoot = pageFooter.getPageFooter(this, data);
+  const aside = pageAside.getAside(this, data);
+
   const card = cards.getCards(this, data);
   const { ar } = data;
   const arCode = (ar) => {
@@ -69,20 +72,23 @@ exports.render = function (data) {
   <html lang="de">
     ${documentHead}
     <body class="poi">
+      <div class="device-wrapper">
+        ${pageHead}
+        <main>
+          ${arCode(ar)}
+          ${data.content}
+          <div id="media-controls">
+            <button id="playButton" hidden="hidden"></button>
+            <button id="pauseButton" hidden="hidden"></button>
+            <button id="stopButton" hidden="hidden"></button>
+          </div>
+          ${card}
+        </main>
+        ${pageFoot}
+      </div>
 
-      ${pageHead}
-      <main>
-        ${arCode(ar)}
-        ${data.content}
-        <div id="media-controls">
-          <button id="playButton" hidden="hidden"></button>
-          <button id="pauseButton" hidden="hidden"></button>
-          <button id="stopButton" hidden="hidden"></button>
-        </div>
-        ${card}
-      </main>
+      ${aside}
 
-      ${pageFoot}
     </body>
   </html>`;
 };

@@ -9,6 +9,6 @@ links:
     icon: "list"
 ---
 
-Hier findest Du unsere ARlebnisse in einer geographischen Übersicht. Für die meisten ARlebnisse brauchst Du ein Smartphone, eine Internetverbindung und musst an der entsprechenden Stelle sein. Viel Spaß 🙌🏽
+Hier finden Sie unsere ARlebnisse in einer geographischen Übersicht. Für die meisten ARlebnisse brauchen Sie ein Smartphone, eine Internetverbindung und musst an der entsprechenden Stelle sein. Viel Spaß 🙌🏽
 
-Hier findest Du weitere [Informationen zum Projekt](https://www.vhs-nrw.de/innovationsfonds2023/).
+Weitere [Informationen zum Projekt](https://www.vhs-nrw.de/innovationsfonds2023/) gibt es hier.

@@ -1,0 +1,19 @@
+/* Device Info
+############################################################################ */
+
+.device-info{
+  font-size: var(--xl);
+  max-width: 40ch;;
+  line-height: var(--lh-normal);
+
+  .qr-code{
+    margin-top: var(--xl);
+  
+    img{
+      mix-blend-mode: darken;
+      max-width: 10ch;
+      margin-left: -15px;
+    }
+  }
+}
+
