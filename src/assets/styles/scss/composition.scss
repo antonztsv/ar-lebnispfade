@@ -6,6 +6,7 @@ main {
   flex-direction: column;
 
   background-color: var(--lightest);
+  height: 100%;
 
   &.fade {
     opacity: var(--op-medium);
@@ -28,6 +29,7 @@ aside{
 
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 /* Large Screen

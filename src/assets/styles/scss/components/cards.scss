@@ -10,29 +10,29 @@
       left: 0;
       right: 0;
       opacity: var(--op-full);
-
+      
       border-top-left-radius: var(--border-radius-l);
       border-top-right-radius: var(--border-radius-l);
       box-shadow: var(--shadow-card);
 
-      
+      transition: max-height var(--tr-slow), padding var(--tr-fast);
 
+      max-height: 5ch;
+      
       &.is-active{
-        position: relative;
+        max-height: 80%;
+        height: 80%;
       }
     }
 
     &-body{
-
-      max-height: 0;
-      transition: max-height var(--tr-slow), padding var(--tr-fast);
-      overflow: hidden;
-      padding: var(--l) var(--l) 0 var(--l);
+      padding: 0 var(--l);
       max-width: var(--max-width-content);
+      height: 0;
+      overflow-y: auto;
 
       &.is-active{
-        max-height: 1200px;
-        padding-bottom: var(--xl);
+        height: 90%;
       }
     }
 
@@ -47,6 +47,8 @@
 .info-card{
   &-navigation{
     text-align: center;
+    height: 5ch;
+
     button{
       padding: 0;
       display: inline-block;
