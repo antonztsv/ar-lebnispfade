@@ -7,7 +7,7 @@ exports.getCards = (eleventy, data) => {
   const videoData = video.getVideo(eleventy, data);
 
   const info = data.info ? `<p class="info-card-text info-card-item">${data.info}</p>` : '';
-  const desc = data.arDesc ? `        <h4>Was kann ich hier machen?</h4><p class="info-card-text info-card-item">${data.arDesc}</p>` : '';
+  const desc = data.arDesc ? `<h4 class="info-card-item">Was kann ich hier machen?</h4><p class="info-card-text info-card-item">${data.arDesc}</p>` : '';
 
   
 
@@ -28,8 +28,8 @@ exports.getCards = (eleventy, data) => {
             ${info}
             ${desc}
             ${videoData}
+            ${pageFoot}
           </div>
-          ${pageFoot}
         </div>
     `;
 }

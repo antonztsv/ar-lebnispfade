@@ -1,12 +1,7 @@
 main {
   flex-grow: 2;
-  margin-top: 3em;
-
   display: flex;
   flex-direction: column;
-
-  background-color: var(--lightest);
-  height: 100%;
 
   &.fade {
     opacity: var(--op-medium);

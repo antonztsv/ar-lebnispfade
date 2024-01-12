@@ -28,8 +28,6 @@
     }
 
     &-content-wrap{
-      padding: 0 var(--l);
-      max-width: var(--max-width-content);
       height: 0;
       overflow-y: auto;
       border: solid 1px #11dd66;
@@ -37,7 +35,7 @@
     }
 
     &-item{
-      margin-bottom: var(--s);
+      margin: 0 var(--s) var(--s) var(--s);
     }
   }
 
