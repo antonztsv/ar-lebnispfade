@@ -256,7 +256,7 @@ html {
 }
 
 body {
-  background-color: var(--color-background);
+  background-color: var(--darkest);
   color: var(--color-text);
   font-family: var(--ff-normal);
   font-size: var(--m);
@@ -343,11 +343,8 @@ p + h4 {
 ############################################################################ */
 main {
   flex-grow: 2;
-  margin-top: 3em;
   display: flex;
   flex-direction: column;
-  background-color: var(--lightest);
-  height: 100%;
 }
 main.fade {
   opacity: var(--op-medium);
@@ -360,11 +357,13 @@ aside {
 /* Device Wrap
 ############################################################################ */
 .device-wrapper {
-  position: absolute;
+  position: fixed;
+  border: solid 1px #dd1166;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -405,10 +404,6 @@ aside {
 /* Main Header
 ###########################################################################  */
 .main-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   display: flex;
   z-index: var(--level-main-nav);
   background-color: var(--color-background);
@@ -436,10 +431,10 @@ aside {
 /* Main Footer
 ###########################################################################  */
 .main-footer {
-  padding: var(--m) var(--s);
+  padding: var(--quat) var(--s);
   font-size: var(--s);
-  background-color: var(--darkest);
-  color: var(--lighten);
+  background-color: var(--darken);
+  color: var(--dark);
 }
 
 /* Overview
@@ -504,7 +499,6 @@ aside {
 
 #arjs-video {
   z-index: var(--level-content);
-  width: 100vw !important;
   overflow: hidden;
 }
 
@@ -573,18 +567,17 @@ button:hover {
 .info-card-wrap.is-active {
   max-height: 80%;
   height: 80%;
+  display: flex;
+  flex-direction: column;
 }
-.info-card-body {
-  padding: 0 var(--l);
-  max-width: var(--max-width-content);
+.info-card-content-wrap {
   height: 0;
   overflow-y: auto;
-}
-.info-card-body.is-active {
-  height: 90%;
+  border: solid 1px #11dd66;
+  flex-grow: 2;
 }
 .info-card-item {
-  margin-bottom: var(--s);
+  margin: 0 var(--s) var(--s) var(--s);
 }
 
 /* Info Card Navigation
