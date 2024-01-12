@@ -1,5 +1,8 @@
 exports.getCards = (eleventy, data) => {
 
+  const pageFooter = require('./page-footer.11ty');
+  const pageFoot = pageFooter.getPageFooter(this, data);
+
   const video = require('./video.11ty');
   const videoData = video.getVideo(eleventy, data);
 
@@ -21,11 +24,12 @@ exports.getCards = (eleventy, data) => {
           <div class="info-card-navigation">
             <button data-js-card-navigation></button>
           </div>
-          <div class="info-card-body" data-js-card-content>
-          ${info}
-          ${desc}
-          ${videoData}
+          <div class="info-card-content-wrap">
+            ${info}
+            ${desc}
+            ${videoData}
           </div>
+          ${pageFoot}
         </div>
     `;
 }

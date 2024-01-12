@@ -22,18 +22,18 @@
       &.is-active{
         max-height: 80%;
         height: 80%;
+        display: flex;
+        flex-direction: column;
       }
     }
 
-    &-body{
+    &-content-wrap{
       padding: 0 var(--l);
       max-width: var(--max-width-content);
       height: 0;
       overflow-y: auto;
-
-      &.is-active{
-        height: 90%;
-      }
+      border: solid 1px #11dd66;
+      flex-grow: 2;
     }
 
     &-item{

@@ -21,11 +21,13 @@ aside{
 ############################################################################ */
 
 .device-wrapper {
-  position: absolute;
+  position: fixed;
+  border: solid 1px #dd1166;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  overflow-y: auto;
 
   display: flex;
   flex-direction: column;
