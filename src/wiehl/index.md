@@ -1,6 +1,6 @@
 ---
 title: Wiehl
 layout: path.11ty.js
-image: wiehl.jpeg
+image: wiehl.webp
 type: metadata
 ---

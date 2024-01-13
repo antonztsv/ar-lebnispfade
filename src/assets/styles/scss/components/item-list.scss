@@ -31,10 +31,14 @@
         text-wrap: balance;
         margin-right: var(--m);
 
-  
         &:hover{
           transform: scale(1.2);
           transform-origin: bottom left;
+        }
+
+        .amount{
+          display: block;
+          font-size: var(--s);
         }
       }
     }

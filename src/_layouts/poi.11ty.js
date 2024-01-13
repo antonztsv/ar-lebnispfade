@@ -8,7 +8,7 @@ exports.render = function (data) {
 
   const poiInfo = (data) => `
   <figure class="core-info">
-    <img src="../images/${data.image}" alt="${data.title}">
+    <img src="../images/small/${data.image}" alt="${data.title}">
     <figcaption>${this.markdown(data.info)}</figcaption>
   </figure>`;
 

@@ -10,10 +10,19 @@ exports.render = function (data) {
   const aside = pageAside.getAside(this, data);
 
   const createOverview = (collection) => {
+
+    const utils = require('./components/utils.11ty');
+
     const overviewItems = collection.map((item) => {
+
+      const pathData = utils.getPoiData(data.collections.sorted, item.page.fileSlug);
+      const amountArlenbisse = pathData.length > 1 ? `${pathData.length} ARlebnisse` : `${pathData.length} ARlebnis`; 
+
       const contentUrl = this.getContentUrl(item.url);
-      const imageUrl = `${contentUrl}images/${item.data.image}`;
-      return `<li style="background-image: url(${imageUrl})"><a data-js-action-on-touch="fade" href="${contentUrl}"><p class="title">${item.data.title}</p></a></li>`;
+      const imageUrl = `${contentUrl}images/small/${item.data.image}`;
+      return `<li class="arlebnis-item" style="background-image: url(${imageUrl})"><a data-js-action-on-touch="fade" href="${contentUrl}"><p class="title">${item.data.title}<span class="amount">${amountArlenbisse}</span></p></a></li>`;
+
+
     });
 
     return `

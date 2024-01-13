@@ -4,12 +4,7 @@ exports.render = function (data) {
   const pageHeader = require('./components/page-header.11ty');
   const pageFooter = require('./components/page-footer.11ty');
   const pageAside = require('./components/aside.11ty');
-
-  const getData = (collections, pattern) => collections.filter((item) => {
-    const { url } = item;
-    const extendedPattern = `${pattern}/.*[a-zA-Z0-9]/`;
-    return url.match(extendedPattern);
-  });
+  const utils = require('./components/utils.11ty');
 
   const createPathItems = (pathData) => {
 
@@ -30,7 +25,7 @@ exports.render = function (data) {
     </ul>`;
   }
 
-  const pathData = getData(data.collections.sorted, data.page.fileSlug);
+  const pathData = utils.getPoiData(data.collections.sorted, data.page.fileSlug);
   const documentHead = documentHeader.getHeader(this, data);
   const pageHead = pageHeader.getPageHeader(this, data);
   const pageFoot = pageFooter.getPageFooter(this, data);
