@@ -71,19 +71,20 @@ exports.render = function (data) {
     ${documentHead}
     <body class="poi">
       <div class="device-wrapper">
-        ${pageHead}
-        <main>
-          ${arCode(ar)}
-          ${data.content}
-          <div id="media-controls">
-            <button id="playButton" hidden="hidden"></button>
-            <button id="pauseButton" hidden="hidden"></button>
-            <button id="stopButton" hidden="hidden"></button>
-          </div>
-          ${card}
-        </main>
+        <div class="content-wrapper">
+          ${pageHead}
+          <main>
+            ${arCode(ar)}
+            ${data.content}
+            <div id="media-controls">
+              <button id="playButton" hidden="hidden"></button>
+              <button id="pauseButton" hidden="hidden"></button>
+              <button id="stopButton" hidden="hidden"></button>
+            </div>
+            ${card}
+          </main>
+        </div>
       </div>
-
       ${aside}
 
     </body>

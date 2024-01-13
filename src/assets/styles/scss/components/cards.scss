@@ -3,6 +3,8 @@
 
 .info-card {
     &-wrap{
+
+      overscroll-behavior: none;
       background-color: var(--lightest);
       z-index: 1;
       position: absolute;
@@ -10,33 +12,40 @@
       left: 0;
       right: 0;
       opacity: var(--op-full);
-      
+      display: flex;
+      flex-direction: column;
       border-top-left-radius: var(--border-radius-l);
       border-top-right-radius: var(--border-radius-l);
       box-shadow: var(--shadow-card);
 
       transition: max-height var(--tr-slow), padding var(--tr-fast);
-
-      max-height: 5ch;
+      max-height: calc(var(--l) + var(--l));
       
       &.is-active{
         max-height: 80%;
-        height: 80%;
-        display: flex;
-        flex-direction: column;
+      }
+
+      .main-footer{
+        margin-top: var(--l);
       }
     }
 
     &-content-wrap{
-      height: 0;
       overflow-y: auto;
       border: solid 1px #11dd66;
       flex-grow: 2;
     }
 
     &-item{
-      margin: 0 var(--s) var(--s) var(--s);
+      padding: 0 var(--s) var(--s) var(--s);
+      flex-grow: 2;
+
+      &:last-child{
+        margin-bottom: var(--l);
+      }
     }
+
+
   }
 
 /* Info Card Navigation
@@ -45,7 +54,6 @@
 .info-card{
   &-navigation{
     text-align: center;
-    height: 5ch;
 
     button{
       padding: 0;
@@ -53,7 +61,14 @@
       height: var(--xs);
       border-radius: 2ch;
       width: 4ch;
-      background-color: var(--darken-strong);
+      background-color: var(--color-accent);
+      margin-top: var(--s);
+      margin-bottom: var(--s);
     }
+  }
+
+  &-content-wrap{
+    display: flex;
+    flex-direction: column;
   }
 }

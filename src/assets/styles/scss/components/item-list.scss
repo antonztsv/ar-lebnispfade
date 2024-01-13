@@ -28,6 +28,9 @@
         transition: all var(--tr-fast);
         padding: var(--quat) var(--xs);
         color: var(--lightest);
+        text-wrap: balance;
+        margin-right: var(--m);
+
   
         &:hover{
           transform: scale(1.2);

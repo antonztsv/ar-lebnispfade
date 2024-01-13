@@ -38,6 +38,7 @@ exports.render = function (data) {
       ${documentHead}
       <body class="overview">
         <div class="device-wrapper">
+          <div class="content-wrapper">
           ${pageHead}
           <main data-js-on-load-action="fade-in">
             ${pathOverview}
@@ -48,7 +49,7 @@ exports.render = function (data) {
           </main>
           ${pageFoot}
         </div>
-
+        </div>
         ${aside}
 
       </body>
