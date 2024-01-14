@@ -2,7 +2,6 @@
 title: ARlebnisspfade Oberberg
 layout: index.11ty.js
 bodyClass: map
-backArrow: true
 links:
   - title: Karte mit allen ARlebnissen
     url: "/map"

@@ -191,6 +191,7 @@ select {
   --xxl: calc(var(--bfs) * 1.6);
   --xxxl: calc(var(--bfs) * 1.8);
   --xxxxl: calc(var(--bfs) * 2);
+  --button-size: 44px;
   --light: #ccc;
   --lighter: #eee;
   --lightest: #fff;
@@ -223,6 +224,7 @@ select {
   --fw-bold: 700;
   --level-bg: 0;
   --level-content: 10;
+  --level-navigation: 80;
   --level-main-nav: 100;
   --lh-normal: 140%;
   --lh-tight: 110%;
@@ -418,26 +420,28 @@ aside {
   left: var(--xs);
   display: inline-block;
   font-size: var(--l);
-  transition: all var(--tr-fast);
   color: var(--lightest);
   text-wrap: balance;
   margin-right: var(--m);
   line-height: var(--lh-tight);
 }
-.overview li > a p:hover, .path li > a p:hover {
-  transform: scale(1.2);
-  transform-origin: bottom left;
-}
 .overview li > a p .title-text, .path li > a p .title-text {
   display: block;
   padding: var(--quat) var(--xs);
   background-color: var(--obk-blau);
+  transition: all var(--tr-fast);
+}
+.overview li > a p .title-text:hover, .path li > a p .title-text:hover {
+  background-color: var(--darkest);
 }
 .overview li > a p .amount, .path li > a p .amount {
   padding: var(--quat) var(--xs);
   display: inline-block;
   font-size: var(--s);
   background-color: var(--darkest);
+}
+.overview li.text-link a, .path li.text-link a {
+  aspect-ratio: 4/1;
 }
 .overview li::before, .path li::before {
   position: absolute;
@@ -469,50 +473,46 @@ aside {
   overflow: hidden;
 }
 
+/* Media Controls
+############################################################################ */
 .arjs-loader div {
   text-align: center;
   font-size: 1.25em;
   color: white;
 }
 
-#media-controls {
-  display: block;
-  margin-bottom: 20px;
-  z-index: 2;
+.media-controls {
+  opacity: 0;
+  transition: all var(--tr-slow) var(--tr-delay);
+  display: flex;
+  gap: var(--m);
+  z-index: 20;
   position: absolute;
-  top: 60%;
   left: 50%;
+  bottom: 10%;
   transform: translateX(-50%);
 }
-
-button {
-  font-size: 20px;
-  margin: 0 10px;
-  padding: 10px;
+.media-controls.is-visible {
+  opacity: 1;
+}
+.media-controls button {
+  width: var(--button-size);
+  font-size: var(--l);
+  aspect-ratio: 1/1;
   cursor: pointer;
   border: none;
   background-color: var(--color-accent);
-  color: var(--lighest);
-  border-radius: 5px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-xl);
 }
-
-button:hover {
+.media-controls button .icon {
+  color: var(--lightest);
+}
+.media-controls button.is-hidden {
+  display: none;
+}
+.media-controls button:hover {
   background-color: var(--color-accent);
-}
-
-#playButton::before {
-  content: "▶";
-  /* Unicode symbol for Play */
-}
-
-#pauseButton::before {
-  content: "II";
-  /* Unicode symbol for Pause */
-}
-
-#stopButton::before {
-  content: "■";
-  /* Unicode symbol for Stop */
 }
 
 /* Info Card
@@ -520,7 +520,7 @@ button:hover {
 .info-card-wrap {
   overscroll-behavior: none;
   background-color: var(--lightest);
-  z-index: 1;
+  z-index: var(--level-navigation);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -560,6 +560,7 @@ button:hover {
 }
 .info-card-navigation button {
   padding: 0;
+  border: none;
   display: inline-block;
   height: var(--xs);
   border-radius: 2ch;
@@ -776,31 +777,42 @@ ul.links .text-link a:hover {
 .poi {
   background-color: var(--light);
 }
-.poi .core-info img {
+.poi .info-card-wrap .core-info img {
   display: block;
   margin-bottom: var(--s);
 }
-.poi .core-info figcaption {
+.poi .info-card-wrap .core-info figcaption {
   padding: var(--m) var(--s);
   font-weight: var(--fw-normal);
 }
-.poi .core-info figcaption p + p {
+.poi .info-card-wrap .core-info figcaption p + p {
   margin-top: var(--xs);
 }
-.poi .maps-link {
+.poi .info-card-wrap .maps-link {
   padding: var(--m) var(--s);
+}
+.poi .info-card-wrap .maps-link a {
+  padding: var(--xs) var(--m);
+  background-color: var(--color-accent);
   display: flex;
   gap: var(--quat);
-  align-items: baseline;
+  border-radius: var(--border-radius-l);
+  transition: background var(--tr-fast);
 }
-.poi .maps-link > * {
+.poi .info-card-wrap .maps-link a > * {
   display: block;
+  line-height: var(--lh-tight);
+  text-wrap: balance;
+  color: var(--lightest);
 }
-.poi .ar-desc {
+.poi .info-card-wrap .maps-link a:hover {
+  background-color: var(--darkest);
+}
+.poi .info-card-wrap .ar-desc {
   padding: var(--m) var(--s);
   gap: var(--quat);
 }
-.poi .icon {
+.poi .info-card-wrap .icon {
   color: var(--darken-strong);
   display: inline-block;
   margin-right: var(--xs);
