@@ -396,6 +396,9 @@ aside {
   margin: 0;
   padding: 0;
 }
+.overview li.arlebnis-item + li.arlebnis-item, .path li.arlebnis-item + li.arlebnis-item {
+  border-top: solid var(--border-width-s) var(--lightest);
+}
 .overview li, .path li {
   position: relative;
   display: block;
@@ -406,7 +409,7 @@ aside {
 .overview li > a, .path li > a {
   position: relative;
   display: block;
-  min-height: calc(var(--m) * 8);
+  aspect-ratio: 16/9;
   z-index: 2;
 }
 .overview li > a p, .path li > a p {
@@ -415,16 +418,26 @@ aside {
   left: var(--xs);
   display: inline-block;
   font-size: var(--l);
-  background-color: var(--obk-blau);
   transition: all var(--tr-fast);
-  padding: var(--quat) var(--xs);
   color: var(--lightest);
   text-wrap: balance;
   margin-right: var(--m);
+  line-height: var(--lh-tight);
 }
 .overview li > a p:hover, .path li > a p:hover {
   transform: scale(1.2);
   transform-origin: bottom left;
+}
+.overview li > a p .title-text, .path li > a p .title-text {
+  display: block;
+  padding: var(--quat) var(--xs);
+  background-color: var(--obk-blau);
+}
+.overview li > a p .amount, .path li > a p .amount {
+  padding: var(--quat) var(--xs);
+  display: inline-block;
+  font-size: var(--s);
+  background-color: var(--darkest);
 }
 .overview li::before, .path li::before {
   position: absolute;
@@ -701,17 +714,8 @@ button.cta:hover {
     box-shadow: var(--shadow-xl);
     flex-shrink: 0;
     position: relative;
-  }
-
-  .content-wrapper {
-    margin-top: 50px;
-    margin-bottom: 80px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow-y: auto;
+    border-top: 50px solid var(--darkest);
+    border-bottom: 70px solid var(--darkest);
   }
 
   body {
@@ -794,8 +798,12 @@ ul.links .text-link a:hover {
 }
 .poi .ar-desc {
   padding: var(--m) var(--s);
-  display: flex;
   gap: var(--quat);
+}
+.poi .icon {
+  color: var(--darken-strong);
+  display: inline-block;
+  margin-right: var(--xs);
 }
 
 /* Path

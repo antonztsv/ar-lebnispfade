@@ -14,9 +14,18 @@ exports.render = function (data) {
       if (data.status === 'hidden') return '';
 
       const contentUrl = `..${poi.url}`;
-      const imageUrl = `./images/${poi.data.image}`;
+      const imageUrl = `./images/small/${poi.data.image}`;
 
-      return `<li style="background-image: url(${imageUrl})"><a data-js-action-on-touch="move-left" href="${contentUrl}"><p class="title">${poi.data.title}</p></a></li>`;
+      return `
+        <li class="arlebnis-item" style="background-image: url(${imageUrl})">
+          <a data-js-action-on-touch="move-left" href="${contentUrl}">
+            <p class="title">
+              <span class="title-text">
+                ${poi.data.title}
+              </span>
+            </p>
+          </a>
+        </li>`;
     });
 
     return `
@@ -37,22 +46,19 @@ exports.render = function (data) {
     ${documentHead}
     <body class="path">
       <div class="device-wrapper">
-        <div class="content-wrapper">
-          ${pageHead}
-          <main data-js-on-load-action="move-left">
-            ${pathItems}
-  
-            <div class="info">
-              <p>
-              Hier findest Sie unsere ARlebnisse für den ARlebnispfad <em>${data.title}</em>. Für die meisten ARlebnisse brauchen Sie ein Smartphone, eine Internetverbindung und musst an der entsprechenden Stelle sein. Viel Spaß 🙌🏽
-              </p>
-              <p>
-              Weitere <a href="https://www.vhs-nrw.de/innovationsfonds2023/">Informationen zum Projekt</a> gibt es hier.
-              </p>
-            </div>
-          </main>
-          ${pageFoot}
-        </div>
+        ${pageHead}
+        <main data-js-on-load-action="move-left">
+          ${pathItems}  
+          <div class="info">
+            <p>
+            Hier findest Sie unsere ARlebnisse für den ARlebnispfad <em>${data.title}</em>. Für die meisten ARlebnisse brauchen Sie ein Smartphone, eine Internetverbindung und musst an der entsprechenden Stelle sein. Viel Spaß 🙌🏽
+            </p>
+            <p>
+            Weitere <a href="https://www.vhs-nrw.de/innovationsfonds2023/">Informationen zum Projekt</a> gibt es hier.
+            </p>
+          </div>
+        </main>
+        ${pageFoot}
       </div>
 
       ${aside}

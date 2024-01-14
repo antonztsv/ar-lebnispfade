@@ -5,17 +5,22 @@
   margin: 0;
   padding: 0;
 
+  & li.arlebnis-item + li.arlebnis-item {
+    border-top: solid var(--border-width-s) var(--lightest);
+  }
+
   & li{
     position: relative;
     display: block;
     background-size: cover;
     background-position: center center;
     z-index: 0;
+
     
     & > a{
       position: relative;
       display: block;
-      min-height: calc(var(--m) * 8);
+      aspect-ratio: 16/9;
       z-index: 2;
 
       p{
@@ -24,23 +29,34 @@
         left: var(--xs);
         display: inline-block;
         font-size: var(--l);
-        background-color: var(--obk-blau);
-        transition: all var(--tr-fast);
-        padding: var(--quat) var(--xs);
+        
         color: var(--lightest);
         text-wrap: balance;
         margin-right: var(--m);
+        line-height: var(--lh-tight);
 
-        &:hover{
-          transform: scale(1.2);
-          transform-origin: bottom left;
+        .title-text{
+          display: block;
+          padding: var(--quat) var(--xs);
+          background-color: var(--obk-blau);
+          transition: all var(--tr-fast);
+          
+          &:hover{
+            background-color: var(--darkest);
+          }
         }
 
         .amount{
-          display: block;
+          padding: var(--quat) var(--xs);
+          display: inline-block;
           font-size: var(--s);
+          background-color: var(--darkest);
         }
       }
+    }
+
+    &.text-link a{
+      aspect-ratio: 4/1;
     }
 
     &::before{

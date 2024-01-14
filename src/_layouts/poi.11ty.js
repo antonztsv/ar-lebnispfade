@@ -6,39 +6,6 @@ exports.render = function (data) {
   const cards = require('./components/cards.11ty');
   const pageAside = require('./components/aside.11ty');
 
-  const poiInfo = (data) => `
-  <figure class="core-info">
-    <img src="../images/small/${data.image}" alt="${data.title}">
-    <figcaption>${this.markdown(data.info)}</figcaption>
-  </figure>`;
-
-
-  const poiMaps = (data) => {
-    const gmapUrl = data.gmaps;
-    if (!gmapUrl) return '';
-
-    return `
-    <p class="maps-link">
-      <a href="${gmapUrl}" target="_blank">
-        <span class="icon">map</span>
-        <span>${data.title} auf Google Maps anzeigen</span>
-      </a>
-    </p>
-  `;
-  };
-
-  const poiDesc = (data) => {
-    const arDesc = data.arDesc;
-    if (!arDesc) return '';
-
-    return `
-    <div class="ar-desc">
-      <span class="icon">info</span>
-      <p>${this.markdown(arDesc)}</p>
-    </div>
-  `;
-  };
-
   const getArCode = (arData) => {
 
     if(!arData) return '';
@@ -55,7 +22,7 @@ exports.render = function (data) {
   const pageHead = pageHeader.getPageHeader(this, data);
   const aside = pageAside.getAside(this, data);
 
-  const card = cards.getCards(this, data);
+  const card = cards.getCard(this, data);
   const { ar } = data;
   const arCode = (ar) => {
     const code = getArCode(ar);
@@ -71,19 +38,17 @@ exports.render = function (data) {
     ${documentHead}
     <body class="poi">
       <div class="device-wrapper">
-        <div class="content-wrapper">
-          ${pageHead}
-          <main>
-            ${arCode(ar)}
-            ${data.content}
-            <div id="media-controls">
-              <button id="playButton" hidden="hidden"></button>
-              <button id="pauseButton" hidden="hidden"></button>
-              <button id="stopButton" hidden="hidden"></button>
-            </div>
-            ${card}
-          </main>
-        </div>
+        ${pageHead}
+        <main>
+          ${arCode(ar)}
+          ${data.content}
+          <div id="media-controls">
+            <button id="playButton" hidden="hidden"></button>
+            <button id="pauseButton" hidden="hidden"></button>
+            <button id="stopButton" hidden="hidden"></button>
+          </div>
+          ${card}
+        </main>
       </div>
       ${aside}
 

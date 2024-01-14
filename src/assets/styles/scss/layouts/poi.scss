@@ -1,41 +1,61 @@
 /* POI
 ############################################################################ */
 
-.poi{
-  
+.poi {
+
   background-color: var(--light);
 
-  .core-info{
-    img{
-      display: block;
-      margin-bottom: var(--s);
-    }
+  .info-card-wrap {
+    .core-info {
+      img {
+        display: block;
+        margin-bottom: var(--s);
+      }
 
-    figcaption{
-      padding: var(--m) var(--s);
-      font-weight: var(--fw-normal);
+      figcaption {
+        padding: var(--m) var(--s);
+        font-weight: var(--fw-normal);
 
-      p + p {
-        margin-top: var(--xs);
+        p+p {
+          margin-top: var(--xs);
+        }
       }
     }
-  }
 
-  .maps-link{
-    padding: var(--m) var(--s);
+    .maps-link {
+      padding: var(--m) var(--s);
 
-    display: flex;
-    gap: var(--quat);
-    align-items: baseline;
+      & a{
+        padding: var(--xs) var(--m);
+        background-color: var(--color-accent);
+        display: flex;
+        gap: var(--quat);
+        border-radius: var(--border-radius-l);
+        transition: background var(--tr-fast);
 
-    & > *{
-      display: block;
+        & > * {
+          display: block;
+          line-height: var(--lh-tight);
+          text-wrap: balance;
+          color: var(--lightest);
+        }        
+
+        &:hover{
+          background-color: var(--darkest);
+        }
+      }
+    }
+
+    .ar-desc {
+      padding: var(--m) var(--s);
+      gap: var(--quat);
+    }
+
+    .icon {
+      color: var(--darken-strong);
+      display: inline-block;
+      margin-right: var(--xs);
     }
   }
 
-  .ar-desc{
-    padding: var(--m) var(--s);
-    display: flex;
-    gap: var(--quat);
-  }
 }

@@ -21,7 +21,7 @@
 /* Device Wrap
 ############################################################################ */
 
-.device-wrapper, .content-wrapper {
+.device-wrapper {
   position: fixed;
   border: solid 1px #dd1166;
   top: 0;
@@ -54,17 +54,9 @@
     box-shadow: var(--shadow-xl);
     flex-shrink: 0;
     position: relative;
-  }
+    border-top: 50px solid var(--darkest);
+    border-bottom: 70px solid var(--darkest);
 
-  .content-wrapper{
-    margin-top: 50px;
-    margin-bottom: 80px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow-y: auto;
   }
 
   body {

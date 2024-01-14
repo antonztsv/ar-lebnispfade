@@ -20,7 +20,15 @@ exports.render = function (data) {
 
       const contentUrl = this.getContentUrl(item.url);
       const imageUrl = `${contentUrl}images/small/${item.data.image}`;
-      return `<li class="arlebnis-item" style="background-image: url(${imageUrl})"><a data-js-action-on-touch="fade" href="${contentUrl}"><p class="title">${item.data.title}<span class="amount">${amountArlenbisse}</span></p></a></li>`;
+      return `
+        <li class="arlebnis-item" style="background-image: url(${imageUrl})">
+          <a data-js-action-on-touch="fade" href="${contentUrl}">
+            <p class="title">
+              <span class="title-text">${item.data.title}</span>
+              <span class="amount">${amountArlenbisse}</span>
+            </p>
+          </a>
+        </li>`;
 
 
     });
@@ -47,7 +55,6 @@ exports.render = function (data) {
       ${documentHead}
       <body class="overview">
         <div class="device-wrapper">
-          <div class="content-wrapper">
           ${pageHead}
           <main data-js-on-load-action="fade-in">
             ${pathOverview}
@@ -57,7 +64,6 @@ exports.render = function (data) {
             </div>
           </main>
           ${pageFoot}
-        </div>
         </div>
         ${aside}
 
