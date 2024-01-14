@@ -13,6 +13,8 @@
   --xxxl: calc(var(--bfs) * 1.8);
   --xxxxl: calc(var(--bfs) * 2);
 
+  --button-size: 44px;
+
   --light: #ccc;
   --lighter: #eee;
   --lightest: #fff;
@@ -32,7 +34,6 @@
   --obk-akzent-1: #cbe2ec;
   --obk-akzent-2: #f1f2f5;
 
-  
   --color-text: var(--darker);
   --color-headline: var(--darkest);
   --color-accent: var(--obk-blau);
@@ -52,6 +53,7 @@
 
   --level-bg: 0;
   --level-content: 10;
+  --level-navigation: 80;
   --level-main-nav: 100;
 
   --lh-normal: 140%;

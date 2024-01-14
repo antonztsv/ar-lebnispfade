@@ -18,6 +18,13 @@ exports.render = function (data) {
     }
   };
 
+  const mediaControls = `
+    <div id="media-controls" class="media-controls" data-js-media-controls>
+      <button id="play-button" data-js-play-button><span class="icon">play_arrow</span></button>
+      <button id="pause-button" class="is-hidden" data-js-pause-button><span class="icon">pause</span></button>
+    </div>
+  `;
+
   const documentHead = documentHeader.getHeader(this, data);
   const pageHead = pageHeader.getPageHeader(this, data);
   const aside = pageAside.getAside(this, data);
@@ -42,11 +49,7 @@ exports.render = function (data) {
         <main>
           ${arCode(ar)}
           ${data.content}
-          <div id="media-controls">
-            <button id="playButton" hidden="hidden"></button>
-            <button id="pauseButton" hidden="hidden"></button>
-            <button id="stopButton" hidden="hidden"></button>
-          </div>
+          ${mediaControls}
           ${card}
         </main>
       </div>

@@ -16,44 +16,53 @@
   overflow: hidden;
 }
 
+
+/* Media Controls
+############################################################################ */
+
 .arjs-loader div {
   text-align: center;
   font-size: 1.25em;
   color: white;
 }
-#media-controls {
-  display: block;
-  margin-bottom: 20px;
-  z-index: 2;
+
+.media-controls {
+  opacity: 0;
+  transition: all var(--tr-slow) var(--tr-delay);
+  display: flex;
+  gap: var(--m);
+  z-index: 20;
   position: absolute;
-  top: 60%;
   left: 50%;
+  bottom: 10%;
   transform: translateX(-50%);
+
+  &.is-visible{
+    opacity: 1;
+  }
+
+  button {
+    width: var(--button-size);
+    font-size: var(--l);
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    border: none;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    box-shadow: var(--shadow-xl);
+
+    .icon {
+      color: var(--lightest);
+    }
+
+    &.is-hidden{
+      display: none;
+    }
+  }
+  
+  button:hover {
+    background-color: var(--color-accent);
+  }
 }
 
-button {
-  font-size: 20px;
-  margin: 0 10px;
-  padding: 10px;
-  cursor: pointer;
-  border: none;
-  background-color: var(--color-accent);
-  color: var(--lighest);
-  border-radius: 5px;
-}
 
-button:hover {
-  background-color: var(--color-accent);
-}
-
-#playButton::before {
-  content: '\25B6'; /* Unicode symbol for Play */
-}
-
-#pauseButton::before {
-  content: '\II'; /* Unicode symbol for Pause */
-}
-
-#stopButton::before {
-  content: '\25A0'; /* Unicode symbol for Stop */
-}
