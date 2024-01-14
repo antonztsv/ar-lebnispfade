@@ -1,9 +1,5 @@
+let playableContent;
 
-var playableContent;
-
-var playBtn;
-var pauseBtn;
-var stopBtn;
 
 AFRAME.registerComponent('registerevents', {
     init: function () {
@@ -36,31 +32,51 @@ AFRAME.registerComponent('registerevents', {
     }
 });
 
-window.onload = function() {
-    //var video = document.getElementById("video");
-    playBtn = document.getElementById("playButton");
-    pauseBtn = document.getElementById("pauseButton");
-    stopBtn = document.getElementById("stopButton");
+/* Functions
+############################################################################ */
 
-    if(!playBtn || !pauseBtn || !stopBtn) return;
-    //console.log(playableContent)
+let audioIsPlaying = false;
 
-    playBtn.onclick = function (){
+const addingMediaControls = () => {
 
+    const playBtn = document.querySelector("[data-js-play-button]");
+    const pauseBtn = document.querySelector("[data-js-pause-button]");
+    const mediaControls = document.getElementById("media-controls");
+
+    const playAudio = () => {
         playableContent.play();
-        console.log("PLAY")
+        audioIsPlaying = true;
+        playBtn.classList.add("is-hidden");
+        pauseBtn.classList.remove("is-hidden");
     }
 
-    pauseBtn.onclick = function (){
-
+    const pauseAudio = () => {
         playableContent.pause();
-        console.log("PAUSE")
+        audioIsPlaying = false;
+        playBtn.classList.remove("is-hidden");
+        pauseBtn.classList.add("is-hidden");
     }
+    
+    // Dev Demo
+    playableContent = document.getElementById("audio");
+    if(playableContent && mediaControls) mediaControls.classList.add("is-visible");
 
-    stopBtn.onclick = function (){
+    if(!playBtn) return;
+    
+    mediaControls.addEventListener("click", () => {
+        if(audioIsPlaying){
+            pauseAudio();
+        }else{
+            playAudio();
+        }
+    });
+};
 
-        playableContent.pause();
-        playableContent.currentTime = 0;
-        console.log("STOP")
-    }
-}
+
+/* Main
+############################################################################ */
+
+document.addEventListener("DOMContentLoaded", () => {
+    addingMediaControls();
+});
+

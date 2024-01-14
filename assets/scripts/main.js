@@ -1,3 +1,7 @@
+/* Functions
+############################################################################ */
+
+
 const addingEyeCandy = () => {
   
   const actionOnTouch = () => {
@@ -36,6 +40,9 @@ const addingEyeCandy = () => {
   actionOnLoad();
 
 };
+
+/* Main
+############################################################################ */
 
 document.addEventListener("DOMContentLoaded", () => {
   addingEyeCandy();
