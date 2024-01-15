@@ -3,16 +3,32 @@ title: Pulvermuseum
 image: pulvermuseum.webp
 layout: poi
 gmaps: https://www.google.com/maps/place/Villa+Ohl/@51.1113933,7.4862051,17z/data=!3m1!4b1!4m6!3m5!1s0x47b934b438695541:0x23677c406164f6e9!8m2!3d51.11139!4d7.48878!16s%2Fg%2F120p462z?entry=ttu
-coords: [51.111524684583856, 7.488779997927827]
+coords: [51.1113282, 7.4886674]
 info: |
-    Gut zweihundert Jahre alt ist das "Haus Ohl", auch bekannt als "Villa Buchholz", einst Wohnsitz der Pulverfabrikanten, die das Wirtschaftsleben im bergisch-märkischen Grenzgebiet wesentlich bestimmten. Die Herstellung von Schwarzpulver aus Schwefel, Salpeter und Holzkohle hat sie reich gemacht.
+    **1874 - Gewinne und Gefahren: Pulvermühlenindustrie in Oberberg**
 
-    Heute ist in einem Teil des Hauses zu sehen, wie das hochexplosive Pulver im bergisch-märkischen Grenzgebiet hergestellt wurde und als Schieß- und Sprengstoff in alle Welt gelangte. Darüber hinaus zeigt der Heimat- und Geschichtsverein Wipperfürth Details aus dem Leben der Pulverfabrikanten, denen 1913 sogar Kaiser Wilhelm II. einen Besuch abstattete.
+    In den Pulvermühlen (Schießpulverfabriken) im Oberbergischen Kreis wurden Salpeter, Schwefel und Holzkohle für die Herstellung von Schwarzpulver zerkleinert gemischt werden. 
+
+    Durch die vielen kleinen Wasserläufe kam es in der Region zu einer Verdichtung an Produktionsstätten - mit guten Gewinnen für die Betreiber.
+
+    Sehr häufig explodierten allerdings diese Mühlen. Die Ursache dafür konnte schon ein einzelner Funke sein, der z.B. beim Einschlagen eines Nagels entstand, oder eine elektrostatische Aufladung der Luft.
+
+    **Schwarzpulvermuseum**
+
+    Das Gebäude, vor dem Sie stehen, ist die Villa Ohl. Es handelt sich um ehemalige Fabrikantenvilla, in der sich u.a. das Schwarzpulvermuseum befindet.
+
+    Im etwa 200 Jahre alten Haus lebten Familienangehörige der Pulverfabrikanten Cramer und Buchholz. Sie bestimmten das regionale Wirtschaftsgeschehen so stark, dass man die Region „Königreich Buchholz“ nannte. Wegen eines Besuches von Kaiser Wilhelm II. wurde es zeitweise auch die „Kaiservilla“ nannte.
+
+    Heute betreibt der Heimat- und Geschichtsverein Wipperfürth e.V. in den Räumen der 1. Etage ein Museum zur  Geschichte der Schwarzpulvermühlen im Tal der Wipper und ihrer Seitenbäche - - inklusive Beleuchtung von Handel und Transport.
 arDesc: |
-    In diesem ARlebnis können Sie dies und das erleben. Ziehen Sie dafür Ihr Smartphone Halvah shortbread jelly-o tootsie roll tiramisu gummi bears. Sesame snaps lollipop gummi bears marzipan marshmallow tiramisu pie danish icing. Gummi bears caramels cheesecake lemon drops jujubes oat cake liquorice. Sweet roll dragée apple pie pastry chocolate fruitcake. Caramels sesame snaps dragée soufflé caramels sweet roll donut croissant jujubes.
+    Halten Sie Ihre Kamera auf die  Eingangstür der Villa Ohl.
+
+    Erleben Sie hierdurch einen Zeitprung ins Jahr 1874 - eine Zeit, in der die Pulvermühlen rund um Wipperfürth in Vollproduktion laufen. Die deutsche Regierung braucht Schwarzpulver.
+
+    Erleben Sie eine spannungsgeladene Szene, die sich so ähnlich ereignet haben könnte.
 ar:
     type: image-tracking
-    content: model
+    content: video
     location: wipperfuerth
     video: [
         {
@@ -24,25 +40,11 @@ ar:
             filename: 'wahllokal.mp4'
         }
     ]
-    audio:
-        filename: "wiehl_bielstein_motocross.mp3"
     nft: [
-        {
-            type: model,
-            id: "muenzschlaeger",
-            name: "Muenzschlaeger",
-            model: "Muenzschlaeger_T"
-        },
-        {
-            type: audio,
-            id: "hammerboy",
-            name: "Hammerboy"
-        },
         {
             type: video,
             id: "pulvermuseum",
             name: "Pulvermuseum",
-            model: "Parrot"
         }
     ]
 ---

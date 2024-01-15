@@ -1,6 +1,6 @@
 ---
-title: Bergischer Löwe an der Mühle
-image: bergischerloewe.webp
+title: Eisenbahnbrücke
+image: eisenbahnbrücke.webp
 type: ar-data
 layout: poi
 gmaps:
@@ -14,4 +14,16 @@ info: |
 
 arDesc: |
     Halte nun die Kamera auf die Brücke. Dort siehst du die alte Dampflock "Bergischer Löwe" vorbeifahren, die die Region Oberberg mit erschlossen hat.
+ar:
+    type: image-tracking
+    content: model
+    location: wiehl
+    nft: [
+        {
+            type: model,
+            id: "bergischerloewe",
+            name: "BergischerLoewe",
+            model: "bergischerloewe"
+        }
+    ]
 ---
