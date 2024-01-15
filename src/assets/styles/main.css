@@ -497,13 +497,16 @@ aside {
 }
 .media-controls button {
   width: var(--button-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: var(--l);
   aspect-ratio: 1/1;
   cursor: pointer;
   border: none;
   background-color: var(--color-accent);
   border-radius: 50%;
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--shadow-l);
 }
 .media-controls button .icon {
   color: var(--lightest);
