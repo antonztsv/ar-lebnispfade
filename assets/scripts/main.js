@@ -2,6 +2,8 @@
 ############################################################################ */
 
 
+/* Adding eye candy ######################################################## */
+
 const addingEyeCandy = () => {
   
   const actionOnTouch = () => {
@@ -41,9 +43,38 @@ const addingEyeCandy = () => {
 
 };
 
+/* Adding modal dialog #################################################### */
+const addModalDialog = () => {
+
+  const dialog = document.querySelector("[data-js-ar-actions]");
+
+  if(!dialog || dialog === null) return;
+  dialog.showModal();
+
+  const start = document.querySelector("[data-js-ar-actions-start]");
+  const bypass = document.querySelector("[data-js-ar-actions-bypass]");
+
+  start.addEventListener("click", () => {
+    dialog.close();
+
+    const target = document.querySelector("[data-js-inject-ar-code]");
+    if(!target || target === null) return;
+    target.innerHTML = decodeURI(arCode);
+    
+  });
+
+  bypass.addEventListener("click", () => {
+    dialog.close();
+    return;
+  });
+};
+
+
+
 /* Main
 ############################################################################ */
 
 document.addEventListener("DOMContentLoaded", () => {
   addingEyeCandy();
+  addModalDialog();
 });
