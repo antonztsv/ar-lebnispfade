@@ -23,7 +23,6 @@
 
 .device-wrapper {
   position: fixed;
-  border: solid 1px #dd1166;
   top: 0;
   left: 0;
   right: 0;
@@ -49,7 +48,7 @@
     overflow: hidden;
     overflow-y: auto;
     border: solid 5px var(--darkest);
-    background-color: var(--darkest);
+    background-color: var(--lightest);
     left: var(--l);
     box-shadow: var(--shadow-xl);
     flex-shrink: 0;

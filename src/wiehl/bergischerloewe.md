@@ -1,6 +1,6 @@
 ---
 title: Eisenbahnbrücke
-image: eisenbahnbrücke.webp
+image: eisenbahnbruecke.webp
 type: ar-data
 layout: poi
 gmaps:
