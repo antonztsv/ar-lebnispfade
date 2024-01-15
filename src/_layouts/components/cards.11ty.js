@@ -6,8 +6,6 @@ exports.getCard = (eleventy, data) => {
   const video = require('./video.11ty');
   const videoData = video.getVideo(eleventy, data);
 
-  const desc = data.arDesc ? `` : '';
-
 
   const getPoiInfo = (data) => {
     if(!data.info) return '';
@@ -20,7 +18,6 @@ exports.getCard = (eleventy, data) => {
       </p>
     `;
   }
-
 
   const getPoiMaps = (data) => {
     const gmapUrl = data.gmaps;

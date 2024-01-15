@@ -18,7 +18,7 @@ info: |
 arDesc: |
     Halten Sie Ihre Kamera auf die Eingangstür des Franziskanerklosters.
 
-    Reisen Sie dadurch ins Jahr 1848 - ein Jahr in dem zwei verfassungsgebende Versammlungen in Deutschland abehalten wurden.
+    Reisen Sie dadurch ins Jahr 1848 - ein Jahr in dem zwei verfassungsgebende Versammlungen in Deutschland abgehalten wurden.
 
     Erleben Sie, welchen Bezug dieser Ort hierzu hat und was sich hier abgespielt haben könnte.
 ar:

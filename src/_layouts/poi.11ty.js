@@ -4,20 +4,18 @@ exports.render = function (data) {
   const pageHeader = require('./components/page-header.11ty');
   const imageTracking = require('./ar/image-tracking.11ty');
   const cards = require('./components/cards.11ty');
+  const pageDialogs = require('./components/dialogs.11ty');
   const pageAside = require('./components/aside.11ty');
 
   const getArCode = (arData) => {
-
     if(!arData) return '';
-
     switch (arData.type) {
       case 'image-tracking':
         return imageTracking.getImageTrackingCode(this, arData);
       default:
-
     }
   };
-
+  
   const mediaControls = `
     <div id="media-controls" class="media-controls" data-js-media-controls>
       <button id="play-button" data-js-play-button><span class="icon">play_arrow</span></button>
@@ -25,18 +23,21 @@ exports.render = function (data) {
     </div>
   `;
 
+  const dialogData = {
+    "text": data.arDesc || '',
+    "title": data.title || '',
+    "ar": data.ar || ''
+  };
+  const modalDialog = pageDialogs.getModalDialog(this, dialogData)
+
   const documentHead = documentHeader.getHeader(this, data);
   const pageHead = pageHeader.getPageHeader(this, data);
   const aside = pageAside.getAside(this, data);
 
   const card = cards.getCard(this, data);
   const { ar } = data;
-  const arCode = (ar) => {
-    const code = getArCode(ar);
-    return `
-        ${code}
-    `;
-  };
+  const arCode = getArCode(ar);
+
   /* ${poiInfo(data)}
      ${poiMaps(data)}
      ${poiDesc(data)}*/
@@ -47,14 +48,18 @@ exports.render = function (data) {
       <div class="device-wrapper">
         ${pageHead}
         <main>
-          ${arCode(ar)}
+          <div class="ar-code" data-js-inject-ar-code></div>
           ${data.content}
           ${mediaControls}
           ${card}
         </main>
+        ${modalDialog}
       </div>
       ${aside}
-
     </body>
+
+    <script>
+    const arCode = "${encodeURI(arCode)}";
+    </script>
   </html>`;
 };

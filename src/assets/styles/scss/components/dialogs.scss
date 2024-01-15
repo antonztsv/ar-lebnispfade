@@ -1,0 +1,99 @@
+::backdrop {
+  background-image: linear-gradient(45deg,
+      var(--dark), var(--color-accent));
+  opacity: 0.75;
+}
+
+/*   Open state of the dialog  */
+dialog[open] {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/*   Closed state of the dialog   */
+dialog {
+  opacity: 0;
+  transform: scaleY(0);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out,
+    overlay 0.7s ease-out allow-discrete,
+    display 0.7s ease-out allow-discrete;
+  /* Equivalent to
+  transition: all 0.7s allow-discrete; */
+}
+
+/*   Before-open state  */
+/* Needs to be after the previous dialog[open] rule to take effect,
+    as the specificity is the same */
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+/* Transition the :backdrop when the dialog modal is promoted to the top layer */
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0);
+  transition:
+    display 0.7s allow-discrete,
+    overlay 0.7s allow-discrete,
+    background-color 0.7s;
+  /* Equivalent to
+  transition: all 0.7s allow-discrete; */
+}
+
+dialog[open]::backdrop {
+  background-color: rgb(0 0 0 / 0.25);
+}
+
+/* This starting-style rule cannot be nested inside the above selector
+because the nesting selector cannot represent pseudo-elements. */
+
+@starting-style {
+  dialog[open]::backdrop {
+    background-color: rgb(0 0 0 / 0);
+  }
+}
+
+
+dialog{
+  .dialog-body{
+    padding-bottom: var(--l);
+  }
+}
+
+dialog{
+  button{
+    background-color: var(--color-accent);
+    border: none;
+    border-radius: var(--border-radius-m);
+    padding: var(--xs) var(--m);
+    transition: all var(--tr-fast);
+    color: var(--lightest);
+
+    &:hover{
+      cursor: pointer;
+      background-color: var(--darkest);
+    }
+
+    &.bypass-ar{
+      background-color: var(--dark);
+    }
+  }
+
+  .permissions{
+    padding-top: var(--xs);
+    padding-bottom: var(--xs);
+    li{
+      display: block;
+      padding-top: var(--quat) 0;
+      .icon{
+        font-size: var(--l);
+        display: inline-block;
+        margin-right: var(--quat);
+      }
+    }
+  }
+}
