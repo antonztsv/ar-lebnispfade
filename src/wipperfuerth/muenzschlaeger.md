@@ -1,6 +1,6 @@
 ---
 title: Münzschläger
-image: münzschläger.webp
+image: muenzschlaeger.webp
 type: ar-data
 layout: poi
 gmaps:
