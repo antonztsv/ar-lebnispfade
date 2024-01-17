@@ -50,6 +50,7 @@ exports.render = function (data) {
         ${pageHead}
         <main>
           <div class="ar-code" data-js-inject-ar-code></div>
+          ${arCode}
           ${data.content}
           ${mediaControls}
           ${card}

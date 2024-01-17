@@ -43,7 +43,7 @@ ar:
     nft: [
         {
             type: video,
-            id: "pulvermuseum",
+            id: "pulvermuseum_front",
             name: "Pulvermuseum",
         }
     ]

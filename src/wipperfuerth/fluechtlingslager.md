@@ -35,7 +35,7 @@ ar:
     nft: [
         {
             type: video,
-            id: "fluechtlingslager",
+            id: "fluechtlingslager_front",
             name: "Fluechtlingslager",
         }
     ]
