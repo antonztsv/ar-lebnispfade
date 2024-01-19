@@ -37,7 +37,7 @@ ar:
         },
         {
             type: 'filename',
-            filename: 'wahllokal.mp4'
+            filename: 'wahllokal.webm'
         }
     ]
     nft: [

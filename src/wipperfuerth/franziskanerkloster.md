@@ -34,7 +34,7 @@ ar:
     nft: [
         {
             type: video,
-            id: "franziskanerkloster",
+            id: "franziskanerkloster_front",
             name: "Franziskanerkloster",
         }
     ]

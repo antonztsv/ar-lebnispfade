@@ -31,7 +31,7 @@ ar:
     nft: [
         {
             type: video,
-            id: "nikolauskirche",
+            id: "nikolauskirche_front",
             name: "Nikolauskirche"
         }
     ]

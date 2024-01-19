@@ -124,9 +124,7 @@ select {
   font-family: "MaterialIcons";
   font-style: normal;
   font-weight: 400;
-  src: url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.eot");
-  /* For IE6-8 */
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.woff2") format("woff2"), url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.woff") format("woff"), url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/MaterialIcons/material-icons-round.woff2") format("woff2");
 }
 .icon {
   display: inline-flex;
@@ -146,7 +144,7 @@ select {
   vertical-align: bottom;
   white-space: nowrap;
   word-wrap: normal;
-  font-size: var(--xxxl);
+  font-size: var(--xxl);
 }
 .icon--s {
   font-size: var(--s);
@@ -188,9 +186,9 @@ select {
   --m: calc(var(--bfs) * 1);
   --l: calc(var(--bfs) * 1.2);
   --xl: calc(var(--bfs) * 1.4);
-  --xxl: calc(var(--bfs) * 1.6);
-  --xxxl: calc(var(--bfs) * 1.8);
-  --xxxxl: calc(var(--bfs) * 2);
+  --xxl: calc(var(--bfs) * 2.0);
+  --xxxl: calc(var(--bfs) * 2.8);
+  --xxxxl: calc(var(--bfs) * 3.8);
   --button-size: 44px;
   --light: #ccc;
   --lighter: #eee;
@@ -545,7 +543,6 @@ aside {
 }
 .info-card-content-wrap {
   overflow-y: auto;
-  border: solid 1px #11dd66;
   flex-grow: 2;
 }
 .info-card-item {
@@ -692,7 +689,6 @@ button.cta:hover {
 ############################################################################ */
 .device-wrapper {
   position: fixed;
-  border: solid 1px #dd1166;
   top: 0;
   left: 0;
   right: 0;
@@ -713,7 +709,7 @@ button.cta:hover {
     overflow: hidden;
     overflow-y: auto;
     border: solid 5px var(--darkest);
-    background-color: var(--darkest);
+    background-color: var(--lightest);
     left: var(--l);
     box-shadow: var(--shadow-xl);
     flex-shrink: 0;
@@ -737,6 +733,87 @@ button.cta:hover {
     padding-right: var(--l);
   }
 }
+::backdrop {
+  background-image: linear-gradient(45deg, var(--dark), var(--color-accent));
+  opacity: 0.75;
+}
+
+/*   Open state of the dialog  */
+dialog[open] {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/*   Closed state of the dialog   */
+dialog {
+  opacity: 0;
+  transform: scaleY(0);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out, overlay 0.7s ease-out allow-discrete, display 0.7s ease-out allow-discrete;
+  /* Equivalent to
+  transition: all 0.7s allow-discrete; */
+}
+
+/*   Before-open state  */
+/* Needs to be after the previous dialog[open] rule to take effect,
+    as the specificity is the same */
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+/* Transition the :backdrop when the dialog modal is promoted to the top layer */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0);
+  transition: display 0.7s allow-discrete, overlay 0.7s allow-discrete, background-color 0.7s;
+  /* Equivalent to
+  transition: all 0.7s allow-discrete; */
+}
+
+dialog[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+/* This starting-style rule cannot be nested inside the above selector
+because the nesting selector cannot represent pseudo-elements. */
+@starting-style {
+  dialog[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+dialog .dialog-body {
+  padding-bottom: var(--l);
+}
+
+dialog button {
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: var(--border-radius-m);
+  padding: var(--xs) var(--m);
+  transition: all var(--tr-fast);
+  color: var(--lightest);
+}
+dialog button:hover {
+  cursor: pointer;
+  background-color: var(--darkest);
+}
+dialog button.bypass-ar {
+  background-color: var(--dark);
+}
+dialog .permissions {
+  padding-top: var(--xs);
+  padding-bottom: var(--xs);
+}
+dialog .permissions li {
+  display: block;
+  padding-top: var(--quat) 0;
+}
+dialog .permissions li .icon {
+  font-size: var(--l);
+  display: inline-block;
+  margin-right: var(--quat);
+}
+
 /* Overview
 ############################################################################ */
 .overview main {
@@ -750,7 +827,7 @@ button.cta:hover {
 /* Infotext
 ############################################################################ */
 .info {
-  padding: var(--xl) var(--s) var(--xxl) var(--s);
+  padding: var(--xxxl) var(--s) var(--xxxxl) var(--s);
   background-color: var(--lightest);
 }
 .info p {
