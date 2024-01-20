@@ -26,7 +26,7 @@ ar:
     video: [
         {
             type: 'filename',
-            filename: 'stbonifatius.mp4'
+            filename: 'stbonifatius.webm'
         }
     ]
     nft: [

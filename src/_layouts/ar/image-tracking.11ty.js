@@ -24,7 +24,15 @@ for (const data of arData.nft) {
 
 function getModelCode(arData, data) {
 
+  let audioData = ''
+
+  if(arData.audio) audioData = `  
+  <a-assets>
+    <audio id="audio" src="../ar-media/audios/${arData.audio.filename}" preload="auto"></audio>
+  </a-assets>`
+
 return `
+${audioData}
 <a-nft
 class="${data.id}-nft"
 type="nft"
@@ -36,6 +44,7 @@ smoothThreshold="5"
 raycaster="objects: .clickable"
 emitevents="true"
 cursor="fuse: false; rayOrigin: mouse"
+content="audio"
 card
 nfthandler
 registerevents
@@ -57,6 +66,11 @@ registerevents
 
 function getVideoCode(arData, data) {
 
+  let audioData = ''
+
+  if(arData.audio) audioData = ` 
+    <audio id="audio" src="../ar-media/audios/${arData.audio.filename}" preload="auto"></audio> `
+
   var localFilename = ''
 
   for (const data of arData.video){
@@ -65,6 +79,7 @@ function getVideoCode(arData, data) {
 
   return `
   <a-assets>
+        ${audioData}
         <video id="video" controls src="../ar-media/videos/${localFilename}" loop></video>
 </a-assets>
 <a-nft
@@ -88,7 +103,7 @@ registerevents
           src="#video"
           width="40"
           height="22"
-          position="20 0 -35"
+           position="250 400 -500"
           rotation="90 0 180"
           gesture-handler="minScale: 0.25; maxScale: 10"
           ></a-video>
