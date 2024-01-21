@@ -1,14 +1,17 @@
 let playableContent;
 
+let playBtn;
+let pauseBtn;
+let stopBtn;
+let mediaControls
 
 AFRAME.registerComponent('registerevents', {
     init: function () {
         var marker = this.el;
         marker.addEventListener('markerFound', function() {
 
-            playBtn.removeAttribute("hidden")
-            pauseBtn.removeAttribute("hidden")
-            stopBtn.removeAttribute("hidden")
+            mediaControls.classList.add("is-visible")
+
 
             var content = marker.getAttribute('content')
             switch (content) {
@@ -25,9 +28,7 @@ AFRAME.registerComponent('registerevents', {
         marker.addEventListener('markerLost', function() {
             playableContent.pause();
             playableContent.currentTime = 0;
-            playBtn.setAttribute("hidden", "hidden");
-            pauseBtn.setAttribute("hidden", "hidden");
-            stopBtn.setAttribute("hidden", "hidden");
+            mediaControls.classList.remove("is-visible")
         });
     }
 });
@@ -39,9 +40,10 @@ let audioIsPlaying = false;
 
 const addingMediaControls = () => {
 
-    const playBtn = document.querySelector("[data-js-play-button]");
-    const pauseBtn = document.querySelector("[data-js-pause-button]");
-    const mediaControls = document.getElementById("media-controls");
+    playBtn = document.querySelector("[data-js-play-button]");
+    pauseBtn = document.querySelector("[data-js-pause-button]");
+    stopBtn = document.querySelector("[data-js-stop-button]");
+    mediaControls = document.getElementById("media-controls");
 
     const playAudio = () => {
         playableContent.play();
@@ -57,11 +59,11 @@ const addingMediaControls = () => {
         pauseBtn.classList.add("is-hidden");
     }
     
-    // Dev Demo
+/*     // Dev Demo
     playableContent = document.getElementById("audio");
     if(playableContent && mediaControls) mediaControls.classList.add("is-visible");
 
-    if(!playBtn) return;
+    if(!playBtn) return; */
     
     mediaControls.addEventListener("click", () => {
         if(audioIsPlaying){
