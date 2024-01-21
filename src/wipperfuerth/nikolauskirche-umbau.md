@@ -32,7 +32,10 @@ ar:
         {
             type: video,
             id: "nikolauskirche_front",
-            name: "Nikolauskirche"
+            name: "Nikolauskirche",
+            position: "120 0 -150",
+            scale: "5 5 5",
+            rotation: "-90 0 0"
         }
     ]
 ---

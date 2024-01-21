@@ -32,6 +32,9 @@ ar:
             type: video,
             id: "lambachpumpe",
             name: "Lambachpumpe",
+            position: "120 0 -150",
+            scale: "5 5 5",
+            rotation: "-90 0 0"
         }
     ]
 ---

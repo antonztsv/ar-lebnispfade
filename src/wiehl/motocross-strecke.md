@@ -66,6 +66,9 @@ ar:
             type: video,
             id: "wiehl-motocross",
             name: "Motocross-Strecke",
+            position: "200 0 -550",
+            scale: "10 10 10",
+            rotation: "-90 0 0"
         }
     ]
 ---

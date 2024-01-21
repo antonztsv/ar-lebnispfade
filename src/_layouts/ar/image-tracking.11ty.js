@@ -103,8 +103,9 @@ registerevents
           src="#video"
           width="40"
           height="22"
-           position="250 400 -500"
-          rotation="90 0 180"
+          scale="${data.scale}"
+          position="${data.position}"
+          rotation="${data.rotation}"
           gesture-handler="minScale: 0.25; maxScale: 10"
           ></a-video>
       </a-nft>
