@@ -59,7 +59,7 @@ const addModalDialog = () => {
 
     const target = document.querySelector("[data-js-inject-ar-code]");
     if(!target || target === null) return;
-    target.innerHTML = decodeURI(arCode);
+    //target.innerHTML = decodeURI(arCode);
     
   });
 

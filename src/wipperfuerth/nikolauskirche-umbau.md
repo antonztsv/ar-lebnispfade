@@ -25,14 +25,17 @@ ar:
     video: [
         {
             type: "filename",
-            filename: "nikolauskirche.mp4"
+            filename: "nikolauskirche.webm"
         }
     ] 
     nft: [
         {
             type: video,
-            id: "nikolauskirche",
-            name: "Nikolauskirche"
+            id: "nikolauskirche_front",
+            name: "Nikolauskirche",
+            position: "120 0 -150",
+            scale: "5 5 5",
+            rotation: "-90 0 0"
         }
     ]
 ---

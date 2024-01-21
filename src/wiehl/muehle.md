@@ -24,12 +24,17 @@ ar:
     type: image-tracking
     content: model
     location: wiehl
+    audio:
+        filename: "wiehl_repschenrothermuehle.mp3"
     nft: [
         {
             type: model,
             id: "muehlrad",
             name: "Muehlrad",
-            model: "muehlrad"
+            model: "muehlrad",
+            position: "0, 0, 0",
+            rotation: "0, 0, 0",
+            scale: "150, 150, 150"
         }
     ]
 ---

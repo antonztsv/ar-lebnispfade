@@ -37,14 +37,17 @@ ar:
         },
         {
             type: 'filename',
-            filename: 'wahllokal.mp4'
+            filename: 'pulvermuseum.webm'
         }
     ]
     nft: [
         {
             type: video,
-            id: "pulvermuseum",
+            id: "pulvermuseum_front",
             name: "Pulvermuseum",
+            position: "120 0 -150",
+            scale: "5 5 5",
+            rotation: "-90 0 0"
         }
     ]
 ---

@@ -32,7 +32,10 @@ ar:
             type: model,
             id: "muenzschlaeger",
             name: "Muenzschlaeger",
-            model: "Muenzschlaeger_T"
+            model: "Muenzschlaeger_T",
+            position: "200, 0, -550",
+            rotation: "0, 90, -90",
+            scale: "50, 50, 50"
         }
     ]
 ---
