@@ -53,9 +53,9 @@ registerevents
 <!-- scale/rotation/position attribute need high values (pixels?) -->
   <a-entity
     gltf-model="../ar-media/models/${data.model}.glb"
-    scale="250 250 250"
-    position="250 400 -500"
-    rotation="0 0 0"
+    scale="${data.scale}"
+    position="${data.position}"
+    rotation="${data.rotation}"
     class="clickable"
     gesture-handler="minScale: 0.5; maxScale: 10"
   >

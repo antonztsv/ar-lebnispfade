@@ -15,7 +15,7 @@ info: |
 
     Im November 1946 kamen täglich 1.600 bis 1.800 Menschen hier im Durchgangslager an, die auf Nordrhein- Westfalen verteilt werden sollten. Da dies gar nicht so schnell zu schaffen war, wurde das „Durchgangslager“ für zahlreiche Menschen zum Aufenthaltsort für viele Monate. Für einen längeren Aufenthalt war das Lager aber nicht ausgerüstet; so gab es weder Duschen noch Bäder; 30 bis 50 Menschen hausten in einem Raum; die Unterkünfte waren verlaust und verwanzt; wiederholt brachen Seuchen aus. Es gab natürlich auch nicht genug Platz in den Schulen, um allen Flüchtlingskindern den Unterrichtsbesuch zu ermöglichen. Ende 1950 war fast jeder vierte Einwohner von Wipperfürth und Klüppelberg ein Vertriebener; 1951 registrierte man 902 wohnungssuchende Familien mit 2583 Personen. 
 
-    Die dargestellte Video-Szene soll veranschaulichen, wie emotional Familienzuammenführungen von Geflüchten  - ach all den Wirren des Krieges - hier am Bahnhof gewesen sein können.
+    Die dargestellte Video-Szene soll veranschaulichen, wie emotional Familienzuammenführungen von Geflüchten  - nach all den Wirren des Krieges - hier am Bahnhof gewesen sein können.
 arDesc: |
     Halten Sie Ihre Kamera auf das mittlere Tor des Verladebahnhofs.
 
@@ -29,7 +29,7 @@ ar:
     video: [
         {
             type: 'filename',
-            filename: 'fluchtlingslager.mp4'
+            filename: 'fluechtlingslager.webm'
         }
     ]
     nft: [

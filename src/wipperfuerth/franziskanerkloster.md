@@ -28,7 +28,7 @@ ar:
     video: [
         {
             type: 'filename',
-            filename: 'franziskanerkloster.mp4'
+            filename: 'wahllokal.webm'
         }
     ]
     nft: [

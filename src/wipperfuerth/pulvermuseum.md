@@ -37,7 +37,7 @@ ar:
         },
         {
             type: 'filename',
-            filename: 'wahllokal.webm'
+            filename: 'pulvermuseum.webm'
         }
     ]
     nft: [

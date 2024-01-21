@@ -28,7 +28,10 @@ ar:
             type: model,
             id: "bergischerloewe",
             name: "BergischerLoewe",
-            model: "bergischerloewe"
+            model: "bergischerloewe",
+            position: "200, 0, -550",
+            rotation: "0, 90, -90",
+            scale: "50, 50, 50"
         }
     ]
 ---

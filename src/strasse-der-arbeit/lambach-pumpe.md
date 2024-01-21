@@ -25,6 +25,8 @@ ar:
             filename: 'lambachpumpe.mp4'
         }
     ]
+    audio:
+        filename: 'lambachpumpe.mp3'
     nft: [
         {
             type: video,

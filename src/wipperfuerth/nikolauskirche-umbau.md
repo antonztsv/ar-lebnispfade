@@ -25,7 +25,7 @@ ar:
     video: [
         {
             type: "filename",
-            filename: "nikolauskirche.mp4"
+            filename: "nikolauskirche.webm"
         }
     ] 
     nft: [
