@@ -5,8 +5,11 @@ button.cta{
   border-radius: 0;
   margin: var(--m) 0;
   font-size: var(--m);
-  padding: var(--quat) var(--half);
+  padding: var(--half) var(--xs);
   transition: all var(--tr-fast);
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: var(--border-radius-s);
 
   &:hover{
     transform: scale(1.2);
