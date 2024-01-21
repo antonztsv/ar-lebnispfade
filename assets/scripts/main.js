@@ -69,6 +69,38 @@ const addModalDialog = () => {
   });
 };
 
+/* Scrollspy
+############################################################################ */
+const addScrollSpy = () => { 
+
+  const target = document.querySelector('[data-js-scrollspy-target]');
+  if(!target || target === null) return;
+
+  const scrollRoot = document.querySelector('[data-js-scrollspy-root]')
+  const targetHeight = target.clientHeight;
+
+  const options = {
+    root: scrollRoot,
+    rootMargin: `-${targetHeight - 100}px`,
+    threshold: 0.5
+  }
+
+  /* The callback that will fire on intersection */
+  const onIntersect = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('is-small')
+      } else {
+        entry.target.classList.add('is-small')
+      }
+    });
+  }
+
+  /* Create the observer */
+  const observer = new IntersectionObserver(onIntersect, options)
+  observer.observe(target)
+
+};
 
 
 /* Main
@@ -77,4 +109,9 @@ const addModalDialog = () => {
 document.addEventListener("DOMContentLoaded", () => {
   addingEyeCandy();
   addModalDialog();
+
+});
+
+window.addEventListener("load", () => {
+  addScrollSpy();
 });

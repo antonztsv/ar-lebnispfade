@@ -45,6 +45,8 @@ const addingMediaControls = () => {
     stopBtn = document.querySelector("[data-js-stop-button]");
     mediaControls = document.getElementById("media-controls");
 
+    if(!mediaControls || mediaControls === null) return;
+
     const playAudio = () => {
         playableContent.play();
         audioIsPlaying = true;
