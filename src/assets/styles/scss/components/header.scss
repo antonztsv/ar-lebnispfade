@@ -32,12 +32,12 @@
   h1{
     flex-grow: 2;
     transition: max-height 2s;
-    height: 200px;
     position: relative;
-    max-height: 400px;
 
     &.home{
+      height: 200px;
       text-align: center;
+      max-height: 400px;
     }
 
     &.is-small{
