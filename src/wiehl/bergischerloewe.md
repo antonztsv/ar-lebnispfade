@@ -13,7 +13,12 @@ info: |
     Auch die Loks hatten auf diesem steilen Stück ihre Probleme. Mitunter musste im Schacht vor Gassenhagen angehalten werden, um neuen Dampf zu machen. Die dann folgende Anfahrt wurde von den Bewohnern des Bechtales wie folgt kommentiert „Ich muss erob, ich muss erob, der Deufel schleet mem Knüppel drop!“
 
 arDesc: |
-    Halte nun die Kamera auf die Brücke. Dort siehst du die alte Dampflock "Bergischer Löwe" vorbeifahren, die die Region Oberberg mit erschlossen hat.
+    Halten Sie Ihre Kamera auf die alte Eisenbahn-Brücke vor Ihnen. 
+
+    Erleben Sie hierdurch einen Zeitsprung ins Jahr 1915. Es hat gerade eine neue Bahnlinie zur Erschließung der Region eröffnet.
+
+    Es öffnen sich nun 3D-Elmente auf Ihrem Bildschirm. 
+
 ar:
     type: image-tracking
     content: model
@@ -23,7 +28,10 @@ ar:
             type: model,
             id: "bergischerloewe",
             name: "BergischerLoewe",
-            model: "bergischerloewe"
+            model: "bergischerloewe",
+            position: "200, 0, -550",
+            rotation: "0, 90, -90",
+            scale: "50, 50, 50"
         }
     ]
 ---

@@ -6,6 +6,9 @@ exports.getCard = (eleventy, data) => {
   const video = require('./video.11ty');
   const videoData = video.getVideo(eleventy, data);
 
+  const audio = require('./audio.11ty');
+  const audioData = audio.getAudio(eleventy, data);
+
 
   const getPoiInfo = (data) => {
     if(!data.info) return '';
@@ -45,15 +48,6 @@ exports.getCard = (eleventy, data) => {
       </div>
   `;
   };
-  
-
-/*   if(data.ar.video.url){
-    videoData = '<iframe id="iframeVideo" src="' + data.ar.video.url + 'title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
-  } else if(data.ar.video.filename){
-    videoData = ' <video controls="controls" src="../ar-media/videos/' + data.ar.video.filename + '"></video>'
-  } else{
-
-  } */
 
     const poiInfo = getPoiInfo(data);
     const poiMaps = getPoiMaps(data);
@@ -65,6 +59,7 @@ exports.getCard = (eleventy, data) => {
             <button data-js-card-navigation></button>
           </div>
           <div class="info-card-content-wrap">
+            ${audioData}
             ${poiInfo}
             ${poiDesc}
             ${videoData}

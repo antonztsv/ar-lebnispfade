@@ -20,6 +20,7 @@ exports.render = function (data) {
     <div id="media-controls" class="media-controls" data-js-media-controls>
       <button id="play-button" data-js-play-button><span class="icon">play_arrow</span></button>
       <button id="pause-button" class="is-hidden" data-js-pause-button><span class="icon">pause</span></button>
+      <button id="stop-button" class="is-hidden" data-js-stop-button><span class="icon">stop</span></button>
     </div>
   `;
 
@@ -49,6 +50,7 @@ exports.render = function (data) {
         ${pageHead}
         <main>
           <div class="ar-code" data-js-inject-ar-code></div>
+          ${arCode}
           ${data.content}
           ${mediaControls}
           ${card}

@@ -26,7 +26,7 @@ ar:
     video: [
         {
             type: 'filename',
-            filename: 'stbonifatius.mp4'
+            filename: 'stbonifatius.webm'
         }
     ]
     nft: [
@@ -34,6 +34,9 @@ ar:
             type: video,
             id: "stbonifatius-steine",
             name: "StBonifatius-Steine",
+            position: "120 0 -150",
+            scale: "5 5 5",
+            rotation: "-90 0 0"
         },
         {
             type: audio,
