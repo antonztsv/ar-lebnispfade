@@ -1,4 +1,4 @@
-/* Main Header
+  /* Main Header
 ###########################################################################  */
 
 .main-header{
@@ -31,5 +31,22 @@
 
   h1{
     flex-grow: 2;
+    transition: max-height 2s;
+    height: 200px;
+    position: relative;
+    max-height: 400px;
+
+    &.home{
+      text-align: center;
+    }
+
+    &.is-small{
+      max-height: 100px;
+    }
+
+    img{
+      max-height: 100%;
+      display: inline;
+    }
   }
 }

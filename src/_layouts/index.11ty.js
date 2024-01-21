@@ -54,7 +54,7 @@ exports.render = function (data) {
     <html lang="de">
       ${documentHead}
       <body class="overview">
-        <div class="device-wrapper">
+        <div class="device-wrapper" data-js-scrollspy-root>
           ${pageHead}
           <main data-js-on-load-action="fade-in">
             ${pathOverview}
