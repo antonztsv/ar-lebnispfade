@@ -18,7 +18,7 @@ arDesc: |
 ar:
     type: image-tracking
     content: video
-    location: strassederarbeit
+    location: strasse-der-arbeit
     video: [
         {
             type: 'filename',
