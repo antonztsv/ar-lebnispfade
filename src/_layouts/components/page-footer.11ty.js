@@ -10,7 +10,8 @@ exports.getPageFooter = (eleventy, data) => {
   
   return `
     <footer class="main-footer">
-      ${date}.${month}.${year} // ${hours}:${minutes}:${seconds} // <a href="https://www.th-koeln.de/hochschule/impressum_8159.php">Impressum</a>
+      <a href="/ueber-das-projekt/">Über das Projekt</a> // <a href="https://www.th-koeln.de/hochschule/impressum_8159.php">Impressum</a><br>
+      <small>${date}.${month}.${year} // ${hours}:${minutes}:${seconds}</small>
     </footer>
   `;
 };
