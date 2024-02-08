@@ -25,6 +25,9 @@ compiled-assets     Kompilierte Dateien, z.B. CSS
 .stylelintrc.json   
 ```
 
+## Autodeployments
+Ein Commit auf den `main`-branch triggert ein Deployment auf [arlebnisobk.de](https://arlebnisobk.de). Ein Commit auf den `dev`-branch triggert ein Deployment auf [dev.arlebnisobk.de](https://dev.arlebnisobk.de). 
+
 ## Funktionen
 
 - `npm install`
@@ -42,11 +45,3 @@ compiled-assets     Kompilierte Dateien, z.B. CSS
 - bitte (möglichst) ausschließlich CSS Variabeln aus der variables.scss nutzen
 - bitte keine Regeln auf Elemente im Global Scope legen. Außer in der base.scss
 
-## ToDos
-
-### Michael
-- Einführungstext Startseite
-- Link zum Projekt Startseite
-- Einführungstext zu den Pfaden
-- Absprungtext Text bei den POIs
-- Duzen oder siezen?
