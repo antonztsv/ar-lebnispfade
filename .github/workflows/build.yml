@@ -46,6 +46,8 @@ jobs:
       - name: Push files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
+          local-dir: ./docs/
+          server-dir: arlebnisobk.de/
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
