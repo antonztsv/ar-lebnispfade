@@ -36,9 +36,16 @@ jobs:
       - name: Run npm build
         run: npm run build
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+#      - name: Deploy to gh-pages
+#        uses: peaceiris/actions-gh-pages@v3
+#        with:
+#          publish_dir: docs 
+#          publish_branch: gh-pages
+#          deploy_key: ${{ secrets.ARLEBNISPAFDE_ACTIONS_DEPLOY_KEY }}
+
+      - name: Push files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          publish_dir: docs 
-          publish_branch: gh-pages
-          deploy_key: ${{ secrets.ARLEBNISPAFDE_ACTIONS_DEPLOY_KEY }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
