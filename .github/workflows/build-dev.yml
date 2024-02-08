@@ -1,0 +1,53 @@
+name: 11ty Dev Preview Build
+
+on:
+  push:
+    branches: ['dev']
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: string
+        default: dev
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ['19']
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Get Token
+        run: echo 'MAPBOX_TOKEN=${{ vars.MAPBOX_TOKEN }}' >> $GITHUB_ENV    
+
+      - name: Run npm build
+        run: npm run build
+
+#      - name: Deploy to gh-pages
+#        uses: peaceiris/actions-gh-pages@v3
+#        with:
+#          publish_dir: docs 
+#          publish_branch: gh-pages
+#          deploy_key: ${{ secrets.ARLEBNISPAFDE_ACTIONS_DEPLOY_KEY }}
+
+      - name: Push files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          local-dir: ./docs/
+          server-dir: dev.arlebnisobk.de/
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
