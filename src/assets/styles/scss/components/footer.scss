@@ -7,3 +7,20 @@
   background-color: var(--light);
   color: var(--darker);
 }
+
+
+/* Footer Links
+###########################################################################  */
+
+ul.footer-links{
+
+  padding-top: var(--m);
+  padding-bottom: var(--l);
+
+  li{
+    a{
+      font-weight: var(--fw-normal);
+    }
+  }
+
+}

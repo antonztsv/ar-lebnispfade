@@ -256,7 +256,7 @@ html {
 }
 
 body {
-  background-color: var(--darkest);
+  background-color: var(--lightst);
   color: var(--color-text);
   font-family: var(--ff-normal);
   font-size: var(--m);
@@ -829,6 +829,24 @@ dialog .permissions li .icon {
   font-size: var(--l);
   display: inline-block;
   margin-right: var(--quat);
+}
+
+/* Liste der Partner
+############################################################################ */
+ul.list-of-partners li {
+  padding: var(--xl);
+}
+ul.list-of-partners li.small {
+  scale: 0.7;
+}
+ul.list-of-partners li a {
+  display: block;
+  text-align: center;
+}
+ul.list-of-partners li a img {
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
 }
 
 /* Overview
