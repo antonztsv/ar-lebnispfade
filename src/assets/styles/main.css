@@ -177,7 +177,7 @@ select {
 }
 
 :root {
-  --bfs: 0.8rem;
+  --bfs: 1rem;
   --half: calc(var(--bfs) / 2);
   --quat: calc(var(--bfs) / 4);
   --xxs: calc(var(--bfs) * 0.4);
@@ -428,20 +428,20 @@ ul.footer-links li a {
 .overview li.arlebnis-item + li.arlebnis-item, .path li.arlebnis-item + li.arlebnis-item {
   border-top: solid var(--border-width-s) var(--lightest);
 }
-.overview li, .path li {
+.overview .item-list li, .overview .links li, .path .item-list li, .path .links li {
   position: relative;
   display: block;
   background-size: cover;
   background-position: center center;
   z-index: 0;
 }
-.overview li > a, .path li > a {
+.overview .item-list li > a, .overview .links li > a, .path .item-list li > a, .path .links li > a {
   position: relative;
   display: block;
   aspect-ratio: 16/9;
   z-index: 2;
 }
-.overview li > a p, .path li > a p {
+.overview .item-list li > a p, .overview .links li > a p, .path .item-list li > a p, .path .links li > a p {
   position: absolute;
   bottom: var(--s);
   left: var(--xs);
@@ -452,25 +452,25 @@ ul.footer-links li a {
   margin-right: var(--m);
   line-height: var(--lh-tight);
 }
-.overview li > a p .title-text, .path li > a p .title-text {
+.overview .item-list li > a p .title-text, .overview .links li > a p .title-text, .path .item-list li > a p .title-text, .path .links li > a p .title-text {
   display: block;
   padding: var(--quat) var(--xs);
   background-color: var(--obk-blau);
   transition: all var(--tr-fast);
 }
-.overview li > a p .title-text:hover, .path li > a p .title-text:hover {
+.overview .item-list li > a p .title-text:hover, .overview .links li > a p .title-text:hover, .path .item-list li > a p .title-text:hover, .path .links li > a p .title-text:hover {
   background-color: var(--darkest);
 }
-.overview li > a p .amount, .path li > a p .amount {
+.overview .item-list li > a p .amount, .overview .links li > a p .amount, .path .item-list li > a p .amount, .path .links li > a p .amount {
   padding: var(--quat) var(--xs);
   display: inline-block;
   font-size: var(--s);
   background-color: var(--darkest);
 }
-.overview li.text-link a, .path li.text-link a {
+.overview .item-list li.text-link a, .overview .links li.text-link a, .path .item-list li.text-link a, .path .links li.text-link a {
   aspect-ratio: 4/1;
 }
-.overview li::before, .path li::before {
+.overview .item-list li::before, .overview .links li::before, .path .item-list li::before, .path .links li::before {
   position: absolute;
   display: block;
   content: "";
