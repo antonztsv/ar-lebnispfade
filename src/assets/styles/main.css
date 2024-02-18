@@ -177,7 +177,7 @@ select {
 }
 
 :root {
-  --bfs: 1rem;
+  --bfs: 0.8rem;
   --half: calc(var(--bfs) / 2);
   --quat: calc(var(--bfs) / 4);
   --xxs: calc(var(--bfs) * 0.4);
@@ -211,7 +211,7 @@ select {
   --color-accent: var(--obk-blau);
   --color-decoration: var(--obk-akzent-1);
   --color-background: var(--lightest);
-  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --system-ui: Verdana, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --ff-normal: var(--system-ui), sans-serif;
   --ff-serif: var(--system-ui), serif;
   --ff-code: var(--system-ui), monospace;
@@ -341,6 +341,11 @@ p + h4 {
 
 /* DEV
 ############################################################################ */
+.is-rev {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
 main {
   flex-grow: 2;
   display: flex;
@@ -402,6 +407,16 @@ aside {
   font-size: var(--s);
   background-color: var(--light);
   color: var(--darker);
+}
+
+/* Footer Links
+###########################################################################  */
+ul.footer-links {
+  padding-top: var(--m);
+  padding-bottom: var(--l);
+}
+ul.footer-links li a {
+  font-weight: var(--fw-normal);
 }
 
 /* Overview
@@ -949,6 +964,13 @@ ul.links .text-link a:hover {
 ############################################################################ */
 .page main {
   padding: var(--m);
+}
+
+.impressum ul:not([class]) {
+  padding-left: 0;
+}
+.impressum ul:not([class]) li {
+  margin-left: 2ch;
 }
 
 /*# sourceMappingURL=main.css.map */
