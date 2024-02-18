@@ -21,3 +21,4 @@ Kooperationspartner sind: TH Köln, Katholische Erwachsenenbildung Oberberg, Hau
   <li><a href="https://www.mkw.nrw/weiterbildung-und-politische-bildung/allgemeine-weiterbildung/innovationsfonds"><img src="/assets/images/logos-partner/Gefoerdert-durch-BMKW-NRW.png" alt="Logo Innovationsfond NRW"></a></li>
   <li class="small"><a href="https://www.wiehl.de"><img src="/assets/images/logos-partner/Logo-Wiehl.jpg" alt="Logo Stadt Wiehl"></a></li>
   <li><a href="https://www.wipperfuerth.de/index.html"><img src="/assets/images/logos-partner/logo-hansestadt-wipperfuerth.png" alt="Logo Stadt Wipperfürth"></a></li>
+</ul>
