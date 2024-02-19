@@ -110,6 +110,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/**/*.fset");
   eleventyConfig.addPassthroughCopy("src/**/*.fset3");
   eleventyConfig.addPassthroughCopy("src/**/*.iset");
+  eleventyConfig.addPassthroughCopy("src/**/*.mind");
 
   // Copy Media
   eleventyConfig.addPassthroughCopy("src/**/*.mp4");
