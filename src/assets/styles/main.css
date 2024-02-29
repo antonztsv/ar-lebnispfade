@@ -211,7 +211,7 @@ select {
   --color-accent: var(--obk-blau);
   --color-decoration: var(--obk-akzent-1);
   --color-background: var(--lightest);
-  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --system-ui: Verdana, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --ff-normal: var(--system-ui), sans-serif;
   --ff-serif: var(--system-ui), serif;
   --ff-code: var(--system-ui), monospace;
@@ -256,7 +256,7 @@ html {
 }
 
 body {
-  background-color: var(--darkest);
+  background-color: var(--lightst);
   color: var(--color-text);
   font-family: var(--ff-normal);
   font-size: var(--m);
@@ -341,6 +341,11 @@ p + h4 {
 
 /* DEV
 ############################################################################ */
+.is-rev {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
 main {
   flex-grow: 2;
   display: flex;
@@ -404,6 +409,16 @@ aside {
   color: var(--darker);
 }
 
+/* Footer Links
+###########################################################################  */
+ul.footer-links {
+  padding-top: var(--m);
+  padding-bottom: var(--l);
+}
+ul.footer-links li a {
+  font-weight: var(--fw-normal);
+}
+
 /* Overview
 ############################################################################ */
 .overview, .path {
@@ -413,20 +428,20 @@ aside {
 .overview li.arlebnis-item + li.arlebnis-item, .path li.arlebnis-item + li.arlebnis-item {
   border-top: solid var(--border-width-s) var(--lightest);
 }
-.overview li, .path li {
+.overview .item-list li, .overview .links li, .path .item-list li, .path .links li {
   position: relative;
   display: block;
   background-size: cover;
   background-position: center center;
   z-index: 0;
 }
-.overview li > a, .path li > a {
+.overview .item-list li > a, .overview .links li > a, .path .item-list li > a, .path .links li > a {
   position: relative;
   display: block;
   aspect-ratio: 16/9;
   z-index: 2;
 }
-.overview li > a p, .path li > a p {
+.overview .item-list li > a p, .overview .links li > a p, .path .item-list li > a p, .path .links li > a p {
   position: absolute;
   bottom: var(--s);
   left: var(--xs);
@@ -437,25 +452,25 @@ aside {
   margin-right: var(--m);
   line-height: var(--lh-tight);
 }
-.overview li > a p .title-text, .path li > a p .title-text {
+.overview .item-list li > a p .title-text, .overview .links li > a p .title-text, .path .item-list li > a p .title-text, .path .links li > a p .title-text {
   display: block;
   padding: var(--quat) var(--xs);
   background-color: var(--obk-blau);
   transition: all var(--tr-fast);
 }
-.overview li > a p .title-text:hover, .path li > a p .title-text:hover {
+.overview .item-list li > a p .title-text:hover, .overview .links li > a p .title-text:hover, .path .item-list li > a p .title-text:hover, .path .links li > a p .title-text:hover {
   background-color: var(--darkest);
 }
-.overview li > a p .amount, .path li > a p .amount {
+.overview .item-list li > a p .amount, .overview .links li > a p .amount, .path .item-list li > a p .amount, .path .links li > a p .amount {
   padding: var(--quat) var(--xs);
   display: inline-block;
   font-size: var(--s);
   background-color: var(--darkest);
 }
-.overview li.text-link a, .path li.text-link a {
+.overview .item-list li.text-link a, .overview .links li.text-link a, .path .item-list li.text-link a, .path .links li.text-link a {
   aspect-ratio: 4/1;
 }
-.overview li::before, .path li::before {
+.overview .item-list li::before, .overview .links li::before, .path .item-list li::before, .path .links li::before {
   position: absolute;
   display: block;
   content: "";
@@ -831,6 +846,24 @@ dialog .permissions li .icon {
   margin-right: var(--quat);
 }
 
+/* Liste der Partner
+############################################################################ */
+ul.list-of-partners li {
+  padding: var(--xl);
+}
+ul.list-of-partners li.small {
+  scale: 0.7;
+}
+ul.list-of-partners li a {
+  display: block;
+  text-align: center;
+}
+ul.list-of-partners li a img {
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
+}
+
 /* Overview
 ############################################################################ */
 .overview main {
@@ -931,6 +964,13 @@ ul.links .text-link a:hover {
 ############################################################################ */
 .page main {
   padding: var(--m);
+}
+
+.impressum ul:not([class]) {
+  padding-left: 0;
+}
+.impressum ul:not([class]) li {
+  margin-left: 2ch;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -9,7 +9,8 @@
     border-top: solid var(--border-width-s) var(--lightest);
   }
 
-  & li{
+  & .item-list li,
+  & .links li{
     position: relative;
     display: block;
     background-size: cover;

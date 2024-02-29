@@ -102,6 +102,21 @@ const addScrollSpy = () => {
 
 };
 
+/* Mailto
+############################################################################ */
+
+const addMailTo = () => {
+
+  const mailTos = document.querySelectorAll("[data-js-to]");
+  if(mailTos.length === 0) return;
+
+  mailTos.forEach((mailto) => {
+    mailto.addEventListener("click", () => {
+      window.location.href = `mailto: ${mailto.dataset.jsTo}@${mailto.dataset.jsDomain}`;
+    });
+  });
+};
+
 
 /* Main
 ############################################################################ */
@@ -109,7 +124,7 @@ const addScrollSpy = () => {
 document.addEventListener("DOMContentLoaded", () => {
   addingEyeCandy();
   addModalDialog();
-
+  addMailTo();
 });
 
 window.addEventListener("load", () => {

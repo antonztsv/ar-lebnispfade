@@ -1,0 +1,10 @@
+.impressum{
+  ul:not([class]){
+    padding-left: 0;
+
+    li{
+      margin-left: 2ch;
+    }
+  }
+}
+

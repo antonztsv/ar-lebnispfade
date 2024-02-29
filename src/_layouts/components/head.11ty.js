@@ -28,17 +28,33 @@ exports.getHeader = (eleventy, data, mapMeta) => {
       <meta name="msapplication-TileColor" content="#da532c">
       <meta name="theme-color" content="#ffffff">
 
-      <link href="${eleventy.url('/compiled-assets/main.css')}" rel="stylesheet">
+      <link href="${eleventy.url('/compiled-assets/main.css')}?${eleventy.getDateString()}" rel="stylesheet">
       
       <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@cb0bb8407968be713b79008548b7044908ba5729/dist/aframe-master.min.js"></script>
       <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
       <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
 
-      <script src="${eleventy.url('/assets/scripts/main.js')}" defer></script>
-      <script src="${eleventy.url('/assets/scripts/gestures.js')}" defer></script>
-      <script src="${eleventy.url('/assets/scripts/card.js')}" defer></script>
-      <script src="${eleventy.url('/assets/scripts/mediaControls.js')}" defer></script>
+      <script src="${eleventy.url('/assets/scripts/main.js')}?${eleventy.getDateString()}" defer></script>
+      <script src="${eleventy.url('/assets/scripts/gestures.js')}?${eleventy.getDateString()}" defer></script>
+      <script src="${eleventy.url('/assets/scripts/card.js')}?${eleventy.getDateString()}" defer></script>
+      <script src="${eleventy.url('/assets/scripts/mediaControls.js')}?${eleventy.getDateString()}" defer></script>
+
+      <!-- Matomo -->
+      <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="//stats.arlebnisobk.de/";
+          _paq.push(['setTrackerUrl', u+'matomo.php']);
+          _paq.push(['setSiteId', '1']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+      <!-- End Matomo Code -->
     </head>
   `;
 };
