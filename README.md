@@ -2,6 +2,7 @@
 
 Nutzt [11ty](https://www.11ty.dev) für die strukturierte Ablage von Content. Für die Karte wird eine .env Konfiguration mit dem Token genutzt.
 
+
 ## Ordnerstruktur
 
 ### `/docs`
@@ -25,9 +26,6 @@ compiled-assets     Kompilierte Dateien, z.B. CSS
 .stylelintrc.json   
 ```
 
-## Autodeployments
-Ein Commit auf den `main`-branch triggert ein Deployment auf [arlebnisobk.de](https://arlebnisobk.de). Ein Commit auf den `dev`-branch triggert ein Deployment auf [dev.arlebnisobk.de](https://dev.arlebnisobk.de). 
-
 ## Funktionen
 
 - `npm install`
@@ -45,3 +43,16 @@ Ein Commit auf den `main`-branch triggert ein Deployment auf [arlebnisobk.de](ht
 - bitte (möglichst) ausschließlich CSS Variabeln aus der variables.scss nutzen
 - bitte keine Regeln auf Elemente im Global Scope legen. Außer in der base.scss
 
+
+
+## Deployments
+
+Wir haben drei Umgebungen mit folgenden Aufgaben:
+
+| Ungebung | Branch | Url | Aufgabe |
+|---|---|---|---|
+| Produktiv | main | https://arlebnisobk.de | Produktivumgebung für die Welt | 
+| Dev | dev | https://dev.arlebnisobk.de | Umgebung um Entwicklungsstände auszutesten |
+| Preview | preview | https://preview.arlebnisobk.de |Umgebung zur temprären Bereitstellung von Entwicklungsständen, z.B. für Absprachen oder Demos. Bitte in der Preview.md dokumentieren, damit keine Stände überschrieben werden, die gerade noch gebraucht werden. |
+
+Ein Commit auf den jeweiligen Branch triggert ein Deploment auf die entsprechende Umgebung.
