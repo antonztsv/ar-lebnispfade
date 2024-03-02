@@ -31,7 +31,7 @@ exports.render = function (data) {
   };
   const modalDialog = pageDialogs.getModalDialog(this, dialogData)
 
-  const documentHead = documentHeader.getHeader(this, data);
+  const documentHead = documentHeader.getHeader(this, data, { arDependencies: true });
   const pageHead = pageHeader.getPageHeader(this, data);
   const aside = pageAside.getAside(this, data);
 

@@ -4,6 +4,7 @@
   font-style: normal;
   font-weight: 200;
   src: url('../assets/fonts/Roboto/Roboto-Light.ttf');
+  font-display: swap;
 }
 
 @font-face {
@@ -12,6 +13,7 @@
   font-style: normal;
   font-weight: 300;
   src: url('../assets/fonts/Roboto/Roboto-Regular.ttf');
+  font-display: swap;
 }
 
 @font-face {
@@ -20,6 +22,7 @@
   font-style: normal;
   font-weight: 500;
   src: url('../assets/fonts/Roboto/Roboto-Medium.ttf');
+  font-display: swap;
 }
 
 @font-face {
@@ -28,6 +31,7 @@
   font-style: normal;
   font-weight: 700;
   src: url('../assets/fonts/Roboto/Roboto-Bold.ttf');
+  font-display: swap;
 }
 
 @font-face {
@@ -36,6 +40,7 @@
   font-style: normal;
   font-weight: 200;
   src: url("../assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf");
+  font-display: swap;
 }
 
 @font-face {
@@ -44,12 +49,14 @@
   font-style: normal;
   font-weight: 700;
   src: url("../assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'MaterialIcons';
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src:
     url('../assets/fonts/MaterialIcons/material-icons-round.woff2') format('woff2'),
 }

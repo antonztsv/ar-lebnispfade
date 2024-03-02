@@ -10,7 +10,8 @@ exports.render = function(data) {
   const pageFooter = require('./components/page-footer.11ty');
   const pageAside = require('./components/aside.11ty');
 
-  const documentHead = documentHeader.getHeader(this, data, mapMeta);
+
+  const documentHead = documentHeader.getHeader(this, data, { mapMeta });
   const pageHead = pageHeader.getPageHeader(this, data);
   const pageFoot = pageFooter.getPageFooter(this, data);
   const aside = pageAside.getAside(this, data);
