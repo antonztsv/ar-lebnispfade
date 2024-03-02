@@ -131,4 +131,4 @@ window.addEventListener("load", () => {
   addScrollSpy();
 });
 
-alert("asas");
+alert("Hello from main.js!");
