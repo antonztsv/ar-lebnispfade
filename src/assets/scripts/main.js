@@ -130,3 +130,5 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("load", () => {
   addScrollSpy();
 });
+
+alert("Hello from main.js!");
