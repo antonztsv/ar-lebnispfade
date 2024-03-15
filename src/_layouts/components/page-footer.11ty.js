@@ -10,6 +10,7 @@ exports.getPageFooter = (eleventy, data) => {
   
   return `
     <footer class="main-footer">
+    <a href="https://www.vhs-oberberg.de"><img src="/assets/images/logos-partner/VHS-Oberberg1.png" alt="Logo VHS Oberberg"></a>
       <ul class="footer-links">
         <li><a href="/ueber-das-projekt/">Über das Projekt</a></li>
         <li><a href="/impressum">Impressum</a></li>

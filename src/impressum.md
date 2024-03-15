@@ -28,3 +28,9 @@ Moltkestraße 42
 51643 Gummersbach  
 
 E-Mail: <a data-js-to="datenschutz" data-js-domain="obk.de" class="is-rev">ed.kb<!--check-->o@zt<!--check-->uhcsnetad</a>
+
+### Quell- und Urhebernachweis: 
+Logo: Michael Beiderwellen, <br>
+„AR-Pfad Straße der Arbeit“ Dominik Ketz, „Lambach-Pumpe“ Michael Beiderwellen <br>
+„AR-Pfad Wiehl“ Christian Melzer , „Eisenbahnbrücke“ Michael Beiderwellen, „Burghaus Bielstein“ Kulturkreis Wiehl e.V. David Prinz, „Motocross-Strecke“ Reiner Herle, „Mühle“ Hillnhütter Architekten, „St. Bonifatius“ Christian Springer. <br>
+„AR-Pfad Wipperfürth“ Stadt Wipperfürth, „Flüchtlingslager“: Michael Beiderwellen, „Franziskaner Kloster“ gemeinfrei, „Münzschläger“ Michael Beiderwellen, „Pulvermuseum“ gemeinfrei.
