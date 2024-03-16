@@ -7,7 +7,7 @@ backArrow: true
 
 ![alt-text](/assets/images/ARlebnisOBK-icon.png "Hover text")
 
-Das durch den Innovationsfond NRW geförderte und durch die VHS Oberberg koordinierte Augmented Reality Projekt "ARlebnis OBK" möchte neue Zugänge zu Bildung schaffen. Junge Menschen sollen durch das Faszinosum Augmented Reality einen Zugang zu Oberberger Kultur und Geschichte erlangen. Ältere Menschen sollen durch den Bezugspunkt Heimatgeschichte einen Zugang zu modernen digitalen Kulturtechniken per Smartphone erlangen (digital literacy).
+Das durch den Innovationsfond NRW geförderte und durch die VHS Oberberg koordinierte Augmented Reality Projekt "ARlebnis OBK" möchte neue Zugänge zu Bildung schaffen. Junge Menschen sollen durch das Faszinosum Augmented Reality einen Zugang zur oberbergischen Kultur und Geschichte erlangen. Ältere Menschen sollen durch den Bezugspunkt Heimatgeschichte einen Zugang zu modernen digitalen Kulturtechniken per Smartphone erlangen (digital literacy).
 
 Kooperationspartner sind: TH Köln, Katholische Erwachsenenbildung Oberberg, Haus der Familie Wipperfürth, KuBa Wipperfürth, Ev. Erwachsenenbildung an der Agger, die Stadt Wiehl, die Stadt Wipperfürth.
 
