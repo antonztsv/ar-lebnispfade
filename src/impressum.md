@@ -19,18 +19,30 @@ Telefon-Zentrale: 02261 88-0
 Fax: 02261 88-8190-27  
 E-Mail: <a data-js-to="michael.beiderwellen" data-js-domain="vhs.obk.de" class="is-rev">ed<!-- check -->.kbo.shv@<!--check -->nellewredieb.leahcim</a>
  
-### Datenschutzbeauftragter
-Oberbergischer Kreis  
-Der Landrat  
-Leitungsstab  
-Datenschutzbeauftragter  
-Moltkestraße 42  
-51643 Gummersbach  
 
-E-Mail: <a data-js-to="datenschutz" data-js-domain="obk.de" class="is-rev">ed.kb<!--check-->o@zt<!--check-->uhcsnetad</a>
+### Redaktionell verantwortlich für den Inhalt
+Volkshochschule Oberberg<br>
+vertreten durch: Michael Beiderwellen<br>
+Mühlenbergweg 3<br>
+51645 Gummersbach<br>
+02261 8190-0<br>
+02261 8190-27<br>
+info@vhs-oberberg.de<br>
+
+E-Mail: <a data-js-to="info" data-js-domain="vhs-oberberg.de" class="is-rev">ed.kb<!--check-->o@zt<!--check-->uhcsnetad</a>
 
 ### Quell- und Urhebernachweis: 
 Logo: Michael Beiderwellen, <br>
-„AR-Pfad Straße der Arbeit“ Dominik Ketz, „Lambach-Pumpe“ Michael Beiderwellen <br>
-„AR-Pfad Wiehl“ Christian Melzer , „Eisenbahnbrücke“ Michael Beiderwellen, „Burghaus Bielstein“ Kulturkreis Wiehl e.V. David Prinz, „Motocross-Strecke“ Reiner Herle, „Mühle“ Hillnhütter Architekten, „St. Bonifatius“ Christian Springer. <br>
-„AR-Pfad Wipperfürth“ Stadt Wipperfürth, „Flüchtlingslager“: Michael Beiderwellen, „Franziskaner Kloster“ gemeinfrei, „Münzschläger“ Michael Beiderwellen, „Pulvermuseum“ gemeinfrei.
+„AR-Pfad Straße der Arbeit“ Dominik Ketz,<br> 
+„Lambach-Pumpe“ Michael Beiderwellen, <br>
+„AR-Pfad Wiehl“ Christian Melzer,<br> 
+„Eisenbahnbrücke“ Michael Beiderwellen, <br>
+„Burghaus Bielstein“ Kulturkreis Wiehl e.V. David Prinz,<br> 
+„Motocross-Strecke“ Reiner Herle, <br>
+„Mühle“ Hillnhütter Architekten, <br>
+„St. Bonifatius“ Christian Springer, <br>
+„AR-Pfad Wipperfürth“ Stadt Wipperfürth, <br>
+„Flüchtlingslager“: Michael Beiderwellen, <br>
+„Franziskaner Kloster“ gemeinfrei, <br>
+„Münzschläger“ Michael Beiderwellen, <br>
+„Pulvermuseum“ gemeinfrei.

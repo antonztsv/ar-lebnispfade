@@ -54,7 +54,7 @@ exports.render = function (data) {
             Hier finden Sie unsere ARlebnisse für den ARlebnispfad <em>${data.title}</em>. Für die meisten ARlebnisse brauchen Sie ein Smartphone, eine Internetverbindung und Sie müssen an der entsprechenden Stelle sein. Viel Spaß 🙌🏽
             </p>
             <p>
-            Weitere <a href="https://www.vhs-nrw.de/innovationsfonds2023/">Informationen zum Projekt</a> gibt es hier.
+            Weitere <a href="https://www.vhs-nrw.de/innovationsfonds2023/">Informationen zum Projekt</a> - Bitte ganz nach unten scrollen, dort finden Sie ein Interview mit Michael Beiderwellen, vhs Oberberg.
             </p>
           </div>
         </main>
