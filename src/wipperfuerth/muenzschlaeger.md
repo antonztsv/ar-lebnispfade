@@ -4,7 +4,7 @@ image: muenzschlaeger.webp
 type: ar-data
 layout: poi
 gmaps:
-coords: [551.1174008,7.398508]
+coords: [51.1174008,7.398508]
 info: |
     **Münzprägungen im Rheinland, im Oberbergischen und in Wipperfürth**
 
