@@ -43,6 +43,10 @@ exports.getHeader = (eleventy, data, args) => {
       <meta name="theme-color" content="#ffffff">
 
       <link href="${eleventy.url('/compiled-assets/main.css')}?${eleventy.getDateString()}" rel="stylesheet" media="screen">
+
+      <!-- Cookie-Banner -->
+      <script id="usercentrics-cmp" async data-eu-mode="true" data-settings-id="UZi3OuY5qI34pm" src=https://app.eu.usercentrics.eu/browser-ui/latest/loader.js></script>
+      <script type="application/javascript"> var UC_UI_SUPPRESS_CMP_DISPLAY=true;</script>
       
       ${arDependencyBlock}
 
@@ -64,10 +68,6 @@ exports.getHeader = (eleventy, data, args) => {
         })();
       </script>
       <!-- End Matomo Code -->
-      
-      <!-- Cookie-Banner -->
-      <script id="usercentrics-cmp" async data-eu-mode="true" data-settings-id="UZi3OuY5qI34pm" src=https://app.eu.usercentrics.eu/browser-ui/latest/loader.js></script>
-      <script type="application/javascript"> var UC_UI_SUPPRESS_CMP_DISPLAY=true;</script>
 
     </head>
   `;
