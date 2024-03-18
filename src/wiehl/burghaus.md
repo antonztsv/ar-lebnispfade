@@ -4,7 +4,7 @@ image: burghaus.webp
 type: ar-data
 layout: poi
 gmaps: 
-coords: [50,961562, 7.4977105]
+coords: [50.961562, 7.4977105]
 info: |
     1720 - Burhause Biellstein: Keimzelle des Ortes
 
