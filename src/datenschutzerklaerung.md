@@ -68,6 +68,7 @@ Zudem dienen die unter Ziffer 1. genannten Daten zur bedarfsgerechten Gestaltung
 #### 4. Dauer der Speicherung
 Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind.
 Im Falle der Erfassung der Daten zur Bereitstellung der Website ist dies der Fall, wenn die jeweilige Sitzung beendet ist.
+Eine Datenübergreifende Speicherung zur bedarfsgerechten Gestaltung und fortlaufenden Optimierung der WebApp, zur statistischen Erfassung sowie zur Gewährleistung der Sicherheit der informationstechnischen Systeme ist möglich. In diesem Fall werden die Daten anonymisiert, so dass eine Zuordnung des aufrufenden Clients nicht mehr möglich ist.
  
 #### 5. Widerspruchs- und Beseitigungsmöglichkeit
 Die automatisierte Erfassung der Daten zur Bereitstellung der Website ist für den Betrieb der Internetseite zwingend erforderlich. Es besteht folglich seitens der Nutzerin bzw. des Nutzers keine Widerspruchsmöglichkeit.
