@@ -54,7 +54,7 @@ exports.render = function (data) {
             Hier finden Sie unsere ARlebnisse für den ARlebnispfad <em>${data.title}</em>. Für die meisten ARlebnisse brauchen Sie ein Smartphone, eine Internetverbindung und Sie müssen an der entsprechenden Stelle sein. Viel Spaß 🙌🏽
             </p>
             <p>
-            Weitere Informationen zum Projekt finden Sie <a href="http://localhost:8080/ueber-das-projekt/">hier in der App.</a><br>
+            Weitere Informationen zum Projekt finden Sie <a href="https://arlebnisobk.de/ueber-das-projekt/">hier in der App.</a><br>
              Zusätzliche finden Sie ein Video zum Projekt mit Interviews <a href="https://www.vhs-nrw.de/innovationsfonds2023/">hier</a>. Sie müssen auf dieser Seite bitte nach unten scrollen und auf das Video der VHS Oberberg klicken.
             </p>
           </div>
