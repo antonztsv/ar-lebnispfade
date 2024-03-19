@@ -16,6 +16,7 @@ exports.getPageFooter = (eleventy, data) => {
         <li><a href="/impressum">Impressum</a></li>
         <li><a href="/datenschutzerklaerung">Datenschutzerklärung</a></li>
       </ul>
+      <br>
       <a href="javascript:UC_UI.showSecondLayer();">Cookie-Einstellungen</a>
     </footer>
   `;

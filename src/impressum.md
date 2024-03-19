@@ -10,26 +10,32 @@ backArrow: true
 
 Oberbergischer Kreis  
 Der Landrat  
-Leitungsstab  
-Kreisvolkshochschule  
+
+VHS Oberberg
+Mühlenbergweg 3  
 51643 Gummersbach  
   
-Telefon: 02261 88-8190-13  
-Telefon-Zentrale: 02261 88-0  
+Telefon-Zentrale: 02261 8190-0  
 Fax: 02261 88-8190-27  
-E-Mail: <a data-js-to="michael.beiderwellen" data-js-domain="vhs.obk.de" class="is-rev">ed<!-- check -->.kbo.shv@<!--check -->nellewredieb.leahcim</a>
+E-Mail: <a data-js-to="info" data-js-domain="vhs-oberberg.de" class="is-rev">ed<!-- check -->.grebrebo-shv@<!--check -->ofni</a>
  
+ ### Rechtsform
+ Der oberbergische Kreis ist eine Körperschaft des Öffentlichen Rechts.
+
+ ### Umsatzsteuer-Identifikationsnummer
+Gemäß §27a Umsatzsteuergesetz: DE122539628
 
 ### Redaktionell verantwortlich für den Inhalt
 Volkshochschule Oberberg<br>
 vertreten durch: Michael Beiderwellen<br>
 Mühlenbergweg 3<br>
 51645 Gummersbach<br>
-02261 8190-0<br>
-02261 8190-27<br>
-info@vhs-oberberg.de<br>
+Tel.: 02261 8190-0<br>
+Fax:02261 8190-27<br>
+E-Mail: <a data-js-to="info" data-js-domain="vhs-oberberg.de" class="is-rev">ed<!-- check -->.grebrebo-shv@<!--check -->ofni</a>
 
-E-Mail: <a data-js-to="info" data-js-domain="vhs-oberberg.de" class="is-rev">ed.kb<!--check-->o@zt<!--check-->uhcsnetad</a>
+
+### Rechtsform
 
 ### Quell- und Urhebernachweis: 
 Logo: Michael Beiderwellen, <br>
