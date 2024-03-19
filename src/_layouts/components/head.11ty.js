@@ -46,15 +46,16 @@ exports.getHeader = (eleventy, data, args) => {
 
       <!-- Cookie-Banner -->
       <script id="usercentrics-cmp" async data-eu-mode="true" data-settings-id="UZi3OuY5qI34pm" src=https://app.eu.usercentrics.eu/browser-ui/latest/loader.js></script>
-      <script type="application/javascript"> var UC_UI_SUPPRESS_CMP_DISPLAY=true;</script>
-      
+      <script type="application/javascript">var UC_UI_SUPPRESS_CMP_DISPLAY=false;</script>
+      <script type="application/javascript" src="https://sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"></script>
+
       ${arDependencyBlock}
 
       <!--script src="${eleventy.url('/assets/scripts/gestures.js')}?${eleventy.getDateString()}" defer></script-->
       <script src="${eleventy.url('/assets/scripts/main.js')}?${eleventy.getDateString()}" defer></script>
 
       <!-- Matomo -->
-      <script>
+      <script type="text/plain" data-usercentrics="Matomo (self hosted)">
         var _paq = window._paq = window._paq || [];
         /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
         _paq.push(['trackPageView']);
