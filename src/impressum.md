@@ -11,7 +11,7 @@ backArrow: true
 Oberbergischer Kreis  
 Der Landrat  
 
-VHS Oberberg
+VHS Oberberg <br>
 Mühlenbergweg 3  
 51643 Gummersbach  
   
@@ -20,7 +20,7 @@ Fax: 02261 88-8190-27
 E-Mail: <a data-js-to="info" data-js-domain="vhs-oberberg.de" class="is-rev">ed<!-- check -->.grebrebo-shv@<!--check -->ofni</a>
  
  ### Rechtsform
- Der oberbergische Kreis ist eine Körperschaft des Öffentlichen Rechts.
+ Der Oberbergische Kreis ist eine Körperschaft des Öffentlichen Rechts.
 
  ### Umsatzsteuer-Identifikationsnummer
 Gemäß §27a Umsatzsteuergesetz: DE122539628
