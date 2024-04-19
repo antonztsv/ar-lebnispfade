@@ -56,3 +56,7 @@ Wir haben drei Umgebungen mit folgenden Aufgaben:
 | Preview | preview | https://preview.arlebnisobk.de |Umgebung zur temprären Bereitstellung von Entwicklungsständen, z.B. für Absprachen oder Demos. Bitte in der Preview.md dokumentieren, damit keine Stände überschrieben werden, die gerade noch gebraucht werden. |
 
 Ein Commit auf den jeweiligen Branch triggert ein Deploment auf die entsprechende Umgebung.
+
+## Probleme
+
+IOS byte-range-requests siehe Issue [#33](https://github.com/ARlebnispfade-Oberbergischer-Kreis/ar-lebnispfade/issues/33)
