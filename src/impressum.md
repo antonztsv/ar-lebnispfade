@@ -10,21 +10,45 @@ backArrow: true
 
 Oberbergischer Kreis  
 Der Landrat  
-Leitungsstab  
-Kreisvolkshochschule  
+
+VHS Oberberg
+Mühlenbergweg 3  
 51643 Gummersbach  
   
-Telefon: 02261 88-8190-13  
-Telefon-Zentrale: 02261 88-0  
+Telefon-Zentrale: 02261 8190-0  
 Fax: 02261 88-8190-27  
-E-Mail: <a data-js-to="michael.beiderwellen" data-js-domain="vhs.obk.de" class="is-rev">ed<!-- check -->.kbo.shv@<!--check -->nellewredieb.leahcim</a>
+E-Mail: <a data-js-to="info" data-js-domain="vhs-oberberg.de" class="is-rev">ed<!-- check -->.grebrebo-shv@<!--check -->ofni</a>
  
-### Datenschutzbeauftragter
-Oberbergischer Kreis  
-Der Landrat  
-Leitungsstab  
-Datenschutzbeauftragter  
-Moltkestraße 42  
-51643 Gummersbach  
+ ### Rechtsform
+ Der oberbergische Kreis ist eine Körperschaft des Öffentlichen Rechts.
 
-E-Mail: <a data-js-to="datenschutz" data-js-domain="obk.de" class="is-rev">ed.kb<!--check-->o@zt<!--check-->uhcsnetad</a>
+ ### Umsatzsteuer-Identifikationsnummer
+Gemäß §27a Umsatzsteuergesetz: DE122539628
+
+### Redaktionell verantwortlich für den Inhalt
+Volkshochschule Oberberg<br>
+vertreten durch: Michael Beiderwellen<br>
+Mühlenbergweg 3<br>
+51645 Gummersbach<br>
+Tel.: 02261 8190-0<br>
+Fax:02261 8190-27<br>
+E-Mail: <a data-js-to="info" data-js-domain="vhs-oberberg.de" class="is-rev">ed<!-- check -->.grebrebo-shv@<!--check -->ofni</a>
+
+
+### Rechtsform
+
+### Quell- und Urhebernachweis: 
+Logo: Michael Beiderwellen, <br>
+„AR-Pfad Straße der Arbeit“ Dominik Ketz,<br> 
+„Lambach-Pumpe“ Michael Beiderwellen, <br>
+„AR-Pfad Wiehl“ Christian Melzer,<br> 
+„Eisenbahnbrücke“ Michael Beiderwellen, <br>
+„Burghaus Bielstein“ Kulturkreis Wiehl e.V. David Prinz,<br> 
+„Motocross-Strecke“ Reiner Herle, <br>
+„Mühle“ Hillnhütter Architekten, <br>
+„St. Bonifatius“ Christian Springer, <br>
+„AR-Pfad Wipperfürth“ Stadt Wipperfürth, <br>
+„Flüchtlingslager“: Michael Beiderwellen, <br>
+„Franziskaner Kloster“ gemeinfrei, <br>
+„Münzschläger“ Michael Beiderwellen, <br>
+„Pulvermuseum“ gemeinfrei.

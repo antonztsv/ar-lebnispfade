@@ -14,7 +14,7 @@ Jochen Hagt
 Moltkestraße 42  
 51643 Gummersbach  
 
-Telefon-Zentrale: 02261 88-0
+Telefon-Zentrale: 02261 88-0 <br>
 Fax: 02261 88-1033  
 
 E-Mail: <a data-js-to="mail" data-js-domain="obk.de" class="is-rev">ed.kb<!--check-->o@l<!--check-->iam</a>
@@ -33,7 +33,7 @@ E-Mail: <a data-js-to="datenschutz" data-js-domain="obk.de" class="is-rev">ed.kb
  
 ### Allgemeine Datenschutzhinweise
 
-Mit diesen Datenschutzhinweisen werden Sie gemäß der geltenden europäischen Datenschutzgrundverordnung (DSGVO), sowie des Datenschutzgesetzes Nordrhein-Westfalen (DSG NRW)[https://recht.nrw.de/lmi/owa/br_text_anzeigen?v_id=3520071121100436275] über die Verarbeitung Ihrer personenbezogenen Daten sowie über die Ihnen zustehenden Rechte informiert.
+Mit diesen Datenschutzhinweisen werden Sie gemäß der geltenden europäischen Datenschutzgrundverordnung (DSGVO), sowie des <a href="https://recht.nrw.de/lmi/owa/br_text_anzeigen?v_id=3520071121100436275">Datenschutzgesetzes Nordrhein-Westfalen (DSG NRW)</a> über die Verarbeitung Ihrer personenbezogenen Daten sowie über die Ihnen zustehenden Rechte informiert.
 Die DSGVO ist eine Verordnung der Europäischen Union, mit der die Regeln für die Verarbeitung von personenbezogenen Daten durch private Unternehmen und öffentliche Stellen EU-weit vereinheitlicht werden.
 
 Das ordnungsbehördliche Verwaltungshandeln ist nach der JI-Richtlinie (EU) 2016/680 auszurichten. Das bedeutet, dass für die Ordnungsbehörden die Vorschriften des 3. Teils des DSG NRW, mithin die §§ 35 bis 69 DSG NRW gelten, sofern sie Ordnungswidrigkeiten verfolgen, ahnden sowie Sanktionen vollstrecken. Es gelten hier die Informationspflichten nach §§47 und 48 DSG NRW.
@@ -68,6 +68,7 @@ Zudem dienen die unter Ziffer 1. genannten Daten zur bedarfsgerechten Gestaltung
 #### 4. Dauer der Speicherung
 Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind.
 Im Falle der Erfassung der Daten zur Bereitstellung der Website ist dies der Fall, wenn die jeweilige Sitzung beendet ist.
+Eine Datenübergreifende Speicherung zur bedarfsgerechten Gestaltung und fortlaufenden Optimierung der WebApp, zur statistischen Erfassung sowie zur Gewährleistung der Sicherheit der informationstechnischen Systeme ist möglich. In diesem Fall werden die Daten anonymisiert, so dass eine Zuordnung des aufrufenden Clients nicht mehr möglich ist.
  
 #### 5. Widerspruchs- und Beseitigungsmöglichkeit
 Die automatisierte Erfassung der Daten zur Bereitstellung der Website ist für den Betrieb der Internetseite zwingend erforderlich. Es besteht folglich seitens der Nutzerin bzw. des Nutzers keine Widerspruchsmöglichkeit.

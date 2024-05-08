@@ -1,10 +1,24 @@
-exports.getHeader = (eleventy, data, mapMeta) => {
+exports.getHeader = (eleventy, data, args) => {
+
+  const mapMeta = args && args.mapMeta ? args.mapMeta : false;
+  const arDependencies = args && args.arDependencies ? args.arDependencies : false;
+
   const currentDay= new Date().getDate();
   const currentMonth = new Date().getMonth() +1;
   const currentYear = new Date().getFullYear();
   const publishDate = `${currentYear}-${currentMonth}-${currentDay}`;
 
   const mapMetaData = mapMeta ? mapMeta : '';
+
+  const arDependencyBlock = !arDependencies ? ''
+    : `<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@cb0bb8407968be713b79008548b7044908ba5729/dist/aframe-master.min.js"></script>
+      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+      <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
+      <script src="${eleventy.url('/assets/scripts/card.js')}?${eleventy.getDateString()}" defer></script>
+      <script src="${eleventy.url('/assets/scripts/mediaControls.js')}?${eleventy.getDateString()}" defer></script>
+    `;
+  
 
   const title = data.title === 'ARlebnispfade Oberberg' ? data.title : `ARlebnispfade Oberberg // ${data.title}`;
 
@@ -24,24 +38,24 @@ exports.getHeader = (eleventy, data, mapMeta) => {
       
       ${mapMetaData}
 
-      <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+      <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=5.0">
       <meta name="msapplication-TileColor" content="#da532c">
       <meta name="theme-color" content="#ffffff">
 
-      <link href="${eleventy.url('/compiled-assets/main.css')}?${eleventy.getDateString()}" rel="stylesheet">
-      
-      <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@cb0bb8407968be713b79008548b7044908ba5729/dist/aframe-master.min.js"></script>
-      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-      <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
+      <link href="${eleventy.url('/compiled-assets/main.css')}?${eleventy.getDateString()}" rel="stylesheet" media="screen">
 
+      <!-- Cookie-Banner -->
+      <script id="usercentrics-cmp" async data-eu-mode="true" data-settings-id="UZi3OuY5qI34pm" src=https://app.eu.usercentrics.eu/browser-ui/latest/loader.js></script>
+      <script type="application/javascript">var UC_UI_SUPPRESS_CMP_DISPLAY=false;</script>
+      <script type="application/javascript" src="https://sdp.eu.usercentrics.eu/latest/uc-block.bundle.js"></script>
+
+      ${arDependencyBlock}
+
+      <!--script src="${eleventy.url('/assets/scripts/gestures.js')}?${eleventy.getDateString()}" defer></script-->
       <script src="${eleventy.url('/assets/scripts/main.js')}?${eleventy.getDateString()}" defer></script>
-      <script src="${eleventy.url('/assets/scripts/gestures.js')}?${eleventy.getDateString()}" defer></script>
-      <script src="${eleventy.url('/assets/scripts/card.js')}?${eleventy.getDateString()}" defer></script>
-      <script src="${eleventy.url('/assets/scripts/mediaControls.js')}?${eleventy.getDateString()}" defer></script>
 
       <!-- Matomo -->
-      <script>
+      <script type="text/plain" data-usercentrics="Matomo (self hosted)">
         var _paq = window._paq = window._paq || [];
         /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
         _paq.push(['trackPageView']);
@@ -55,6 +69,9 @@ exports.getHeader = (eleventy, data, mapMeta) => {
         })();
       </script>
       <!-- End Matomo Code -->
+
     </head>
   `;
 };
+
+

@@ -10,12 +10,16 @@ exports.getPageFooter = (eleventy, data) => {
   
   return `
     <footer class="main-footer">
+    <a href="https://www.vhs-oberberg.de"><img src="/assets/images/sat_40_OBK_vhs_SW.png" alt="Logo VHS Oberberg"></a>
       <ul class="footer-links">
         <li><a href="/ueber-das-projekt/">Über das Projekt</a></li>
         <li><a href="/impressum">Impressum</a></li>
         <li><a href="/datenschutzerklaerung">Datenschutzerklärung</a></li>
       </ul>
-      <small>${date}.${month}.${year} // ${hours}:${minutes}:${seconds}</small>
+      <br>
+      <a href="javascript:UC_UI.showSecondLayer();">Cookie-Einstellungen</a>
     </footer>
   `;
 };
+ /* hinter </ul> einfügen
+ <small>${date}.${month}.${year} // ${hours}:${minutes}:${seconds}</small>*/
