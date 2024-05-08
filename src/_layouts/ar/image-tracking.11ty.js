@@ -77,10 +77,14 @@ function getVideoCode(arData, data) {
     if (data.type === 'filename') localFilename = data.filename
   }
 
+  // https://media.arlebnisobk.de/data-proxy/?filename=wahllokal.mp4
+  // <video autoplay loop muted playsinline id="video" controls src="../ar-media/videos/${localFilename}"></video>
+
+
   return `
   <a-assets>
         ${audioData}
-        <video id="video" controls src="../ar-media/videos/${localFilename}" loop></video>
+        <video loop muted playsinline id="video" controls src="https://media.arlebnisobk.de/data-proxy/?filename=wahllokal.mp4"></video>
 </a-assets>
 <a-nft
 class="${data.id}-nft"
@@ -101,8 +105,8 @@ registerevents
         <a-video
           id="video"
           src="#video"
-          width="40"
-          height="22"
+          width="50"
+          height="28"
           scale="${data.scale}"
           position="${data.position}"
           rotation="${data.rotation}"
