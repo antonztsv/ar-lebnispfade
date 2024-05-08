@@ -12,6 +12,7 @@ const mediaControlsLogic = `
   <script type="module">
   let audioIsPlaying = false;
       
+  let mediaControls
       const addingMediaControls = () => {
         
         let playableContent;
@@ -19,7 +20,6 @@ const mediaControlsLogic = `
         let playBtn;
         let stopBtn;
         let pauseBtn;
-        let mediaControls
       playableContent = document.getElementById('video');
   
       playBtn = document.querySelector("[data-js-play-button]");
@@ -27,7 +27,7 @@ const mediaControlsLogic = `
       stopBtn = document.querySelector("[data-js-stop-button]");
       mediaControls = document.getElementById("media-controls");
   
-      mediaControls.classList.add("is-visible");
+      //mediaControls.classList.add("is-visible");
   
       console.log(mediaControls);
   
@@ -66,7 +66,6 @@ const mediaControlsLogic = `
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
-    ${mediaControlsLogic}
     <script type="importmap">
     {
       "imports": {
@@ -76,59 +75,7 @@ const mediaControlsLogic = `
       }
     }
     </script>
-    <script type="module">
-
-      // ==============================================================
-      import * as THREE from 'three';
-      import { MindARThree } from 'mindar-image-three';
-      const mindarThree = new MindARThree({
-	      container: document.querySelector("#container"),
-	      imageTargetSrc: "../ar-media/images/pulvermuseum.mind"
-      });
-
-      console.log("HALLO");
-
-      const {renderer, scene, camera} = mindarThree;
-      const anchor = mindarThree.addAnchor(0);
-      
-      let video = document.getElementById("video");
-      let videoTexture = new THREE.VideoTexture(video);
-      
-      videoTexture.minFilter = THREE.LinearFilter;
-      videoTexture.magFilter = THREE.LinearFilter;
-      
-      var movieMaterial = new THREE.MeshBasicMaterial({
-        map: videoTexture,
-	      side: THREE.FrontSide,
-	      toneMapped: false
-      });
-      
-      function animate(){
-        //video.play();
-        requestAnimationFrame(animate);
-        
-        videoTexture.needsUpdate = true;
-      }
-      
-      const movieGeometry = new THREE.PlaneGeometry(1, 0.55);
-      const plane = new THREE.Mesh( movieGeometry, movieMaterial );
-      anchor.group.add(plane);
-      const start = async() => {
-	      await mindarThree.start();
-	      renderer.setAnimationLoop(() => {
-          animate();
-          renderer.render(scene, camera);
-	        });
-      }
-      const startButton = document.querySelector("#startButton");
-      startButton.addEventListener("click", () => {
-	      start();
-      });
-      stopButton.addEventListener("click", () => {
-	      mindarThree.stop();
-	      mindarThree.renderer.setAnimationLoop(null);
-      });
-    </script>
+    <script type="module" src="/assets/scripts/threejs.js" defer></script>
     <style>
       body {
 	margin: 0;
@@ -193,10 +140,11 @@ const mediaControlsLogic = `
       id="video"
       playsinline
       webkit-playsinline
+      controls='true'
       loop
       width="1290"
       height="1040"
-      src="../ar-media/videos/pulvermuseum.webm"
+      src="../ar-media/videos/wahllokal.mp4"
       style="display: none"
     ></video>
     <div id="control">
