@@ -99,7 +99,7 @@ exports.render = function (data) {
       muted
       width="400"
       height="240"
-      src="../ar-media/videos/wahllokal.mp4"
+      src="../ar-media/videos/wahllokal2.mp4"
       style="display: none"
     ></video>
     <div id="control">
