@@ -19,9 +19,6 @@ const addingMediaControls = () => {
 
   //mediaControls.classList.add("is-visible");
 
-  console.log("MEDIA CONTROLS")
-  console.log(mediaControls);
-
   if (!mediaControls || mediaControls == null) return;
 
   const playMedia = () => {
@@ -54,10 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
 // ==============================================================
 import * as THREE from "three";
 import { MindARThree } from "mindar-image-three";
+
+
 const mindarThree = new MindARThree({
   container: document.querySelector("#container"),
   imageTargetSrc: "../ar-media/images/pulvermuseum.mind",
 });
+
+const currentUrl = window.location.href;
 
 const { renderer, scene, camera } = mindarThree;
 const anchor = mindarThree.addAnchor(0);
@@ -76,9 +77,14 @@ var movieMaterial = new THREE.MeshBasicMaterial({
 
 const scanningUI = document.querySelector(".mindar-ui-scanning");
 
+let canvas = document.getElementsByTagName("canvas");
+
+
 function setMediaControls() {
   const check = scanningUI.classList.contains("hidden");
   if (check) {
+    canvas[0].style.height = 300;
+    canvas[0].style.width = 500;
     mediaControls.classList.add("is-visible");
   } else {
     mediaControls.classList.remove("is-visible");
@@ -95,6 +101,8 @@ function animate() {
 const movieGeometry = new THREE.PlaneGeometry(1, 0.55);
 const plane = new THREE.Mesh(movieGeometry, movieMaterial);
 anchor.group.add(plane);
+
+
 const start = async () => {
   await mindarThree.start();
   renderer.setAnimationLoop(() => {

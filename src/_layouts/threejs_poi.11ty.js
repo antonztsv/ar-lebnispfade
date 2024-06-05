@@ -1,5 +1,7 @@
 exports.render = function (data) {
 
+  console.log(data.ar)
+
   const mediaControls = `
   <div id="media-controls" class="media-controls" data-js-media-controls>
     <button id="play-button" data-js-play-button><span class="icon">play_arrow</span></button>
@@ -7,60 +9,6 @@ exports.render = function (data) {
     <button id="stop-button" class="is-hidden" data-js-stop-button><span class="icon">stop</span></button>
   </div>
 `;
-
-const mediaControlsLogic = `
-  <script type="module">
-  let audioIsPlaying = false;
-      
-  let mediaControls
-      const addingMediaControls = () => {
-        
-        let playableContent;
-  
-        let playBtn;
-        let stopBtn;
-        let pauseBtn;
-      playableContent = document.getElementById('video');
-  
-      playBtn = document.querySelector("[data-js-play-button]");
-      pauseBtn = document.querySelector("[data-js-pause-button]");
-      stopBtn = document.querySelector("[data-js-stop-button]");
-      mediaControls = document.getElementById("media-controls");
-  
-      //mediaControls.classList.add("is-visible");
-  
-      console.log(mediaControls);
-  
-    if(!mediaControls || mediaControls == null) return;
-  
-    const playMedia = () => {
-      playableContent.play();
-      audioIsPlaying = true;
-      playBtn.classList.add("is-hidden");
-      pauseBtn.classList.remove("is-hidden");
-    }
-  
-    const pauseMedia = () => {
-      playableContent.pause();
-      audioIsPlaying = false;
-      playBtn.classList.remove("is-hidden");
-      pauseBtn.classList.add("is-hidden");
-    }
-  
-          mediaControls.addEventListener("click", () => {
-            if(audioIsPlaying){
-                pauseMedia();
-            }else{
-                playMedia();
-            }
-          });
-        }
-        document.addEventListener("DOMContentLoaded", () => {
-          addingMediaControls();
-        })
-  </script>
-`
-
     return `
     <html>
     <head>
@@ -76,6 +24,7 @@ const mediaControlsLogic = `
     }
     </script>
     <script type="module" src="/assets/scripts/threejs.js" defer></script>
+    <link href="${this.url('/compiled-assets/main.css')}?${this.getDateString()}" rel="stylesheet" media="screen">
     <style>
       body {
 	margin: 0;
@@ -132,6 +81,10 @@ const mediaControlsLogic = `
         button:hover {
           background-color: var(--color-accent);
         }
+        #video {
+          width: 400px;
+          height: 240px;
+        }
       }
     </style>
   </head>
@@ -142,8 +95,8 @@ const mediaControlsLogic = `
       webkit-playsinline
       controls='true'
       loop
-      width="1290"
-      height="1040"
+      width="400"
+      height="240"
       src="../ar-media/videos/wahllokal.mp4"
       style="display: none"
     ></video>
