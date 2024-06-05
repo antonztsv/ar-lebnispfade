@@ -94,7 +94,9 @@ exports.render = function (data) {
       playsinline
       webkit-playsinline
       controls='true'
+      autoplay
       loop
+      muted
       width="400"
       height="240"
       src="../ar-media/videos/wahllokal.mp4"
