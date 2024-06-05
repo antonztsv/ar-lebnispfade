@@ -29,7 +29,7 @@ ar:
     video: [
         {
             type: 'filename',
-            filename: 'fluechtlingslager.webm'
+            filename: 'wahllokal2.mp4'
         }
     ]
     nft: [
