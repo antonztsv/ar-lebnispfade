@@ -99,7 +99,7 @@ exports.render = function (data) {
       muted
       width="400"
       height="240"
-      src="../ar-media/videos/paintandquest.mp4"
+      src="https://media.arlebnisobk.de/data-proxy/?filename=demo-cn.mov"
       style="display: none"
     ></video>
     <div id="control">
