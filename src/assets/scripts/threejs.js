@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
 import * as THREE from "three";
 import { MindARThree } from "mindar-image-three";
 
-
 const mindarThree = new MindARThree({
   container: document.querySelector("#container"),
   imageTargetSrc: "../ar-media/images/pulvermuseum.mind",
@@ -74,6 +73,14 @@ var movieMaterial = new THREE.MeshBasicMaterial({
   side: THREE.FrontSide,
   toneMapped: false,
 });
+
+const capabilities = {
+  OES_texture_half_float: renderer.extensions.has( 'OES_texture_half_float'  ),
+  OES_texture_half_float_linear: renderer.extensions.has( 'OES_texture_half_float_linear'  ),
+  OES_texture_float: renderer.extensions.has( 'OES_texture_float'  )
+};
+
+console.log( capabilities );
 
 const scanningUI = document.querySelector(".mindar-ui-scanning");
 
