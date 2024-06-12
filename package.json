@@ -21,7 +21,9 @@
     "dev": "npm-run-all del:docs build:css --parallel watch serve:11ty",
     "build": "npm-run-all del:docs del:assets build:css build:site",
     "live": "npm run build && npm run serve:prod",
-    "quiet": "npm-run-all del:docs build:css --parallel watch serve:11ty-quiet"
+    "ngrok-tunnel": "npx ngrok http 8080",
+    "quiet": "npm-run-all del:docs build:css --parallel watch serve:11ty-quiet",
+    "ngrok": "npm-run-all del:docs build:css --parallel watch serve:11ty-quiet ngrok-tunnel"
   },
   "repository": {
     "type": "git",
