@@ -1,6 +1,6 @@
 exports.render = function (data) {
 
-  console.log(data.ar)
+  //console.log(data.ar)
 
   const mediaControls = `
   <div id="media-controls" class="media-controls" data-js-media-controls>
@@ -9,6 +9,83 @@ exports.render = function (data) {
     <button id="stop-button" class="is-hidden" data-js-stop-button><span class="icon">stop</span></button>
   </div>
 `;
+
+//console.log(data.ar.nft)
+//console.log(data.ar)
+
+var htmlWithARData = ``;
+
+for (const nftdata of data.ar.nft) {
+  switch (nftdata.type) {
+    case 'model':
+      htmlWithARData = htmlWithARData.concat(getModelCode(data.ar, nftdata));
+      break
+    case 'video':
+      htmlWithARData = htmlWithARData.concat(getVideoCode(data.ar, nftdata));
+      break
+    case 'audio':
+      htmlWithARData = htmlWithARData.concat(getAudioCode(data.ar, nftdata));
+      break
+    default:
+      break;
+  }
+}
+
+function getModelCode(arData, data) {
+  let audioData = ''
+
+  if(arData.audio) audioData = `
+    <audio id="audio" src="../ar-media/audios/${arData.audio.filename}" preload="auto"></audio>
+  `
+  
+  return `
+    <div id="3dmodel" data-value="${data.model}"></div>
+  `
+}
+
+function getVideoCode(arData, data) {
+  let audioData = ''
+
+  if(arData.audio) audioData = `
+    <audio id="audio" src="../ar-media/audios/${arData.audio.filename}" preload="auto"></audio>
+  `
+  console.log(arData)
+
+  var localFilename = ''
+
+  for (const data of arData.video){
+    if (data.type === 'filename') localFilename = data.filename
+  }
+
+  return `
+  <video
+      id="video"
+      playsinline
+      webkit-playsinline
+      controls='true'
+      autoplay
+      loop
+      muted
+      width="400"
+      height="240"
+      src="../ar-media/videos/${localFilename}"
+      style="display: none"
+    ></video>
+  `
+}
+
+function getAudioCode(arData, data) {
+  let audioData = ''
+
+  if(arData.audio) audioData = `
+    <audio id="audio" src="../ar-media/audios/${arData.audio.filename}" preload="auto"></audio>
+  `
+  
+  return `
+  
+  `
+}
+
     return `
     <html>
     <head>
@@ -27,19 +104,19 @@ exports.render = function (data) {
     <link href="${this.url('/compiled-assets/main.css')}?${this.getDateString()}" rel="stylesheet" media="screen">
     <style>
       body {
-	margin: 0;
+  margin: 0;
       }
       #container {
-	width: 100vw;
-	height: 100vh;
-	position: relative;
-	overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
       }
       #control {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
       }
       .media-controls {
         opacity: 0;
@@ -87,25 +164,10 @@ exports.render = function (data) {
         }
       }
     </style>
+
   </head>
   <body>
-  <video
-      id="video"
-      playsinline
-      webkit-playsinline
-      controls='true'
-      autoplay
-      loop
-      muted
-      width="400"
-      height="240"
-      src="../ar-media/videos/paintandquest.mp4"
-      style="display: none"
-    ></video>
-    <div id="control">
-      <button id="startButton">Start</button>
-      <button id="stopButton">Stop</button>
-    </div>
+  ${htmlWithARData}
     <div id="container">
     </div>
     ${mediaControls}
@@ -113,3 +175,8 @@ exports.render = function (data) {
 </html>
     `;
 }
+
+{/* <div id="control">
+<button id="startButton">Start</button>
+<button id="stopButton">Stop</button>
+</div> */}

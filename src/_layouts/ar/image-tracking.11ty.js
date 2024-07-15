@@ -2,7 +2,6 @@ exports.getImageTrackingCode = (eleventy, arData) => {
 /**
  * TODO:
  * add variabel to accomandate different 3D-Model filetypes
- * add variable for different positions of content
  */
 var htmlWithARData = ``;
 
