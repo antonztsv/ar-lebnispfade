@@ -122,6 +122,14 @@ if(document.getElementById("3dmodel")){
 	}
 )}
 
+const capabilities = {
+  OES_texture_half_float: renderer.extensions.has( 'OES_texture_half_float'  ),
+  OES_texture_half_float_linear: renderer.extensions.has( 'OES_texture_half_float_linear'  ),
+  OES_texture_float: renderer.extensions.has( 'OES_texture_float'  )
+};
+
+console.log( capabilities );
+
 const scanningUI = document.querySelector(".mindar-ui-scanning");
 
 let canvas = document.getElementsByTagName("canvas");

@@ -35,7 +35,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setWatchJavaScriptDependencies(true);
   eleventyConfig.setBrowserSyncConfig({
     snippet: true,
-    https: true
+    https: false
   });
 
   eleventyConfig.addGlobalData("eleventyComputed.permalink", function() {
@@ -73,10 +73,10 @@ module.exports = function (eleventyConfig) {
     showAllHosts: true,
 
     // Use a local key/certificate to opt-in to local HTTP/2 with https
-     https: {
-       key: "../localhost.key",
-       cert: "../localhost.cert",
-    },
+    // https: {
+    //   key: "../localhost.key",
+    //   cert: "../localhost.cert",
+    //},
 
     // Change the default file encoding for reading/serving files
     encoding: "utf-8",
@@ -115,6 +115,7 @@ module.exports = function (eleventyConfig) {
   // Copy Media
   eleventyConfig.addPassthroughCopy("src/**/*.mp4");
   eleventyConfig.addPassthroughCopy("src/**/*.webm");
+  eleventyConfig.addPassthroughCopy("src/**/*.mov");
   eleventyConfig.addPassthroughCopy("src/**/*.mp3");
   eleventyConfig.addPassthroughCopy("src/**/*.glb");
   eleventyConfig.addPassthroughCopy("src/**/*.obj");

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // https://medieninformatik.th-koeln.de/download/test/demo-cn.mov
+    // ../wipperfuerth/ar-media/videos/demo-cn.mov
+    // https://github.com/ARlebnispfade-Oberbergischer-Kreis/ar-lebnispfade/raw/dev/src/wipperfuerth/ar-media/videos/wahllokal2.mp4
+    const getVideo = () => {
+      fetch('https://media.arlebnisobk.de/data-proxy/?filename=demo-cn.mov')
+        .then(response => console.log(response))
+    }
+
+    getVideo();
+  </script>
+  
+</body>
+</html>
