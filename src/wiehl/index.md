@@ -1,5 +1,5 @@
 ---
-title: Das ist ein API Test
+title: Wiehl
 layout: path.11ty.js
 image: wiehl.webp
 type: metadata
