@@ -1,6 +1,6 @@
 ---
 id: muenzschlaeger
-title: Münzschläger
+title: Münzschläger Test
 image: muenzschlaeger.webp
 layout: poi
 gmaps: null
