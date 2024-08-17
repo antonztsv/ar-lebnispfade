@@ -1,5 +1,5 @@
 ---
-title: Flüchtlingslager
+title: Flüchtlingslager Test
 image: fluechtlingslager.webp
 layout: poi
 gmaps: >-
