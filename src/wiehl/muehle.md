@@ -51,5 +51,12 @@ ar:
       position: '0, 0, 0'
       rotation: '0, 0, 0'
       scale: '150, 150, 150'
+    - type: model
+      id: bergischerloewe
+      name: Bergischerloewe
+      model: bergischerloewe
+      position: '0,0,0'
+      rotation: '0,0,0'
+      scale: '150,150,150'
 ---
 
