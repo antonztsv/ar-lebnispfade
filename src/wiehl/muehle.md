@@ -45,9 +45,9 @@ ar:
     filename: wiehl_repschenrothermuehle.mp3
   nft:
     - type: model
-      id: bergischerloewe
-      name: BergischerLoewe
-      model: bergischerloewe
+      id: muehlrad
+      name: Muehlrad
+      model: muehlrad
       position: '0, 0, 0'
       rotation: '0, 0, 0'
       scale: '150, 150, 150'
