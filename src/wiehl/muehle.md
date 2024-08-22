@@ -49,7 +49,7 @@ ar:
       name: Muehlrad
       model: muehlrad
       position: '0, 0, 0'
-      rotation: '0, 0, 90'
+      rotation: '0, 90, 0'
       scale: '150, 150, 150'
 ---
 
