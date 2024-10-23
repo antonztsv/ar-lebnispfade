@@ -1,6 +1,6 @@
 ---
 title: Neuer AR-Spot
-image: pfad-zum-bild.jpg
+image: strasse-der-arbeit.webp
 type: ar-data
 layout: poi
 gmaps: null
