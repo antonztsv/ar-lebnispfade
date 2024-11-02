@@ -1,6 +1,6 @@
 ---
-title: Lambach-Pumpe
-image: lambachpumpe.webp
+title: Lambach-Wasserrad
+image: wasserrad.webp
 type: ar-data
 layout: poi
 gmaps: >-
